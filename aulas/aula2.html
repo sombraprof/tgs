@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TGS - Aula 2: Curricularização da Extensão</title>
+    <meta
+      name="description"
+      content="Aula 2 da disciplina Teoria Geral de Sistemas, focada em Curricularização da Extensão e a importância do tripé Ensino-Pesquisa-Extensão para a formação em Sistemas de Informação."
+    />
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Estilo base para a fonte Inter */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc; /* bg-slate-50 */
+      }
+      /* Estilo para destacar os callouts */
+      .callout {
+        border-left-width: 4px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.5rem;
+      }
+      .callout-info {
+        background-color: #f0f9ff; /* bg-sky-50 */
+        border-color: #7dd3fc; /* border-sky-300 */
+        color: #0c4a6e; /* text-sky-800 */
+      }
+      .callout-practice {
+        background-color: #f0fdf4; /* bg-emerald-50 */
+        border-color: #6ee7b7; /* border-emerald-300 */
+        color: #065f46; /* text-emerald-800 */
+      }
+      /* Estilo para o quiz */
+      details > summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0.75rem;
+        background-color: #f1f5f9;
+        border-radius: 0.375rem;
+        transition: background-color 0.2s;
+      }
+      details > summary:hover {
+        background-color: #e2e8f0;
+      }
+      details[open] > summary {
+        background-color: #e2e8f0;
+      }
+      .quiz-answer {
+        padding: 1rem;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-top: none;
+        border-radius: 0 0 0.375rem 0.375rem;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <!-- Cabeçalho da Aula -->
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-sky-800">
+          Teoria Geral de Sistemas (TGS)
+        </h1>
+        <p class="text-xl text-slate-600 mt-2">
+          Aula 2: Curricularização da Extensão
+        </p>
+      </div>
+    </header>
+
+    <!-- Corpo Principal da Aula -->
+    <main class="container mx-auto px-6 py-10">
+      <!-- Seção: Plano da Aula -->
+      <section
+        id="plano-aula"
+        aria-label="Plano da Aula"
+        class="mb-12 bg-sky-50 border border-sky-200 p-8 rounded-2xl shadow-lg"
+      >
+        <h2 class="text-3xl font-bold text-sky-700 mb-6 text-center">
+          Plano da Aula
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Unidade e Conteúdo -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-3"
+          >
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+            </h3>
+            <p class="font-bold text-slate-700">
+              Curricularização da Extensão – Unidade de Introdução
+            </p>
+            <p class="text-slate-600 mt-1">
+              O que são atividades de extensão; relações entre universidade,
+              comunidade e mercado; importância do tripé
+              Ensino-Pesquisa-Extensão.
+            </p>
+          </div>
+          <!-- Objetivo -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO
+            </h3>
+            <p class="text-slate-600">
+              Compreender o papel da extensão universitária, sua obrigatoriedade
+              no currículo de Sistemas de Informação segundo a legislação do
+              MEC, e reconhecer sua importância para a formação profissional e
+              cidadã.
+            </p>
+          </div>
+          <!-- Metodologia -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA
+            </h3>
+            <p class="text-slate-600">
+              Aula expositiva dialogada com uso de roda de conversa e vídeo
+              (metodologia ativa).
+            </p>
+          </div>
+          <!-- Recursos -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-desktop mr-2"></i>RECURSOS
+            </h3>
+            <p class="text-slate-600">
+              Quadro, vídeo sobre ações extensionistas, relato de projeto real
+              da instituição.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pergunta Norteadora -->
+      <section
+        id="pergunta-norteadora"
+        aria-label="Pergunta Norteadora"
+        class="mb-12 callout callout-info"
+      >
+        <h3 class="font-bold text-lg mb-2">
+          <i class="fa-solid fa-question-circle mr-2"></i>Pergunta Norteadora
+        </h3>
+        <p>
+          Fora dos muros da universidade, como a tecnologia e o conhecimento que
+          aprendemos aqui podem transformar a realidade da nossa comunidade?
+        </p>
+      </section>
+
+      <!-- Seção: Contexto Inicial -->
+      <section
+        id="contexto"
+        aria-label="Contexto Inicial"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          🌍 O Papel Social da Universidade
+        </h2>
+        <p>
+          Normalmente, pensamos na universidade como um lugar para aprender
+          (Ensino) e para descobrir coisas novas (Pesquisa). Mas existe um
+          terceiro pilar, igualmente importante, que conecta tudo isso ao mundo
+          real: a <strong>Extensão</strong>.
+        </p>
+        <p>
+          A extensão é a ponte que leva o conhecimento produzido na academia
+          para a sociedade e, ao mesmo tempo, traz as necessidades, os desafios
+          e os saberes da comunidade para dentro da universidade. É uma via de
+          mão dupla que enriquece a formação do aluno, qualifica a pesquisa e
+          fortalece o impacto social da instituição.
+        </p>
+        <p>
+          Desde 2018, de acordo com a
+          <strong>Resolução CNE/CES nº 7/2018</strong>, o Ministério da Educação
+          (MEC) tornou obrigatória a Curricularização da Extensão. Isso
+          significa que <strong>todos os cursos de graduação</strong> devem
+          destinar, no mínimo, <strong>10% da carga horária total</strong> para
+          atividades extensionistas. Portanto, participar de projetos de
+          extensão não é opcional: faz parte do seu currículo acadêmico e é
+          requisito para a colação de grau.
+        </p>
+      </section>
+
+      <!-- Seção: O Tripé Acadêmico -->
+      <section
+        id="tripe-academico"
+        aria-label="O Tripé Acadêmico"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          🏛️ O Tripé: Ensino, Pesquisa e Extensão
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <!-- Ensino -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i
+              class="fa-solid fa-chalkboard-user text-4xl text-sky-600 mb-4"
+            ></i>
+            <h3 class="text-2xl font-bold text-slate-700 mb-2">Ensino</h3>
+            <p class="text-slate-600">
+              É a base de tudo. A transmissão e construção do conhecimento em
+              sala de aula, preparando profissionais qualificados para o
+              mercado.
+            </p>
+          </div>
+          <!-- Pesquisa -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i class="fa-solid fa-flask-vial text-4xl text-purple-600 mb-4"></i>
+            <h3 class="text-2xl font-bold text-slate-700 mb-2">Pesquisa</h3>
+            <p class="text-slate-600">
+              A produção de novo conhecimento. É a investigação científica que
+              avança as fronteiras da ciência e da tecnologia, gerando inovação.
+            </p>
+          </div>
+          <!-- Extensão -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i
+              class="fa-solid fa-people-group text-4xl text-emerald-600 mb-4"
+            ></i>
+            <h3 class="text-2xl font-bold text-slate-700 mb-2">Extensão</h3>
+            <p class="text-slate-600">
+              A articulação entre o saber acadêmico e o saber popular. É a
+              aplicação prática do conhecimento para resolver problemas reais da
+              comunidade.
+            </p>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-slate-200">
+          <h4 class="text-xl font-semibold text-center text-slate-700 mb-4">
+            A Sinergia do Tripé: Como os Pilares se Conectam
+          </h4>
+          <div class="prose prose-slate max-w-none lg:prose-lg text-left">
+            <p>
+              Esses três pilares não funcionam de forma isolada. Pelo contrário,
+              eles se alimentam mutuamente em um ciclo contínuo:
+            </p>
+            <ul>
+              <li>
+                <strong class="text-sky-700">A Pesquisa inova o Ensino:</strong>
+                As descobertas científicas e tecnológicas da pesquisa atualizam
+                o conteúdo que é ensinado em sala de aula, garantindo uma
+                formação sempre relevante.
+              </li>
+              <li>
+                <strong class="text-emerald-700"
+                  >A Extensão dá propósito ao Ensino e à Pesquisa:</strong
+                >
+                Ao aplicar o conhecimento para resolver um problema real da
+                comunidade, o aluno entende o propósito prático do que aprendeu.
+                Muitas vezes, os desafios encontrados na extensão geram novas
+                perguntas que viram temas de pesquisa.
+              </li>
+              <li>
+                <strong class="text-purple-700"
+                  >O Ensino prepara para a Pesquisa e a Extensão:</strong
+                >
+                A base teórica sólida adquirida em sala de aula é o que capacita
+                o aluno a investigar novos temas (pesquisa) e a desenvolver
+                soluções eficazes para a sociedade (extensão).
+              </li>
+            </ul>
+            <p class="text-center italic mt-4">
+              É um sistema dinâmico onde cada parte fortalece as outras, criando
+              um ciclo virtuoso de aprendizado, descoberta e impacto social.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção: A Extensão na Prática -->
+      <section
+        id="extensao-pratica"
+        aria-label="A Extensão na Prática"
+        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          💡 A Extensão em Sistemas de Informação na Prática
+        </h2>
+        <p>
+          Para nós, da área de tecnologia, a extensão é uma oportunidade
+          incrível de aplicar o que aprendemos para gerar impacto real. É a
+          chance de sair da teoria e enfrentar desafios complexos, desenvolver
+          habilidades de comunicação, gestão e, acima de tudo, exercer nossa
+          cidadania.
+        </p>
+
+        <div class="not-prose grid md:grid-cols-2 gap-8 mt-6">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="text-xl font-semibold mb-3">
+              Exemplo 1: Inclusão Digital
+            </h4>
+            <p class="text-slate-600">
+              Alunos de SI organizam oficinas para ensinar idosos a usar
+              smartphones, internet banking e redes sociais, promovendo
+              autonomia e combatendo o isolamento digital.
+            </p>
+            <ul class="text-sm text-slate-500 mt-3 list-disc list-inside">
+              <li><strong>Comunidade beneficiada:</strong> Idosos locais.</li>
+              <li>
+                <strong>Habilidades desenvolvidas:</strong> Didática, paciência,
+                comunicação.
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow">
+            <h4 class="text-xl font-semibold mb-3">
+              Exemplo 2: Sistema para ONGs
+            </h4>
+            <p class="text-slate-600">
+              Uma equipe de estudantes desenvolve, voluntariamente, um sistema
+              de gestão de doações e voluntários para uma organização não
+              governamental do bairro, otimizando seus processos.
+            </p>
+            <ul class="text-sm text-slate-500 mt-3 list-disc list-inside">
+              <li>
+                <strong>Comunidade beneficiada:</strong> ONG e seus assistidos.
+              </li>
+              <li>
+                <strong>Habilidades desenvolvidas:</strong> Levantamento de
+                requisitos, desenvolvimento, gestão de projetos.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção: Importância Profissional -->
+      <section
+        id="importancia-profissional"
+        aria-label="Importância para a Carreira"
+        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          💼 Por que a Extensão é um Diferencial para sua Carreira?
+        </h2>
+        <p>
+          Além de ser um requisito curricular, a participação em projetos de
+          extensão é um grande investimento no seu futuro profissional. Em um
+          mercado de TI competitivo, a experiência prática com impacto social se
+          destaca:
+        </p>
+        <ul>
+          <li>
+            <strong>Enriquece seu currículo e portfólio:</strong> Projetos reais
+            mostram sua capacidade de aplicar a teoria na prática.
+          </li>
+          <li>
+            <strong>Desenvolve Soft Skills:</strong> Liderança, trabalho em
+            equipe, comunicação com clientes (a comunidade), resolução de
+            problemas complexos e empatia são habilidades altamente valorizadas.
+          </li>
+          <li>
+            <strong>Cria Networking:</strong> Conecta você com professores,
+            colegas e membros da comunidade, abrindo portas para futuras
+            oportunidades.
+          </li>
+          <li>
+            <strong>Demonstra Proatividade e Engajamento:</strong> Mostra para
+            recrutadores que você é um profissional que vai além do básico e se
+            preocupa com o impacto do seu trabalho.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Desafio Prático -->
+      <section class="callout callout-practice" aria-label="Desafio Prático">
+        <h3 class="font-bold text-lg mb-2">
+          <i class="fa-solid fa-lightbulb mr-2"></i>Desafio Prático: Ideia de
+          Projeto
+        </h3>
+        <p>
+          Pense em uma necessidade real de tecnologia na sua comunidade (bairro,
+          escola, grupo social, etc.). Descreva em poucas linhas como um projeto
+          de extensão, liderado por alunos de SI, poderia ajudar a resolver ou
+          amenizar esse problema.
+        </p>
+        <p class="mt-4">
+          Além de pensar no impacto social, reflita: como um projeto de extensão
+          poderia fortalecer o seu currículo e mostrar para o mercado que você
+          sabe aplicar tecnologia para resolver problemas reais?
+        </p>
+      </section>
+
+      <!-- Metodologia Ativa: Roda de Conversa -->
+      <section
+        id="roda-conversa"
+        aria-label="Roda de Conversa"
+        class="mb-12 bg-white p-8 rounded-lg shadow"
+      >
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          <i class="fa-solid fa-comments mr-2 text-sky-600"></i>Roda de
+          Conversa: Conectando Ideias
+        </h2>
+        <div class="prose prose-slate max-w-none lg:prose-lg">
+          <p>
+            Vamos agora abrir para uma roda de conversa. Com base no vídeo sobre
+            ações extensionistas que assistiremos e em suas próprias
+            experiências, vamos debater:
+          </p>
+          <ul>
+            <li>
+              Que tipo de problema na nossa cidade ou comunidade poderia ser
+              amenizado ou resolvido com um projeto de extensão em TI?
+            </li>
+            <li>
+              Como a interação com a comunidade pode trazer novas perspectivas
+              para os projetos que desenvolvemos em sala de aula?
+            </li>
+            <li>
+              Além do conhecimento técnico, que outras competências um projeto
+              de extensão pode desenvolver em um futuro profissional de SI?
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Seção: Tarefa (TED) -->
+      <section
+        id="tarefa"
+        aria-label="Tarefa da Aula"
+        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📝 Tarefa (TED)
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow not-prose">
+          <p class="text-lg leading-relaxed mb-4">
+            Sua tarefa para a próxima aula é pesquisar e refletir sobre o
+            impacto da extensão. Poste sua resposta no fórum do Moodle para a
+            seguinte questão:
+          </p>
+          <blockquote
+            class="bg-slate-100 p-4 rounded-md text-lg italic border-l-4 border-slate-300 my-2"
+          >
+            "Que ações de extensão você já participou ou conhece na sua
+            comunidade (mesmo que não sejam de TI)? Como elas contribuem com a
+            sociedade?"
+          </blockquote>
+          <p class="mt-4 font-semibold">
+            <strong>Entrega:</strong> Poste sua pesquisa e reflexão no fórum da
+            disciplina no AVA até a data da nossa próxima aula.
+          </p>
+          <p class="mt-4 font-semibold text-sm text-sky-700">
+            <strong>Dica:</strong> Pesquise sobre a
+            <strong>Resolução CNE/CES nº 7/2018</strong> e traga na sua reflexão
+            uma frase sobre como essa norma impacta a sua formação.
+          </p>
+        </div>
+      </section>
+
+      <!-- Mini-Quiz de Autoavaliação -->
+      <section id="quiz" class="mb-12" aria-label="Quiz de Autoavaliação">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🧐 Mini-Quiz de Autoavaliação
+        </h2>
+        <div class="space-y-4">
+          <details>
+            <summary>
+              1. Qual é o objetivo principal da extensão universitária?
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> O principal objetivo é criar uma
+                ponte de mão dupla entre a universidade e a sociedade, aplicando
+                o conhecimento acadêmico para resolver problemas reais da
+                comunidade e, ao mesmo tempo, trazendo as experiências e saberes
+                da comunidade para dentro da universidade, enriquecendo o ensino
+                e a pesquisa.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              2. O tripé que sustenta a universidade é composto por quais três
+              pilares?
+            </summary>
+            <div class="quiz-answer">
+              <p><strong>Resposta:</strong> Ensino, Pesquisa e Extensão.</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              3. Verdadeiro ou Falso: Um projeto de extensão beneficia apenas a
+              comunidade externa.
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Falso. O projeto de extensão
+                beneficia tanto a comunidade quanto os alunos e professores
+                envolvidos, que desenvolvem habilidades técnicas, sociais e de
+                comunicação, além de ganharem uma perspectiva prática sobre a
+                aplicação de seus conhecimentos.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Seção: Bibliografia -->
+      <section
+        id="bibliografia"
+        aria-label="Bibliografia e Leitura Complementar"
+        class="prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📚 Bibliografia
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow space-y-4 not-prose">
+          <p>
+            <strong>RAINER, Jr., Kelly R.</strong>
+            <em>Introdução a Sistemas de Informação.</em> 5. ed. Rio de Janeiro,
+            2016.
+          </p>
+          <p>
+            <strong>FREIRE, Paulo.</strong>
+            <em>Extensão ou Comunicação?</em> 17. ed. Rio de Janeiro: Paz e
+            Terra, 2011. (Leitura complementar sobre a filosofia da extensão).
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-800 text-white mt-12" role="contentinfo">
+      <div class="container mx-auto px-6 py-4 text-center">
+        <p>&copy; 2025 - Disciplina de Teoria Geral de Sistemas</p>
+        <p class="text-sm text-slate-400">
+          Material desenvolvido para o curso de Sistemas de Informação.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

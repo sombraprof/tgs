@@ -1,0 +1,16 @@
+[
+  {
+    "id": "aula1",
+    "titulo": "Aula 1: Definição e Tipos de Sistemas",
+    "descricao": "Introdução à disciplina, apresentação do plano de ensino e conceitos fundamentais da Teoria Geral de Sistemas: definição de sistema, contexto histórico e classificação dos principais tipos.",
+    "arquivo": "aula1.html",
+    "ativo": true
+  },
+  {
+    "id": "aula2",
+    "titulo": "Aula 2: Curricularização da Extensão",
+    "descricao": "Exploração do papel da extensão universitária e sua obrigatoriedade segundo a Resolução CNE/CES nº 7/2018, abordando a integração entre ensino, pesquisa e extensão e a importância dessas atividades na formação profissional em Sistemas de Informação.",
+    "arquivo": "aula2.html",
+    "ativo": true
+  }
+]

@@ -115,7 +115,7 @@ async function loadListaDetalhe(file) {
         <h2 class="text-4xl font-bold text-slate-900">${data.titulo}</h2>
         <p class="text-lg text-slate-600 mt-2">${data.descricao}</p>
       </header>
-      <div id="questoes" class="space-y-6"></div>
+        <div id="questoes" class="grid md:grid-cols-1 gap-6"></div>
     `;
     conteudo.appendChild(section);
 

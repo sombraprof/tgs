@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TGS - Aula 3: Componentes e Características dos Sistemas</title>
+    <meta
+      name="description"
+      content="Aula 3 de TGS aprofundando componentes (entradas, saídas), características (fronteira, ambiente) e tipos de sistemas. Essencial para análise em Sistemas de Informação."
+    />
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Estilo base para a fonte Inter */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc; /* bg-slate-50 */
+      }
+      /* Estilo para destacar os callouts */
+      .callout {
+        border-left-width: 4px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.5rem;
+      }
+      .callout-info {
+        background-color: #f0f9ff; /* bg-sky-50 */
+        border-color: #7dd3fc; /* border-sky-300 */
+        color: #0c4a6e; /* text-sky-800 */
+      }
+      .callout-practice {
+        background-color: #f0fdf4; /* bg-emerald-50 */
+        border-color: #6ee7b7; /* border-emerald-300 */
+        color: #065f46; /* text-emerald-800 */
+      }
+      .callout-history {
+        background-color: #fefce8; /* bg-yellow-50 */
+        border-color: #fde047; /* border-yellow-300 */
+        color: #854d0e; /* text-yellow-800 */
+      }
+      .callout-case {
+        background-color: #f5f3ff; /* bg-violet-50 */
+        border-color: #c4b5fd; /* border-violet-300 */
+        color: #5b21b6; /* text-violet-800 */
+      }
+      /* Estilo para o quiz */
+      details > summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0.75rem;
+        background-color: #f1f5f9;
+        border-radius: 0.375rem;
+        transition: background-color 0.2s;
+      }
+      details > summary:hover {
+        background-color: #e2e8f0;
+      }
+      details[open] > summary {
+        background-color: #e2e8f0;
+      }
+      .quiz-answer {
+        padding: 1rem;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-top: none;
+        border-radius: 0 0 0.375rem 0.375rem;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <!-- Cabeçalho da Aula -->
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-sky-800">
+          Teoria Geral de Sistemas (TGS)
+        </h1>
+        <p class="text-xl text-slate-600 mt-2">
+          Aula 3: Componentes e Características dos Sistemas
+        </p>
+      </div>
+    </header>
+
+    <!-- Corpo Principal da Aula -->
+    <main class="container mx-auto px-6 py-10">
+      <!-- Seção: Plano da Aula -->
+      <section
+        id="plano-aula"
+        aria-label="Plano da Aula"
+        class="mb-12 bg-sky-50 border border-sky-200 p-8 rounded-2xl shadow-lg"
+      >
+        <h2 class="text-3xl font-bold text-sky-700 mb-6 text-center">
+          Plano da Aula
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <!-- Conteúdo e Objetivo -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
+          >
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+            </h3>
+            <p class="font-bold text-slate-700">
+              Unidade I – Definição e Tipos de Sistemas
+            </p>
+            <p class="text-slate-600 mt-1">
+              Componentes essenciais (entradas, processamento, saídas,
+              feedback), características (propósito, fronteira, ambiente) e
+              tipos de sistemas.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO ESPECÍFICO
+            </h3>
+            <p class="text-slate-600">
+              Compreender os principais elementos e características que compõem
+              um sistema e sua aplicação em diferentes contextos organizacionais
+              e de TI.
+            </p>
+          </div>
+          <!-- Metodologia e Recursos -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA E RECURSOS
+            </h3>
+            <p class="text-slate-600">
+              Aula expositiva com exemplos progressivos, utilizando esquemas
+              visuais, tabelas comparativas e estudo de caso para conectar a
+              teoria com a prática.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pergunta Norteadora -->
+      <section
+        id="pergunta-norteadora"
+        aria-label="Pergunta Norteadora"
+        class="mb-12 callout callout-info"
+      >
+        <h3 class="font-bold text-lg mb-2">
+          <i class="fa-solid fa-question-circle mr-2"></i>Pergunta Norteadora
+        </h3>
+        <p>
+          Como um analista de sistemas pode usar o conceito de entradas,
+          processamento, saídas e feedback para melhorar um processo
+          organizacional? Pense num sistema que usa no seu dia a dia e reflita:
+          o que aconteceria se um desses elementos falhasse?
+        </p>
+      </section>
+
+      <!-- Seção: Contexto Inicial Expandido -->
+      <section
+        id="contexto"
+        aria-label="Contexto Inicial"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          ⚙️ Decompondo a Máquina: A Anatomia de um Sistema
+        </h2>
+        <p>
+          Se a Teoria Geral de Sistemas nos deu os "óculos" para enxergar o
+          mundo de forma conectada, agora vamos ajustar o foco para entender a
+          anatomia de tudo o que vemos. Todo sistema, de um simples micro-ondas
+          a um complexo sistema de e-commerce, opera sobre os mesmos princípios
+          fundamentais. Ele existe para cumprir um <strong>propósito</strong>,
+          dentro de uma <strong>fronteira</strong> definida, interagindo com o
+          seu <strong>ambiente</strong>.
+        </p>
+        <p>
+          Em Sistemas de Informação, dominar essa anatomia não é apenas teoria,
+          é a base da nossa profissão. Identificar corretamente as
+          <strong>entradas</strong> (o que o sistema recebe), os
+          <strong>processos</strong> (o que ele faz), as
+          <strong>saídas</strong> (o que ele entrega) e o
+          <strong>feedback</strong> (como ele aprende) é o primeiro passo para
+          analisar requisitos, projetar software e garantir que a tecnologia
+          realmente resolva um problema. Um erro nesta fase inicial pode levar a
+          falhas críticas, como sistemas que não atendem às necessidades do
+          utilizador ou não se adaptam às mudanças do negócio.
+        </p>
+      </section>
+
+      <!-- Seção: Características Fundamentais de um Sistema -->
+      <section
+        id="caracteristicas-sistemas"
+        aria-label="Características Fundamentais de um Sistema"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          🔭 As Lentes do Analista: Características de Todo o Sistema
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          <!-- Propósito -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i
+              class="fa-solid fa-bullseye-arrow text-3xl text-sky-600 mb-3"
+            ></i>
+            <h3 class="text-xl font-bold text-slate-700 mb-2">
+              Propósito (ou Objetivo)
+            </h3>
+            <p class="text-slate-600">
+              Todo o sistema existe por uma razão. É a meta principal que
+              justifica a sua existência e guia as suas ações.
+              <strong>Exemplo:</strong> O propósito de uma aplicação de música é
+              permitir que o utilizador ouça qualquer canção, a qualquer
+              momento.
+            </p>
+          </div>
+          <!-- Ambiente -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i class="fa-solid fa-globe text-3xl text-blue-600 mb-3"></i>
+            <h3 class="text-xl font-bold text-slate-700 mb-2">Ambiente</h3>
+            <p class="text-slate-600">
+              É tudo o que está fora do sistema, mas que o influencia ou é
+              influenciado por ele. <strong>Exemplo:</strong> Para um sistema de
+              transporte urbano, o ambiente inclui os passageiros, o trânsito, o
+              clima e as leis municipais.
+            </p>
+          </div>
+          <!-- Fronteira -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i
+              class="fa-solid fa-draw-polygon text-3xl text-purple-600 mb-3"
+            ></i>
+            <h3 class="text-xl font-bold text-slate-700 mb-2">Fronteira</h3>
+            <p class="text-slate-600">
+              A linha (física ou conceptual) que separa o sistema do seu
+              ambiente. Define o âmbito do que podemos controlar.
+              <strong>Exemplo:</strong> A fronteira de um sistema de e-commerce
+              termina onde a transportadora (ambiente) assume a entrega.
+            </p>
+          </div>
+          <!-- Subsistemas -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i
+              class="fa-solid fa-puzzle-piece text-3xl text-emerald-600 mb-3"
+            ></i>
+            <h3 class="text-xl font-bold text-slate-700 mb-2">Subsistemas</h3>
+            <p class="text-slate-600">
+              Sistemas menores que compõem um sistema maior. Cada um tem o seu
+              próprio propósito, mas trabalham juntos para o objetivo geral.
+              <strong>Exemplo:</strong> Num carro, o motor, os travões e o
+              sistema elétrico são subsistemas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Diagrama Visual do Fluxo -->
+      <section
+        id="diagrama-fluxo"
+        aria-label="Diagrama de Fluxo de um Sistema"
+        class="my-12 p-6 bg-white rounded-lg shadow text-center"
+      >
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          O Ciclo de Vida da Informação em um Sistema
+        </h2>
+        <img
+          src="/imagens/aula_3_imagen_1.png"
+          alt="Diagrama de fluxo mostrando quatro caixas conectadas por setas. A primeira, 'Entrada', aponta para 'Processamento'. 'Processamento' aponta para 'Saída'. Uma seta curva sai de 'Saída' e volta para 'Entrada', rotulada como 'Feedback'."
+          class="mx-auto rounded-lg shadow-md w-full max-w-4xl"
+        />
+        <p class="text-sm text-slate-500 mt-2">
+          Este diagrama ilustra como os componentes se interligam para formar um
+          ciclo contínuo de operação e melhoria.
+        </p>
+      </section>
+
+      <!-- Seção: Componentes Essenciais -->
+      <section
+        id="componentes"
+        aria-label="Componentes Essenciais de um Sistema"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          🛠️ Os 4 Componentes Essenciais de Todo Sistema
+        </h2>
+        <div class="space-y-8">
+          <!-- 1. Entradas (Inputs) -->
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold text-slate-700 mb-3">
+              <span class="text-sky-600">1.</span> Entradas (Inputs): O
+              Combustível do Sistema
+            </h3>
+            <p class="text-lg text-slate-600">
+              As entradas são todos os recursos que o sistema coleta de seu
+              ambiente para poder operar. São a matéria-prima, os dados brutos,
+              a energia ou os comandos que iniciam uma ação.
+            </p>
+            <div class="mt-4 bg-sky-50 p-4 rounded-md">
+              <p><strong>Exemplos:</strong></p>
+              <ul class="list-disc list-inside ml-4 text-slate-700">
+                <li>
+                  <strong>Sistema Hospitalar (ERP):</strong> Dados de cadastro
+                  de um novo paciente, resultados de exames.
+                </li>
+                <li>
+                  <strong>Sistema de CRM:</strong> Informações de um novo lead,
+                  registro de uma ligação de vendas.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2. Processamento -->
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold text-slate-700 mb-3">
+              <span class="text-purple-600">2.</span> Processamento: O Motor da
+              Transformação
+            </h3>
+            <p class="text-lg text-slate-600">
+              O processamento é o conjunto de ações, regras e algoritmos que
+              transformam as entradas em algo novo e útil. É o "cérebro" da
+              operação, onde a mágica acontece.
+            </p>
+            <div class="mt-4 bg-purple-50 p-4 rounded-md">
+              <p><strong>Exemplos:</strong></p>
+              <ul class="list-disc list-inside ml-4 text-slate-700">
+                <li>
+                  <strong>Sistema Hospitalar (ERP):</strong> Cruzar dados do
+                  paciente com o histórico para sugerir diagnósticos, agendar
+                  cirurgia.
+                </li>
+                <li>
+                  <strong>Sistema de CRM:</strong> Qualificar o lead com base em
+                  seu perfil e interações, gerar um relatório de funil de
+                  vendas.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 3. Saídas (Outputs) -->
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold text-slate-700 mb-3">
+              <span class="text-emerald-600">3.</span> Saídas (Outputs): O
+              Resultado Final
+            </h3>
+            <p class="text-lg text-slate-600">
+              As saídas são os resultados gerados pelo processamento, que são
+              entregues de volta ao ambiente. É o produto final, o serviço
+              prestado ou a informação gerada.
+            </p>
+            <div class="mt-4 bg-emerald-50 p-4 rounded-md">
+              <p><strong>Exemplos:</strong></p>
+              <ul class="list-disc list-inside ml-4 text-slate-700">
+                <li>
+                  <strong>Sistema Hospitalar (ERP):</strong> Prontuário
+                  eletrônico atualizado, fatura do plano de saúde.
+                </li>
+                <li>
+                  <strong>Sistema de CRM:</strong> E-mail de marketing enviado
+                  para o lead, dashboard de performance para o gestor.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 4. Retroalimentação (Feedback) -->
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold text-slate-700 mb-3">
+              <span class="text-orange-600">4.</span> Retroalimentação
+              (Feedback): O Mecanismo de Ajuste
+            </h3>
+            <p class="text-lg text-slate-600">
+              O feedback é a informação sobre a saída que retorna ao sistema
+              para avaliar e corrigir seu desempenho. É o que permite que um
+              sistema aprenda, se adapte e melhore continuamente.
+            </p>
+            <div class="mt-4 bg-orange-50 p-4 rounded-md">
+              <p><strong>Exemplos:</strong></p>
+              <ul class="list-disc list-inside ml-4 text-slate-700">
+                <li>
+                  <strong>Sistema Hospitalar (ERP):</strong> Alerta de estoque
+                  baixo de um medicamento, pesquisa de satisfação do paciente.
+                </li>
+                <li>
+                  <strong>Sistema de CRM:</strong> Taxa de abertura de e-mails,
+                  motivo de perda de uma venda registrado pelo vendedor.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Callout Histórico -->
+      <section class="callout callout-history" aria-label="Contexto Histórico">
+        <h3 class="font-bold text-lg mb-2">
+          <i class="fa-solid fa-landmark mr-2"></i>Conexão com a Teoria
+        </h3>
+        <p>
+          Ludwig von Bertalanffy, o pai da TGS, observou este ciclo em sistemas
+          biológicos. Ele viu que um organismo (sistema) consome nutrientes
+          (entradas), os metaboliza (processamento) para gerar energia (saída) e
+          usa sinais internos (feedback) para manter seu equilíbrio. A
+          genialidade foi perceber que este mesmo modelo se aplica a qualquer
+          sistema, seja ele vivo ou artificial.
+        </p>
+      </section>
+
+      <!-- Seção: Erros Comuns -->
+      <section
+        id="erros-comuns"
+        aria-label="Erros Comuns no Mapeamento de Sistemas"
+        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          🚨 Erros Comuns ao Mapear Sistemas
+        </h2>
+        <p>
+          Ao analisar um processo, é fácil cair em algumas armadilhas. Fique
+          atento a estes erros comuns:
+        </p>
+        <ul>
+          <li>
+            <strong>Esquecer o Feedback:</strong> Muitos focam apenas no fluxo
+            linear de entrada-processo-saída e esquecem de mapear como o sistema
+            se monitora e se corrige. Um sistema sem feedback é um sistema
+            "burro", incapaz de se adaptar.
+          </li>
+          <li>
+            <strong>Confundir Entradas e Processos:</strong> Lembre-se que a
+            entrada é o "o quê" (o dado, o recurso), enquanto o processo é o
+            "como" (a ação, a transformação). "Dados do cliente" é uma entrada;
+            "validar dados do cliente" é um processo.
+          </li>
+          <li>
+            <strong>Definir Fronteiras Vagas:</strong> Não saber onde o sistema
+            termina e o ambiente começa gera escopo infinito. A API de um banco
+            é parte do sistema do banco ou do ambiente para o app que a consome?
+            Definir isso é crucial.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Case Real -->
+      <section
+        class="callout callout-case"
+        aria-label="Caso Real: ERP Hospitalar"
+      >
+        <h3 class="font-bold text-lg mb-2">
+          <i class="fa-solid fa-hospital mr-2"></i>Caso Real: ERP de um Hospital
+        </h3>
+        <p>Vamos aplicar estes conceitos a um sistema complexo:</p>
+        <ul class="list-disc list-inside mt-2 space-y-1">
+          <li>
+            <strong>Propósito:</strong> Gerir todas as operações do hospital
+            para garantir o melhor atendimento ao paciente.
+          </li>
+          <li>
+            <strong>Subsistemas:</strong> Agendamento, internamento, farmácia,
+            faturação, processo clínico eletrónico.
+          </li>
+          <li><strong>Entrada:</strong> Registo de um novo paciente.</li>
+          <li>
+            <strong>Processamento:</strong> O sistema verifica a disponibilidade
+            de camas, aloca médicos e agenda exames.
+          </li>
+          <li>
+            <strong>Saída:</strong> A fatura enviada ao plano de saúde e o
+            histórico médico do paciente.
+          </li>
+          <li>
+            <strong>Feedback:</strong> Um alerta de que o stock de um
+            medicamento está baixo, forçando uma nova compra (ajuste no
+            sistema).
+          </li>
+        </ul>
+      </section>
+
+      <!-- Seção: Mapeando Componentes -->
+      <section
+        id="mapeamento-si"
+        aria-label="Mapeando Componentes para Sistemas de Informação"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          🔄 Mapeando Componentes: Do Físico ao Digital
+        </h2>
+        <div class="overflow-x-auto bg-white p-6 rounded-lg shadow">
+          <table class="min-w-full text-left text-sm font-light">
+            <thead class="border-b font-medium bg-slate-100">
+              <tr>
+                <th scope="col" class="px-6 py-4">Componente</th>
+                <th scope="col" class="px-6 py-4">
+                  Sistema Físico (Micro-ondas)
+                </th>
+                <th scope="col" class="px-6 py-4">
+                  Sistema de Informação (App de Música)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="px-6 py-4 font-semibold">Entrada</td>
+                <td class="px-6 py-4">
+                  Comida fria, tempo (2 minutos), potência (alta)
+                </td>
+                <td class="px-6 py-4">Pesquisa por "Queen", clique no play</td>
+              </tr>
+              <tr class="border-b bg-slate-50">
+                <td class="px-6 py-4 font-semibold">Processamento</td>
+                <td class="px-6 py-4">
+                  Gerar micro-ondas para aquecer a comida
+                </td>
+                <td class="px-6 py-4">
+                  Algoritmo procura a música no servidor e faz o streaming
+                </td>
+              </tr>
+              <tr class="border-b">
+                <td class="px-6 py-4 font-semibold">Saída</td>
+                <td class="px-6 py-4">
+                  Comida quente, aviso sonoro de "pronto"
+                </td>
+                <td class="px-6 py-4">A música a tocar nos auscultadores</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-6 py-4 font-semibold">Feedback</td>
+                <td class="px-6 py-4">
+                  O sensor que desliga o aparelho se a porta for aberta
+                </td>
+                <td class="px-6 py-4">
+                  O sistema recolhe dados de que ouviu a música inteira e
+                  recomenda-a a outros utilizadores
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Seção: Tipos de Sistemas (Prévia) -->
+      <section
+        id="tipos-sistemas-preview"
+        aria-label="Prévia dos Tipos de Sistemas"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          🗂️ Tipos de Sistemas: Uma Prévia
+        </h2>
+        <p class="text-lg text-slate-600 mb-6">
+          Com base nestas características, podemos começar a classificar os
+          sistemas. Veremos isto em detalhe nas próximas aulas, mas aqui fica
+          uma prévia:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <strong>Naturais vs. Artificiais:</strong> O corpo humano vs. um
+            software.
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <strong>Abertos vs. Fechados:</strong> Uma empresa vs. um relógio.
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <strong>Simples vs. Complexos:</strong> Uma calculadora vs. um
+            sistema de controlo de tráfego aéreo.
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm">
+            <strong>Determinísticos vs. Probabilísticos:</strong> Um cálculo
+            matemático vs. a previsão do tempo.
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção: Tarefa (TED) -->
+      <section
+        id="tarefa"
+        aria-label="Tarefa da Aula"
+        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📝 Tarefa (TED): Análise Crítica de um Sistema
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow not-prose">
+          <p class="text-lg leading-relaxed mb-4">
+            A sua tarefa é escolher um sistema (físico ou de informação) e fazer
+            uma análise crítica dos seus componentes.
+          </p>
+          <div class="bg-slate-50 p-4 rounded-md">
+            <p class="font-semibold">Instruções:</p>
+            <ol class="list-decimal list-inside mt-2 space-y-2">
+              <li>
+                Escolha um sistema e descreva o seu <strong>propósito</strong>.
+              </li>
+              <li>
+                Mapeie as suas
+                <strong>Entradas, Processamento, Saídas e Feedback</strong>.
+              </li>
+              <li>
+                <strong>Justifique a importância</strong> de cada um destes
+                quatro componentes para que o sistema atinja o seu propósito. O
+                que falharia se um deles não existisse?
+              </li>
+              <li>
+                (Opcional) Se possível, relacione o sistema escolhido com um
+                sistema de informação organizacional que poderia geri-lo ou
+                interagir com ele.
+              </li>
+            </ol>
+          </div>
+          <p class="mt-4 font-semibold">
+            <strong>Entrega:</strong> Apresente a sua análise por escrito no
+            fórum da disciplina no Moodle.
+          </p>
+        </div>
+      </section>
+
+      <!-- Mini-Quiz de Autoavaliação -->
+      <section id="quiz" class="mb-12" aria-label="Quiz de Autoavaliação">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🧐 Mini-Quiz de Autoavaliação
+        </h2>
+        <div class="space-y-4">
+          <details>
+            <summary>
+              1. Num sistema de e-commerce, qual das seguintes opções é um
+              exemplo de FEEDBACK?
+            </summary>
+            <div class="quiz-answer">
+              <ul class="list-disc list-inside space-y-2">
+                <li>a) O clique do utilizador no botão "comprar".</li>
+                <li>b) A validação do número do cartão de crédito.</li>
+                <li>
+                  c) O e-mail de confirmação de compra enviado ao cliente.
+                </li>
+                <li>
+                  <strong
+                    >d) O relatório de produtos mais visitados que o sistema
+                    gera para o gestor.</strong
+                  >
+                </li>
+              </ul>
+              <p class="mt-2">
+                <strong>Resposta correta: d.</strong> O relatório é uma
+                informação sobre as saídas (visitas) que retorna ao sistema
+                (gestores) para ajustar futuras estratégias (processamento).
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              2. O conceito de "melhoria contínua" em Sistemas de Informação
+              está mais diretamente ligado a qual componente do sistema?
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Ao Feedback. É através do ciclo de
+                feedback que um sistema recolhe dados sobre o seu desempenho,
+                permitindo que os programadores e gestores façam ajustes e
+                melhorias contínuas.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              3. Verdadeiro ou Falso: A palavra-passe que digita numa caixa
+              multibanco é uma SAÍDA do sistema.
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Falso. A palavra-passe é uma ENTRADA,
+                um dado que fornece ao sistema para que ele possa processar
+                (validar) a sua identidade.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Seção: Bibliografia -->
+      <section
+        id="bibliografia"
+        aria-label="Bibliografia"
+        class="prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📚 Bibliografia
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow space-y-4 not-prose">
+          <p>
+            <strong>STAIR, Ralph M.; REYNOLDS, George W.</strong>
+            <em>Princípios de sistemas de informação.</em> 14. ed. São Paulo:
+            Cengage Learning, 2021.
+          </p>
+          <p>
+            <strong>SILVA, K.C.N.D.; BARBOSA, C.; JUNIOR, R.S.C.</strong>
+            <em>Sistemas de informações gerenciais.</em> Porto Alegre: Grupo A,
+            2019.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-800 text-white mt-12" role="contentinfo">
+      <div class="container mx-auto px-6 py-4 text-center">
+        <p>&copy; 2025 - Disciplina de Teoria Geral de Sistemas</p>
+        <p class="text-sm text-slate-400">
+          Material desenvolvido para o curso de Sistemas de Informação.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

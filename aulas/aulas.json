@@ -12,5 +12,12 @@
     "descricao": "Exploração do papel da extensão universitária e sua obrigatoriedade segundo a Resolução CNE/CES nº 7/2018, abordando a integração entre ensino, pesquisa e extensão e a importância dessas atividades na formação profissional em Sistemas de Informação.",
     "arquivo": "aula2.html",
     "ativo": true
+  },
+  {
+    "id": "aula3",
+    "titulo": "Aula 3: Componentes Essenciais de um Sistema",
+    "descricao": "Estudo detalhado do conceito de sistema e de seus componentes fundamentais (entradas, processamento, saídas e feedback). Aplicação prática desses elementos em sistemas organizacionais e de informação, com exemplos e exercícios de mapeamento.",
+    "arquivo": "aula3.html",
+    "ativo": true
   }
 ]

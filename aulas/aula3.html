@@ -418,41 +418,75 @@
         </p>
       </section>
 
-      <!-- Seção: Erros Comuns -->
+      <!-- Seção: Erros Comuns (NOVA ESTRUTURA) -->
       <section
         id="erros-comuns"
         aria-label="Erros Comuns no Mapeamento de Sistemas"
-        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+        class="mb-12"
       >
         <h2
-          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
         >
           🚨 Erros Comuns ao Mapear Sistemas
         </h2>
-        <p>
+        <p class="text-lg text-slate-600 mb-6">
           Ao analisar um processo, é fácil cair em algumas armadilhas. Fique
           atento a estes erros comuns:
         </p>
-        <ul>
-          <li>
-            <strong>Esquecer o Feedback:</strong> Muitos focam apenas no fluxo
-            linear de entrada-processo-saída e esquecem de mapear como o sistema
-            se monitora e se corrige. Um sistema sem feedback é um sistema
-            "burro", incapaz de se adaptar.
-          </li>
-          <li>
-            <strong>Confundir Entradas e Processos:</strong> Lembre-se que a
-            entrada é o "o quê" (o dado, o recurso), enquanto o processo é o
-            "como" (a ação, a transformação). "Dados do cliente" é uma entrada;
-            "validar dados do cliente" é um processo.
-          </li>
-          <li>
-            <strong>Definir Fronteiras Vagas:</strong> Não saber onde o sistema
-            termina e o ambiente começa gera escopo infinito. A API de um banco
-            é parte do sistema do banco ou do ambiente para o app que a consome?
-            Definir isso é crucial.
-          </li>
-        </ul>
+        <div class="space-y-6">
+          <!-- Card Erro 1 -->
+          <div
+            class="flex items-start bg-white p-6 rounded-lg shadow-sm border border-slate-200"
+          >
+            <i
+              class="fa-solid fa-eye-slash text-2xl text-red-500 mt-1 mr-4"
+            ></i>
+            <div>
+              <h3 class="font-bold text-slate-800">Esquecer o Feedback</h3>
+              <p class="text-slate-600">
+                Muitos focam apenas no fluxo linear de entrada-processo-saída e
+                esquecem de mapear como o sistema se monitora e se corrige. Um
+                sistema sem feedback é um sistema "cego", incapaz de se adaptar.
+              </p>
+            </div>
+          </div>
+          <!-- Card Erro 2 -->
+          <div
+            class="flex items-start bg-white p-6 rounded-lg shadow-sm border border-slate-200"
+          >
+            <i
+              class="fa-solid fa-right-left text-2xl text-yellow-500 mt-1 mr-4"
+            ></i>
+            <div>
+              <h3 class="font-bold text-slate-800">
+                Confundir Entradas e Processos
+              </h3>
+              <p class="text-slate-600">
+                Lembre-se que a entrada é o "o quê" (o dado, o recurso),
+                enquanto o processo é o "como" (a ação, a transformação). "Dados
+                do cliente" é uma entrada; "validar dados do cliente" é um
+                processo.
+              </p>
+            </div>
+          </div>
+          <!-- Card Erro 3 -->
+          <div
+            class="flex items-start bg-white p-6 rounded-lg shadow-sm border border-slate-200"
+          >
+            <i
+              class="fa-solid fa-arrows-to-dot text-2xl text-blue-500 mt-1 mr-4"
+            ></i>
+            <div>
+              <h3 class="font-bold text-slate-800">Definir Fronteiras Vagas</h3>
+              <p class="text-slate-600">
+                Não saber onde o sistema termina e o ambiente começa gera o
+                "escopo infinito". A API de um banco é parte do sistema do banco
+                ou do ambiente para o app que a consome? Definir isso é crucial
+                para o sucesso de um projeto.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Case Real -->
@@ -483,7 +517,7 @@
             histórico médico do paciente.
           </li>
           <li>
-            <strong>Feedback:</strong> Um alerta de que o stock de um
+            <strong>Feedback:</strong> Um alerta de que o estoque de um
             medicamento está baixo, forçando uma nova compra (ajuste no
             sistema).
           </li>

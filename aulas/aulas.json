@@ -19,5 +19,19 @@
     "descricao": "Estudo detalhado do conceito de sistema e de seus componentes fundamentais (entradas, processamento, saídas e feedback). Aplicação prática desses elementos em sistemas organizacionais e de informação, com exemplos e exercícios de mapeamento.",
     "arquivo": "aula3.html",
     "ativo": true
+  },
+  {
+    "id": "aula4",
+    "titulo": "Aula 4: Tipos de Sistemas: Classificações e Exemplos",
+    "descricao": "Classificação de sistemas em diferentes categorias: abertos e fechados, dinâmicos e estáveis, permanentes e temporários. Análise de exemplos práticos e aplicação em contextos organizacionais para compreender como essas diferenças influenciam o design e a gestão de sistemas.",
+    "arquivo": "aula4.html",
+    "ativo": true
+  },
+  {
+    "id": "aula5",
+    "titulo": "Aula 5: A Organização como Sistema Aberto",
+    "descricao": "Estudo dos elementos que caracterizam uma organização como sistema aberto: entradas, processamento, saídas, retroalimentação e ambiente. Análise de casos reais de empresas que adaptaram processos com base em estímulos ambientais, com aplicação prática do modelo entrada-processamento-saída.",
+    "arquivo": "aula5.html",
+    "ativo": true
   }
 ]

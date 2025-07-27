@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TGS - Aula 5: A Organização como um Sistema Aberto</title>
+    <meta
+      name="description"
+      content="Aula 5 da disciplina Teoria Geral de Sistemas, explorando a organização como um sistema aberto, suas interações com o ambiente e os componentes sistêmicos no contexto empresarial."
+    />
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Estilo base para a fonte Inter */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc; /* bg-slate-50 */
+      }
+      /* Estilo para destacar os callouts */
+      .callout {
+        border-left-width: 4px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.5rem;
+      }
+      .callout-info {
+        background-color: #f0f9ff; /* bg-sky-50 */
+        border-color: #7dd3fc; /* border-sky-300 */
+        color: #0c4a6e; /* text-sky-800 */
+      }
+      .callout-practice {
+        background-color: #f0fdf4; /* bg-emerald-50 */
+        border-color: #6ee7b7; /* border-emerald-300 */
+        color: #065f46; /* text-emerald-800 */
+      }
+      /* Estilo para o quiz */
+      details > summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0.75rem;
+        background-color: #f1f5f9;
+        border-radius: 0.375rem;
+        transition: background-color 0.2s;
+      }
+      details > summary:hover {
+        background-color: #e2e8f0;
+      }
+      details[open] > summary {
+        background-color: #e2e8f0;
+      }
+      .quiz-answer {
+        padding: 1rem;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-top: none;
+        border-radius: 0 0 0.375rem 0.375rem;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <!-- Cabeçalho da Aula -->
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-sky-800">
+          Teoria Geral de Sistemas (TGS)
+        </h1>
+        <p class="text-xl text-slate-600 mt-2">
+          Aula 5: A Organização como um Sistema Aberto
+        </p>
+      </div>
+    </header>
+
+    <!-- Corpo Principal da Aula -->
+    <main class="container mx-auto px-6 py-10">
+      <!-- Seção: Plano da Aula -->
+      <section
+        id="plano-aula"
+        aria-label="Plano da Aula"
+        class="mb-12 bg-sky-50 border border-sky-200 p-8 rounded-2xl shadow-lg"
+      >
+        <h2 class="text-3xl font-bold text-sky-700 mb-6 text-center">
+          Plano da Aula
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <!-- Conteúdo e Objetivo -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
+          >
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+            </h3>
+            <p class="font-bold text-slate-700">
+              Unidade II – A organização como um sistema aberto
+            </p>
+            <p class="text-slate-600 mt-1">
+              Abertura sistêmica: entradas, processamento, saídas,
+              retroalimentação e ambiente.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO ESPECÍFICO
+            </h3>
+            <p class="text-slate-600">
+              Compreender os elementos que caracterizam uma organização como
+              sistema aberto e analisar como ela se relaciona com o ambiente
+              externo.
+            </p>
+          </div>
+          <!-- Metodologia e Recursos -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA E RECURSOS
+            </h3>
+            <p class="text-slate-600">
+              Aula expositiva dialogada com análise de casos reais, utilizando
+              esquemas visuais para ilustrar o modelo sistêmico.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pergunta Norteadora -->
+      <section
+        id="pergunta-norteadora"
+        aria-label="Pergunta Norteadora"
+        class="mb-12 callout callout-info"
+      >
+        <h3 class="font-bold text-lg mb-2">
+          <i class="fa-solid fa-question-circle mr-2"></i>Pergunta Norteadora
+        </h3>
+        <p>
+          Pense na Netflix. Como a chegada de concorrentes como Disney+ e HBO
+          Max (uma mudança no ambiente) forçou a Netflix a mudar suas 'entradas'
+          (investimento em conteúdo) e 'processos' (produção original) para
+          gerar novas 'saídas' (séries de sucesso)?
+        </p>
+      </section>
+
+      <!-- Seção: Contexto Inicial -->
+      <section
+        id="contexto"
+        aria-label="Contexto Inicial"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          🏢 A Empresa Viva: Organizações como Sistemas Abertos
+        </h2>
+        <p>
+          Uma das maiores contribuições da Teoria Geral de Sistemas foi mudar
+          radicalmente a forma como enxergamos as organizações. Antes, uma
+          empresa era vista como uma máquina fechada, previsível e focada apenas
+          em seus processos internos. A TGS nos mostrou que, na verdade, uma
+          organização se parece muito mais com um organismo vivo.
+        </p>
+        <p>
+          Ela é um <strong>sistema aberto</strong>, em constante e vital
+          interação com seu <strong>ambiente</strong>. Ela não sobrevive
+          isolada; ela precisa "respirar" recursos do ambiente (entradas),
+          transformá-los internamente (processamento) e entregar algo de valor
+          de volta (saídas). Mais importante ainda, ela precisa ouvir os sinais
+          do ambiente (feedback) para se adaptar e não ser extinta. Empresas que
+          ignoram seu ambiente, como veremos, correm o risco de se tornarem
+          irrelevantes.
+        </p>
+      </section>
+
+      <!-- Seção: Diagrama da Organização como Sistema Aberto -->
+      <section
+        id="diagrama-organizacao"
+        aria-label="Diagrama da Organização como Sistema Aberto"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          O Ecossistema Organizacional
+        </h2>
+        <div class="bg-white p-6 rounded-lg shadow text-center">
+          <img
+            src="/imagens/aula_5_imagen_1.png"
+            alt="Diagrama mostrando uma empresa no centro, recebendo 'Entradas' de Fornecedores, Governo e Mercado de Trabalho. Dentro da empresa, ocorre o 'Processamento'. A empresa gera 'Saídas' para Clientes, Sociedade e Acionistas. O 'Feedback' retorna de todos os elementos do ambiente para a empresa."
+            class="mx-auto rounded-lg w-full max-w-4xl"
+          />
+          <p class="text-sm text-slate-500 mt-2">
+            Uma organização está em constante troca com múltiplos atores do seu
+            ambiente.
+          </p>
+        </div>
+      </section>
+
+      <!-- Seção: Componentes no Contexto Organizacional -->
+      <section
+        id="componentes-organizacionais"
+        aria-label="Componentes no Contexto Organizacional"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          Analisando a Empresa como um Sistema
+        </h2>
+        <div class="space-y-8">
+          <!-- 1. Entradas (Inputs) -->
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold text-slate-700 mb-3">
+              <i class="fa-solid fa-arrow-down-wide-short text-sky-600 mr-3"></i
+              >Entradas: Os Recursos Essenciais
+            </h3>
+            <p class="text-lg text-slate-600">
+              São todos os recursos que a organização importa do ambiente para
+              funcionar. Sem eles, a operação para.
+            </p>
+            <div class="mt-4 bg-sky-50 p-4 rounded-md">
+              <ul class="list-disc list-inside ml-4 text-slate-700">
+                <li>
+                  <strong>Materiais:</strong> Matéria-prima, componentes,
+                  suprimentos.
+                </li>
+                <li>
+                  <strong>Humanos:</strong> Talentos, mão de obra, conhecimento
+                  dos funcionários.
+                </li>
+                <li>
+                  <strong>Financeiros:</strong> Capital, investimentos,
+                  empréstimos.
+                </li>
+                <li>
+                  <strong>Informacionais:</strong> Pesquisas de mercado, dados
+                  de concorrentes, novas leis.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2. Processamento (Transformação) -->
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold text-slate-700 mb-3">
+              <i class="fa-solid fa-cogs text-purple-600 mr-3"></i
+              >Processamento: O Coração da Empresa
+            </h3>
+            <p class="text-lg text-slate-600">
+              É o conjunto de atividades que transforma as entradas em saídas. É
+              a "caixa-preta" onde o valor é agregado. Em TI, é aqui que
+              projetamos os sistemas de informação para otimizar as operações.
+            </p>
+            <div class="mt-4 bg-purple-50 p-4 rounded-md">
+              <ul class="list-disc list-inside ml-4 text-slate-700">
+                <li>
+                  <strong>Indústria:</strong> Linha de produção, montagem.
+                </li>
+                <li>
+                  <strong>Empresa de Software:</strong> Desenvolvimento, testes,
+                  deploy.
+                </li>
+                <li>
+                  <strong>Consultoria:</strong> Análise de dados, elaboração de
+                  relatórios.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 3. Saídas (Outputs) -->
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold text-slate-700 mb-3">
+              <i class="fa-solid fa-truck-fast text-emerald-600 mr-3"></i
+              >Saídas: A Entrega de Valor
+            </h3>
+            <p class="text-lg text-slate-600">
+              São os resultados do processo de transformação que a organização
+              exporta para o ambiente. Podem ser intencionais ou não.
+            </p>
+            <div class="mt-4 bg-emerald-50 p-4 rounded-md">
+              <ul class="list-disc list-inside ml-4 text-slate-700">
+                <li>
+                  <strong>Produtos ou Serviços:</strong> O bem final entregue ao
+                  cliente.
+                </li>
+                <li>
+                  <strong>Resultados Financeiros:</strong> Lucros para
+                  acionistas, impostos para o governo.
+                </li>
+                <li>
+                  <strong>Impacto Social:</strong> Geração de empregos,
+                  satisfação do cliente.
+                </li>
+                <li>
+                  <strong>Saídas Não Intencionais:</strong> Poluição, resíduos.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 4. Retroalimentação (Feedback) -->
+          <div class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold text-slate-700 mb-3">
+              <i class="fa-solid fa-comments text-orange-600 mr-3"></i>Feedback:
+              A Bússola Estratégica
+            </h3>
+            <p class="text-lg text-slate-600">
+              É a informação que a organização recebe do ambiente sobre suas
+              saídas. É o mecanismo de controle que permite a adaptação e a
+              sobrevivência.
+            </p>
+            <div class="mt-4 bg-orange-50 p-4 rounded-md">
+              <ul class="list-disc list-inside ml-4 text-slate-700">
+                <li>
+                  <strong>Dos Clientes:</strong> Pesquisas de satisfação,
+                  reclamações, reviews online.
+                </li>
+                <li>
+                  <strong>Do Mercado:</strong> Dados de vendas, participação de
+                  mercado, ações de concorrentes.
+                </li>
+                <li>
+                  <strong>Interno:</strong> Relatórios de performance,
+                  auditorias, feedback dos funcionários.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Metodologia Ativa -->
+      <section
+        id="metodologia-ativa"
+        aria-label="Metodologia Ativa: Estudo de Caso"
+        class="mb-12 callout callout-practice"
+      >
+        <h2 class="text-2xl font-bold mb-4">
+          <i class="fa-solid fa-users mr-2"></i>Metodologia Ativa: Análise de
+          Caso Real
+        </h2>
+        <p class="mb-4">
+          Vamos analisar um caso clássico de adaptação (e falta de adaptação) ao
+          ambiente: <strong>Blockbuster vs. Netflix</strong>.
+        </p>
+        <div class="bg-white/50 p-4 rounded-md">
+          <p class="font-semibold">Discussão em Grupo:</p>
+          <ol class="list-decimal list-inside mt-2 space-y-2">
+            <li>
+              Quais eram as principais
+              <strong>entradas, processos e saídas</strong> da Blockbuster no
+              seu auge (lojas físicas)?
+            </li>
+            <li>
+              Qual <strong>feedback</strong> crucial vindo do ambiente
+              (surgimento da internet, mudança de comportamento do consumidor) a
+              Blockbuster falhou em processar?
+            </li>
+            <li>
+              Como a Netflix, em seu início (DVDs pelo correio) e depois
+              (streaming), usou o mesmo feedback para criar um sistema
+              completamente diferente e mais adaptado?
+            </li>
+            <li>
+              Mapeiem os componentes do sistema da Netflix hoje. Como ela
+              continua a usar o feedback para evoluir?
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Seção: Tarefa (TED) -->
+      <section
+        id="tarefa"
+        aria-label="Tarefa da Aula"
+        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📝 Tarefa (TED): Mapa Conceitual
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow not-prose">
+          <p class="text-lg leading-relaxed mb-4">
+            Para consolidar o conhecimento desta aula, sua tarefa é elaborar um
+            <strong>mapa conceitual</strong> sobre os elementos que caracterizam
+            uma organização como um sistema aberto.
+          </p>
+          <div class="bg-slate-50 p-4 rounded-md">
+            <p class="font-semibold">Instruções:</p>
+            <ol class="list-decimal list-inside mt-2 space-y-2">
+              <li>
+                Utilize uma ferramenta digital de sua preferência (Canva,
+                Lucidchart, Miro, etc.).
+              </li>
+              <li>
+                O conceito central do mapa deve ser "Organização como Sistema
+                Aberto".
+              </li>
+              <li>
+                Conecte a este conceito os elementos:
+                <strong
+                  >Entradas, Processamento, Saídas e Retroalimentação
+                  (Feedback)</strong
+                >.
+              </li>
+              <li>
+                Para cada elemento, adicione pelo menos dois exemplos práticos
+                de uma empresa real ou fictícia.
+              </li>
+            </ol>
+          </div>
+          <p class="mt-4 font-semibold">
+            <strong>Entrega:</strong> Poste o link ou a imagem do seu mapa
+            conceitual na atividade da disciplina no AVA.
+          </p>
+        </div>
+      </section>
+
+      <!-- Mini-Quiz de Autoavaliação -->
+      <section id="quiz" class="mb-12" aria-label="Quiz de Autoavaliação">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🧐 Mini-Quiz de Autoavaliação
+        </h2>
+        <div class="space-y-4">
+          <details>
+            <summary>
+              1. O capital recebido de um investidor é um exemplo de qual
+              componente para uma startup?
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Entrada (Financeira). É um recurso
+                vindo do ambiente que a empresa usará para operar.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              2. Uma pesquisa de satisfação enviada a clientes após uma compra é
+              um mecanismo de:
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Feedback (Retroalimentação). A
+                informação coletada serve para avaliar a saída (produto/serviço)
+                e ajustar processos futuros.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              3. Verdadeiro ou Falso: Uma empresa pode prosperar a longo prazo
+              ignorando as ações de seus concorrentes.
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Falso. Os concorrentes são uma parte
+                crucial do ambiente de um sistema aberto. Ignorá-los significa
+                ignorar um feedback vital para a sobrevivência e adaptação.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Seção: Bibliografia -->
+      <section
+        id="bibliografia"
+        aria-label="Bibliografia"
+        class="prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📚 Bibliografia
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow space-y-4 not-prose">
+          <p>
+            <strong>MEIRELES, Manuel; SORDI, J. O. de.</strong>
+            <em>Administração de sistemas de informação.</em> 2. ed. São Paulo:
+            Atlas, 2019.
+          </p>
+          <p>
+            <strong>BATISTA, Emerson de Oliveira.</strong>
+            <em
+              >Sistemas de informação: o uso consciente da tecnologia para o
+              gerenciamento.</em
+            >
+            São Paulo: Saraiva, 2014.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-800 text-white mt-12" role="contentinfo">
+      <div class="container mx-auto px-6 py-4 text-center">
+        <p>&copy; 2025 - Disciplina de Teoria Geral de Sistemas</p>
+        <p class="text-sm text-slate-400">
+          Material desenvolvido para o curso de Sistemas de Informação.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

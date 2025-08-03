@@ -5,52 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Teoria Geral de Sistemas - UniChristus</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="bg-slate-50">
+    <!-- Botão do Menu Mobile -->
+    <button
+      id="menu-btn"
+      class="lg:hidden fixed top-4 right-4 z-30 bg-slate-800 text-white p-2 rounded-md"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
     <div class="flex min-h-screen">
-      
       <!-- Sidebar -->
       <aside
-        class="w-64 bg-slate-800 text-slate-100 p-6 fixed h-full hidden lg:block"
+        id="sidebar"
+        class="w-64 bg-slate-800 text-slate-100 p-6 fixed h-full transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out z-20"
       >
         <h2 class="text-xl font-bold mb-2 mono">TGS</h2>
         <p class="text-sm text-slate-400 mb-8">ADS & SI | UniChristus</p>
         <nav>
-          <ul id="sidebar-links" class="space-y-4"></ul>
+          <ul id="sidebar-links" class="space-y-2">
+            <!-- Links serão inseridos pelo JS -->
+          </ul>
         </nav>
       </aside>
 
-      <!-- Main -->
+      <!-- Conteúdo Principal -->
       <main class="flex-1 lg:ml-64 p-6 md:p-10">
+        <!-- Container para o conteúdo que será substituído -->
+        <div id="conteudo-dinamico">
+          <!-- Visão Inicial com Cards -->
+          <div id="visao-inicial">
+            <header>
+              <h1 class="text-5xl font-bold text-slate-900 leading-tight">
+                Teoria Geral de Sistemas
+              </h1>
+              <p class="text-xl text-slate-600 mt-4">Prof. Tiago Sombra</p>
+            </header>
 
-        <!-- Cards Aulas -->
-        <section id="home" class="min-h-screen flex flex-col justify-center">
-          <header>
-            <h1 class="text-5xl font-bold text-slate-900 leading-tight">
-              Teoria Geral de Sistemas
-            </h1>
-            <p class="text-xl text-slate-600 mt-4">Prof. Tiago Sombra</p>
-          </header>
-          <div
-            id="cards-container"
-            class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          ></div>
-        </section>
+            <!-- Cards Aulas -->
+            <section id="home" class="mt-12">
+              <h2 class="text-3xl font-bold text-slate-900 mb-6">Aulas</h2>
+              <div
+                id="cards-container"
+                class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+              ></div>
+            </section>
 
-        <!-- Cards Exercicios -->
-        <section id="listas" class="mt-12">
-          <h2 class="text-3xl font-bold text-slate-900 mb-6">
-            Listas de Exercícios
-          </h2>
-          <div
-            id="listas-container"
-            class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          ></div>
-        </section>
-
-        <!-- Conteúdo dinâmico Aulas / Exercicios -->
-        <div id="conteudo" class="mt-12"></div>
+            <!-- Cards Exercicios -->
+            <section id="listas" class="mt-12">
+              <h2 class="text-3xl font-bold text-slate-900 mb-6">
+                Listas de Exercícios
+              </h2>
+              <div
+                id="listas-container"
+                class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+              ></div>
+            </section>
+          </div>
+        </div>
       </main>
     </div>
     <script src="js/main.js"></script>

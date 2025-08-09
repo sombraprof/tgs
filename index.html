@@ -3,72 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Teoria Geral de Sistemas - UniChristus</title>
+    <title>Algoritmos e Programação I - UniChristus</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="bg-slate-50">
-    <!-- Botão do Menu Mobile -->
-    <button
-      id="menu-btn"
-      class="lg:hidden fixed top-4 right-4 z-30 bg-slate-800 text-white p-2 rounded-md"
-    >
-      <i class="fas fa-bars"></i>
-    </button>
-
     <div class="flex min-h-screen">
-      <!-- Sidebar -->
+      <!-- Sidebar de Navegação (Carregada dinamicamente) -->
       <aside
-        id="sidebar"
-        class="w-64 bg-slate-800 text-slate-100 p-6 fixed h-full transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out z-20"
+        class="w-64 bg-slate-800 text-slate-100 p-6 fixed h-full hidden lg:block overflow-y-auto"
       >
-        <h2 class="text-xl font-bold mb-2 mono">TGS</h2>
+        <h2 class="text-xl font-bold mb-2 mono">Algo & Prog I</h2>
         <p class="text-sm text-slate-400 mb-8">ADS & SI | UniChristus</p>
         <nav>
-          <ul id="sidebar-links" class="space-y-2">
-            <!-- Links serão inseridos pelo JS -->
+          <ul id="sidebar-links" class="space-y-4">
+            <!-- Links serão inseridos aqui via JS -->
           </ul>
         </nav>
       </aside>
 
       <!-- Conteúdo Principal -->
       <main class="flex-1 lg:ml-64 p-6 md:p-10">
-        <!-- Container para o conteúdo que será substituído -->
-        <div id="conteudo-dinamico">
-          <!-- Visão Inicial com Cards -->
-          <div id="visao-inicial">
-            <header>
-              <h1 class="text-5xl font-bold text-slate-900 leading-tight">
-                Teoria Geral de Sistemas
-              </h1>
-              <p class="text-xl text-slate-600 mt-4">Prof. Tiago Sombra</p>
-            </header>
+        <!-- Página Inicial com os Cards -->
+        <section id="home-content">
+          <header class="mb-10">
+            <h1 class="text-5xl font-bold text-slate-900 leading-tight">
+              Algoritmos e Programação I
+            </h1>
+            <p class="text-xl text-slate-600 mt-4">Prof. Tiago Sombra</p>
+          </header>
 
-            <!-- Cards Aulas -->
-            <section id="home" class="mt-12">
-              <h2 class="text-3xl font-bold text-slate-900 mb-6">Aulas</h2>
+          <!-- Bloco Aulas -->
+          <section id="aulas-section" class="mb-12">
+            <div class="border border-slate-200 rounded-2xl bg-white shadow-sm">
+              <div class="px-6 py-4 border-b border-slate-200 bg-indigo-50 rounded-t-2xl">
+                <h2 class="text-2xl font-semibold text-indigo-800">Aulas</h2>
+              </div>
               <div
                 id="cards-container"
-                class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                class="p-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
               ></div>
-            </section>
+            </div>
+          </section>
 
-            <!-- Cards Exercicios -->
-            <section id="listas" class="mt-12">
-              <h2 class="text-3xl font-bold text-slate-900 mb-6">
-                Listas de Exercícios
-              </h2>
+          <!-- Bloco Listas de Exercícios -->
+          <section id="listas-section" class="mb-12">
+            <div class="border border-slate-200 rounded-2xl bg-white shadow-sm">
+              <div class="px-6 py-4 border-b border-slate-200 bg-emerald-50 rounded-t-2xl">
+                <h2 class="text-2xl font-semibold text-emerald-800">Listas de Exercícios</h2>
+              </div>
               <div
                 id="listas-container"
-                class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+                class="p-6 grid md:grid-cols-2 lg:grid-cols-3 gap-6"
               ></div>
-            </section>
-          </div>
-        </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- Container para o conteúdo dinâmico (Aulas/Exercícios) -->
+        <div id="dynamic-content" class="mt-12"></div>
       </main>
     </div>
     <script src="js/main.js"></script>

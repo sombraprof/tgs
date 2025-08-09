@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TGS - Aula 7: Homeostase e Adaptação Organizacional</title>
+    <meta
+      name="description"
+      content="Aula 7 da disciplina Teoria Geral de Sistemas, focada em homeostase, adaptação e autorregulação em sistemas organizacionais, com analogias e exemplos contemporâneos."
+    />
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Estilo base para a fonte Inter */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc; /* bg-slate-50 */
+      }
+      /* Estilo para destacar os callouts */
+      .callout {
+        border-left-width: 4px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.5rem;
+      }
+      .callout-info {
+        background-color: #f0f9ff; /* bg-sky-50 */
+        border-color: #7dd3fc; /* border-sky-300 */
+        color: #0c4a6e; /* text-sky-800 */
+      }
+      .callout-practice {
+        background-color: #f0fdf4; /* bg-emerald-50 */
+        border-color: #6ee7b7; /* border-emerald-300 */
+        color: #065f46; /* text-emerald-800 */
+      }
+      /* Estilo para o quiz */
+      details > summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0.75rem;
+        background-color: #f1f5f9;
+        border-radius: 0.375rem;
+        transition: background-color 0.2s;
+      }
+      details > summary:hover {
+        background-color: #e2e8f0;
+      }
+      details[open] > summary {
+        background-color: #e2e8f0;
+      }
+      .quiz-answer {
+        padding: 1rem;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-top: none;
+        border-radius: 0 0 0.375rem 0.375rem;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <!-- Cabeçalho da Aula -->
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-sky-800">
+          Teoria Geral de Sistemas (TGS)
+        </h1>
+        <p class="text-xl text-slate-600 mt-2">
+          Aula 7: Homeostase e Adaptação Organizacional
+        </p>
+      </div>
+    </header>
+
+    <!-- Corpo Principal da Aula -->
+    <main class="container mx-auto px-6 py-10">
+      <!-- Seção: Plano da Aula -->
+      <section
+        id="plano-aula"
+        aria-label="Plano da Aula"
+        class="mb-12 bg-sky-50 border border-sky-200 p-8 rounded-2xl shadow-lg"
+      >
+        <h2 class="text-3xl font-bold text-sky-700 mb-6 text-center">
+          Plano da Aula
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <!-- Conteúdo e Objetivo -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
+          >
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+            </h3>
+            <p class="font-bold text-slate-700">
+              Unidade II – A organização como um sistema aberto
+            </p>
+            <p class="text-slate-600 mt-1">
+              Homeostase organizacional; adaptação e autorregulação nos
+              sistemas.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO ESPECÍFICO
+            </h3>
+            <p class="text-slate-600">
+              Compreender os mecanismos que permitem que os sistemas
+              organizacionais mantenham equilíbrio diante de estímulos externos
+              e se adaptem às mudanças.
+            </p>
+          </div>
+          <!-- Metodologia e Recursos -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA E RECURSOS
+            </h3>
+            <p class="text-slate-600">
+              Aula expositiva dialogada com uso de analogias biológicas,
+              exemplos contemporâneos e esquemas visuais.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pergunta Norteadora -->
+      <section
+        id="pergunta-norteadora"
+        aria-label="Pergunta Norteadora"
+        class="mb-12 callout callout-info"
+      >
+        <h3 class="font-bold text-lg mb-2">
+          <i class="fa-solid fa-question-circle mr-2"></i>Pergunta Norteadora
+        </h3>
+        <p>
+          Como o termostato do ar-condicionado, que liga e desliga para manter a
+          sala a 22°C, se parece com a forma como o gerente de uma loja ajusta o
+          estoque de um produto que está a vender muito ou pouco?
+        </p>
+      </section>
+
+      <!-- Seção: Contexto Inicial -->
+      <section
+        id="contexto"
+        aria-label="Contexto Inicial"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          🌡️ O Termostato Organizacional: Equilíbrio em Meio ao Caos
+        </h2>
+        <p>
+          Se as organizações são sistemas abertos em constante interação com um
+          ambiente turbulento, como é que elas não se desintegram? A resposta
+          está em dois conceitos-chave emprestados da biologia e da cibernética:
+          <strong>homeostase</strong> e <strong>autorregulação</strong>.
+        </p>
+        <p>
+          A homeostase é a capacidade de um sistema manter um estado de
+          equilíbrio interno dinâmico, mesmo quando o ambiente externo muda
+          drasticamente. Pense no corpo humano mantendo a temperatura em torno
+          de 36,5°C, seja num dia de calor intenso ou de frio rigoroso. As
+          organizações bem-sucedidas fazem o mesmo: ajustam as suas operações,
+          estratégias e recursos para se manterem estáveis e funcionais perante
+          crises económicas, novas tecnologias ou a entrada de concorrentes. O
+          mecanismo por trás dessa magia é a <strong>autorregulação</strong>,
+          impulsionada pelos ciclos de feedback que já estudámos.
+        </p>
+      </section>
+
+      <!-- MODELO DE CONTROLE HOMEOSTÁTICO -->
+      <section
+        id="modelo-controle"
+        aria-label="Modelo de Controle Homeostático"
+        class="mb-12 bg-white p-8 rounded-lg shadow"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🎯 Modelo de Controle: do Setpoint à Ação
+        </h2>
+
+        <!-- Quick mapping list -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ul class="list-disc list-inside text-slate-700">
+            <li>
+              <strong>Variável controlada:</strong> nível de serviço (OTIF),
+              tempo médio de atendimento, taxa de defeitos.
+            </li>
+            <li>
+              <strong>Setpoint (meta):</strong> alvo desejado (ex.: OTIF ≥ 96%).
+            </li>
+            <li>
+              <strong>Sensor (medição):</strong> KPI/telemetria/encuestas
+              NPS/ERP.
+            </li>
+            <li>
+              <strong>Controlador (regra/política):</strong> gatilhos de decisão
+              (ex.: reabastecer, escalonar, abrir turno).
+            </li>
+            <li>
+              <strong>Atuador (ação física/digital):</strong> compra de insumos,
+              alocação de equipe, ajuste de preço.
+            </li>
+            <li>
+              <strong>Distúrbios & atrasos:</strong> sazonalidade, ruptura de
+              fornecedor, tempo de aprovação, fila de TI.
+            </li>
+          </ul>
+
+          <!-- Small diagram (SVG) -->
+          <figure class="not-prose">
+            <!-- Simple control-loop diagram (accessible) -->
+            <svg
+              viewBox="0 0 740 220"
+              class="w-full"
+              role="img"
+              aria-labelledby="loopTitle loopDesc"
+            >
+              <title id="loopTitle">Loop de Controle Homeostático</title>
+              <desc id="loopDesc">
+                Setpoint compara com a variável medida; controlador aciona
+                atuador que afeta o processo; sensor mede e realimenta.
+              </desc>
+              <!-- Boxes -->
+              <rect
+                x="20"
+                y="80"
+                width="120"
+                height="60"
+                rx="10"
+                fill="#ecfeff"
+                stroke="#06b6d4"
+              ></rect>
+              <text
+                x="80"
+                y="115"
+                text-anchor="middle"
+                font-size="14"
+                fill="#0e7490"
+              >
+                Setpoint
+              </text>
+
+              <rect
+                x="170"
+                y="80"
+                width="140"
+                height="60"
+                rx="10"
+                fill="#e0f2fe"
+                stroke="#38bdf8"
+              ></rect>
+              <text
+                x="240"
+                y="115"
+                text-anchor="middle"
+                font-size="14"
+                fill="#0c4a6e"
+              >
+                Controlador
+              </text>
+
+              <rect
+                x="340"
+                y="80"
+                width="140"
+                height="60"
+                rx="10"
+                fill="#f0fdf4"
+                stroke="#6ee7b7"
+              ></rect>
+              <text
+                x="410"
+                y="115"
+                text-anchor="middle"
+                font-size="14"
+                fill="#065f46"
+              >
+                Atuador
+              </text>
+
+              <rect
+                x="510"
+                y="80"
+                width="140"
+                height="60"
+                rx="10"
+                fill="#fef9c3"
+                stroke="#f59e0b"
+              ></rect>
+              <text
+                x="580"
+                y="115"
+                text-anchor="middle"
+                font-size="14"
+                fill="#92400e"
+              >
+                Processo
+              </text>
+
+              <!-- Arrows forward -->
+              <defs>
+                <marker
+                  id="arr"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="8"
+                  refY="5"
+                  orient="auto"
+                >
+                  <path d="M0,0 L0,10 L10,5 z" fill="#334155"></path>
+                </marker>
+              </defs>
+              <line
+                x1="140"
+                y1="110"
+                x2="170"
+                y2="110"
+                stroke="#334155"
+                stroke-width="2.5"
+                marker-end="url(#arr)"
+              />
+              <line
+                x1="310"
+                y1="110"
+                x2="340"
+                y2="110"
+                stroke="#334155"
+                stroke-width="2.5"
+                marker-end="url(#arr)"
+              />
+              <line
+                x1="480"
+                y1="110"
+                x2="510"
+                y2="110"
+                stroke="#334155"
+                stroke-width="2.5"
+                marker-end="url(#arr)"
+              />
+
+              <!-- Sensor and feedback -->
+              <rect
+                x="510"
+                y="10"
+                width="140"
+                height="50"
+                rx="10"
+                fill="#f0f9ff"
+                stroke="#7dd3fc"
+              ></rect>
+              <text
+                x="580"
+                y="40"
+                text-anchor="middle"
+                font-size="14"
+                fill="#0369a1"
+              >
+                Sensor/Medição
+              </text>
+              <!-- Feedback path -->
+              <path
+                d="M 580 60 C 500 50, 330 50, 240 70"
+                fill="none"
+                stroke="#0ea5e9"
+                stroke-width="2.5"
+                stroke-dasharray="8 6"
+                marker-end="url(#arr)"
+              ></path>
+            </svg>
+            <figcaption class="text-sm text-slate-500 mt-2">
+              Do alvo (setpoint) à ação, com realimentação via sensor/medição.
+            </figcaption>
+          </figure>
+        </div>
+
+        <p class="text-sm text-slate-500 mt-4">
+          <!-- NOTE: Keep language consistent (PT-BR) and reuse the same terms in avaliações/slides. -->
+        </p>
+      </section>
+
+      <!-- Seção: Feedback Loops -->
+      <section
+        id="feedback-loops"
+        aria-label="Ciclos de Feedback"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          Os Dois Lados do Feedback: Estabilizar ou Amplificar?
+        </h2>
+        <p class="text-lg text-slate-600 mb-6">
+          A autorregulação acontece através de dois tipos de ciclos (ou "loops")
+          de feedback. Entender a diferença entre eles é crucial para projetar
+          sistemas que se comportem como esperado.
+        </p>
+        <div class="overflow-x-auto bg-white p-6 rounded-lg shadow">
+          <table class="min-w-full text-left text-sm font-light">
+            <thead class="border-b font-medium bg-slate-100">
+              <tr>
+                <th scope="col" class="px-6 py-4 text-xl text-blue-700">
+                  <i class="fa-solid fa-circle-minus mr-2"></i>Feedback Negativo
+                  (de Equilíbrio)
+                </th>
+                <th scope="col" class="px-6 py-4 text-xl text-red-700">
+                  <i class="fa-solid fa-circle-plus mr-2"></i>Feedback Positivo
+                  (de Reforço)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="px-6 py-4 align-top">
+                  Busca <strong>estabilizar</strong> o sistema, corrigindo
+                  desvios para retornar a um estado desejado. Age como um freio.
+                </td>
+                <td class="px-6 py-4 align-top">
+                  Busca <strong>amplificar</strong> uma tendência, criando um
+                  efeito "bola de neve" que afasta o sistema do seu estado
+                  inicial. Age como um acelerador.
+                </td>
+              </tr>
+              <tr class="bg-slate-50 border-b">
+                <td class="px-6 py-4 align-top">
+                  <strong>Analogia:</strong> O termostato do ar-condicionado. Se
+                  a temperatura sobe, ele liga para resfriar. Se arrefece
+                  demais, ele desliga.
+                </td>
+                <td class="px-6 py-4 align-top">
+                  <strong>Analogia:</strong> Um microfone perto da sua própria
+                  caixa de som. O som é captado, amplificado, emitido, captado
+                  novamente e amplificado, gerando microfonia.
+                </td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 align-top">
+                  <p class="font-semibold">Exemplos Organizacionais:</p>
+                  <ul class="list-disc list-inside mt-2">
+                    <li>
+                      <strong>Controlo de estoque:</strong> Se o estoque de um
+                      produto cai abaixo do mínimo, o sistema gera uma ordem de
+                      compra para repor.
+                    </li>
+                    <li>
+                      <strong>Gestão de Projetos:</strong> Se o projeto está
+                      atrasado, o gestor aloca mais recursos para voltar ao
+                      cronograma.
+                    </li>
+                    <li>
+                      <strong>Suporte ao Cliente:</strong> Um aumento no número
+                      de reclamações (feedback) aciona uma revisão dos processos
+                      de atendimento.
+                    </li>
+                  </ul>
+                </td>
+                <td class="px-6 py-4 align-top">
+                  <p class="font-semibold">Exemplos Organizacionais:</p>
+                  <ul class="list-disc list-inside mt-2">
+                    <li>
+                      <strong>Marketing Viral:</strong> Um post popular é
+                      partilhado, o que aumenta a sua visibilidade, gerando mais
+                      partilhas.
+                    </li>
+                    <li>
+                      <strong>Crise de Reputação:</strong> Uma notícia negativa
+                      gera desconfiança, que leva à queda das ações, o que gera
+                      mais notícias negativas.
+                    </li>
+                    <li>
+                      <strong>Efeito de Rede (Uber/iFood):</strong> Mais
+                      utilizadores atraem mais motoristas/restaurantes, o que
+                      torna o serviço melhor e atrai ainda mais utilizadores.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- CLD ESTOQUE (CAUSAL LOOP DIAGRAM) -->
+      <section
+        id="cld-estoque"
+        aria-label="Ciclo de Controle de Estoque"
+        class="mb-12 bg-white p-8 rounded-lg shadow"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          📦 Controle de Estoque como Loop de Feedback
+        </h2>
+        <figure class="not-prose">
+          <!-- Simple CLD: Demand ↑ → Estoque ↓ → Erro (Meta-Estoque - Estoque) ↑ → Pedido ↑ → Reposição ↑ → Estoque ↑ -->
+          <svg
+            viewBox="0 0 720 300"
+            class="w-full"
+            role="img"
+            aria-labelledby="cldTitle cldDesc"
+          >
+            <title id="cldTitle">CLD de Estoque (Feedback Negativo)</title>
+            <desc id="cldDesc">
+              Relações causais entre demanda, estoque, erro, pedido e reposição;
+              elo negativo estabiliza a variável.
+            </desc>
+
+            <!-- Nodes -->
+            <circle cx="120" cy="80" r="26" fill="#ecfeff" stroke="#06b6d4" />
+            <text
+              x="120"
+              y="85"
+              text-anchor="middle"
+              font-size="12"
+              fill="#0e7490"
+            >
+              Demanda
+            </text>
+            <circle cx="300" cy="80" r="26" fill="#fef9c3" stroke="#f59e0b" />
+            <text
+              x="300"
+              y="85"
+              text-anchor="middle"
+              font-size="12"
+              fill="#92400e"
+            >
+              Estoque
+            </text>
+            <circle cx="480" cy="80" r="26" fill="#e0f2fe" stroke="#38bdf8" />
+            <text
+              x="480"
+              y="85"
+              text-anchor="middle"
+              font-size="12"
+              fill="#0c4a6e"
+            >
+              Erro
+            </text>
+            <circle cx="480" cy="210" r="26" fill="#f0fdf4" stroke="#6ee7b7" />
+            <text
+              x="480"
+              y="215"
+              text-anchor="middle"
+              font-size="12"
+              fill="#065f46"
+            >
+              Pedido
+            </text>
+            <circle cx="300" cy="210" r="26" fill="#f0f9ff" stroke="#7dd3fc" />
+            <text
+              x="300"
+              y="215"
+              text-anchor="middle"
+              font-size="12"
+              fill="#0369a1"
+            >
+              Reposição
+            </text>
+
+            <!-- Arrows / polarities -->
+            <defs>
+              <marker
+                id="arr2"
+                markerWidth="10"
+                markerHeight="10"
+                refX="8"
+                refY="5"
+                orient="auto"
+              >
+                <path d="M0,0 L0,10 L10,5 z" fill="#334155" />
+              </marker>
+            </defs>
+            <!-- Demanda -> Estoque ( - ) -->
+            <line
+              x1="146"
+              y1="80"
+              x2="274"
+              y2="80"
+              stroke="#334155"
+              stroke-width="2"
+              marker-end="url(#arr2)"
+            />
+            <text x="210" y="70" font-size="12" fill="#334155">–</text>
+            <!-- Estoque -> Erro ( – ) (Erro = Meta − Estoque) -->
+            <line
+              x1="326"
+              y1="80"
+              x2="454"
+              y2="80"
+              stroke="#334155"
+              stroke-width="2"
+              marker-end="url(#arr2)"
+            />
+            <text x="390" y="70" font-size="12" fill="#334155">–</text>
+            <!-- Erro -> Pedido ( + ) -->
+            <line
+              x1="480"
+              y1="106"
+              x2="480"
+              y2="184"
+              stroke="#334155"
+              stroke-width="2"
+              marker-end="url(#arr2)"
+            />
+            <text x="490" y="150" font-size="12" fill="#334155">+</text>
+            <!-- Pedido -> Reposição ( + ) -->
+            <line
+              x1="454"
+              y1="210"
+              x2="326"
+              y2="210"
+              stroke="#334155"
+              stroke-width="2"
+              marker-end="url(#arr2)"
+            />
+            <text x="390" y="198" font-size="12" fill="#334155">+</text>
+            <!-- Reposição -> Estoque ( + ) -->
+            <line
+              x1="300"
+              y1="184"
+              x2="300"
+              y2="106"
+              stroke="#334155"
+              stroke-width="2"
+              marker-end="url(#arr2)"
+            />
+            <text x="310" y="150" font-size="12" fill="#334155">+</text>
+          </svg>
+          <figcaption class="text-sm text-slate-500 mt-2">
+            Loop estabilizador: quando a demanda reduz o estoque, o erro aumenta
+            pedidos e repõe o nível.
+          </figcaption>
+        </figure>
+        <p class="text-sm text-slate-500 mt-3">
+          <!-- NOTE: Use este CLD em conjunto com “histerese” para evitar oscilações de pedido. -->
+        </p>
+      </section>
+
+      <!-- FEEDFORWARD & ALOSTASE -->
+      <section
+        id="feedforward-alostase"
+        aria-label="Feedforward e Alostase"
+        class="mb-12 bg-white p-8 rounded-lg shadow"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          ⏩ Feedforward & 🔄 Alostase
+        </h2>
+        <div class="prose prose-slate max-w-none lg:prose-lg">
+          <p>
+            <strong>Feedforward</strong> antecipa perturbações antes do erro
+            aparecer na saída. Exemplos: reabastecimento sazonal com base em
+            previsão, autoscaling de servidores por tendência de tráfego.
+          </p>
+          <p>
+            <strong>Alostase</strong> é a capacidade do sistema de
+            <em>ajustar o setpoint</em> (meta) quando o ambiente muda de forma
+            persistente (ex.: rever prazo “padrão” de entrega em mercados com
+            nova logística urbana).
+          </p>
+        </div>
+
+        <!-- Compact compare table -->
+        <div class="overflow-x-auto mt-4">
+          <table class="min-w-full text-sm border border-slate-200 rounded-lg">
+            <thead class="bg-slate-100 text-slate-700">
+              <tr>
+                <th class="px-4 py-2 text-left">Técnica</th>
+                <th class="px-4 py-2 text-left">Quando usar</th>
+                <th class="px-4 py-2 text-left">Risco comum</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="px-4 py-2 font-medium">Feedback (negativo)</td>
+                <td class="px-4 py-2">Desvio pontual do alvo</td>
+                <td class="px-4 py-2">
+                  Oscilação se atrasos/histerese mal configurados
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium">Feedforward</td>
+                <td class="px-4 py-2">Antecipar sazonalidade/rupturas</td>
+                <td class="px-4 py-2">Previsão ruim gera sobre/baixo ajuste</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium">Alostase</td>
+                <td class="px-4 py-2">Novo “normal” no ambiente</td>
+                <td class="px-4 py-2">
+                  Mudar metas cedo demais (perde comparabilidade)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- VIDEOS: Homeostase/Feedback & Sistema Aberto (corrigido) -->
+      <section
+        id="videos-aula7"
+        aria-label="Vídeos para Fixação"
+        class="mb-12 bg-white p-8 rounded-lg shadow"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🎬 Vídeos para fixar o conteúdo
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Video 1: Pensamento sistêmico e loops de feedback (PT-BR) -->
+          <figure class="not-prose">
+            <div class="relative w-full" style="padding-bottom: 56.25%">
+              <!-- NOTE: Focus on causal loops and feedback for organizational regulation -->
+              <iframe
+                class="absolute inset-0 w-full h-full rounded-lg"
+                src="https://www.youtube.com/embed/CWJ8KDM5PAY"
+                title="Pensamento Sistêmico: relações causais e ciclos de feedback (aplicação em organizações)"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              >
+              </iframe>
+            </div>
+            <figcaption class="text-sm text-slate-600 mt-2">
+              Relações causais e <em>loops</em> de feedback: base prática para
+              autorregulação e homeostase organizacional.
+            </figcaption>
+            <details class="mt-2">
+              <summary class="text-sky-700 hover:underline text-sm">
+                Problemas para carregar? Abrir no YouTube
+              </summary>
+              <a
+                class="text-sky-700 underline text-sm"
+                href="https://www.youtube.com/watch?v=CWJ8KDM5PAY"
+                target="_blank"
+                rel="noopener"
+                >Assistir no YouTube</a
+              >
+            </details>
+          </figure>
+
+          <!-- Video 2: Organização como Sistema Aberto (PT-BR) -->
+          <figure class="not-prose">
+            <div class="relative w-full" style="padding-bottom: 56.25%">
+              <iframe
+                class="absolute inset-0 w-full h-full rounded-lg"
+                src="https://www.youtube.com/embed/TlwpY5pHveM"
+                title="Teoria dos Sistemas | Organização como Sistema Aberto — visão sistêmica na Administração"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              >
+              </iframe>
+            </div>
+            <figcaption class="text-sm text-slate-600 mt-2">
+              Interação com o ambiente, adaptação contínua e uso de informação
+              para manter equilíbrio (homeostase).
+            </figcaption>
+            <details class="mt-2">
+              <summary class="text-sky-700 hover:underline text-sm">
+                Problemas para carregar? Abrir no YouTube
+              </summary>
+              <a
+                class="text-sky-700 underline text-sm"
+                href="https://www.youtube.com/watch?v=TlwpY5pHveM"
+                target="_blank"
+                rel="noopener"
+                >Assistir no YouTube</a
+              >
+            </details>
+          </figure>
+        </div>
+
+        <p class="text-sm text-slate-500 mt-6">
+          Dica: identifique <em>setpoint</em>, <em>sensor</em>,
+          <em>controlador</em>, <em>atuador</em> nos exemplos e marque quando a
+          ação é <em>feedback</em> (corretiva) ou
+          <em>feedforward</em> (antecipatória).
+        </p>
+      </section>
+
+      <!-- Metodologia Ativa -->
+      <section
+        id="metodologia-ativa"
+        aria-label="Metodologia Ativa: Estudo de Caso Pandemia"
+        class="mb-12 callout callout-practice"
+      >
+        <h2 class="text-2xl font-bold mb-4">
+          <i class="fa-solid fa-head-side-virus mr-2"></i>Estudo de Caso: A
+          Resposta Organizacional à Pandemia
+        </h2>
+        <p class="mb-4">
+          A pandemia de COVID-19 foi um dos maiores estímulos ambientais da
+          história recente. As empresas que sobreviveram foram aquelas que
+          melhor se autorregularam. Em grupo, discutam:
+        </p>
+        <div class="bg-white/50 p-4 rounded-md">
+          <ol class="list-decimal list-inside mt-2 space-y-2">
+            <li>
+              A necessidade súbita de trabalho remoto foi um estímulo que exigiu
+              qual tipo de feedback para a maioria das empresas?
+            </li>
+            <li>
+              O aumento da procura por serviços de streaming e delivery é um
+              exemplo de feedback positivo ou negativo para essas empresas?
+              Porquê?
+            </li>
+            <li>
+              Como os sistemas de informação (ferramentas de colaboração,
+              e-commerce, sistemas de logística) foram cruciais para permitir a
+              adaptação e a busca por um novo equilíbrio (homeostase)?
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- INDICADORES PARA AUTORREGULAÇÃO -->
+      <section
+        id="indicadores"
+        aria-label="Indicadores para Autorregulação"
+        class="mb-12 bg-white p-8 rounded-lg shadow"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          📈 Indicadores que Regulam o Sistema
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Leading vs Lagging -->
+          <div class="border border-slate-200 rounded-xl p-5">
+            <h3 class="font-bold text-slate-700">Leading vs Lagging</h3>
+            <ul class="list-disc list-inside text-slate-700 mt-2">
+              <li>
+                <strong>Leading (antecipam):</strong> tempo de picking, fila no
+                chat, taxa de abandono do carrinho.
+              </li>
+              <li>
+                <strong>Lagging (resultados):</strong> OTIF, NPS mensal, ticket
+                médio.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Hysteresis band -->
+          <div class="border border-slate-200 rounded-xl p-5">
+            <h3 class="font-bold text-slate-700">
+              Histerese (faixa de tolerância)
+            </h3>
+            <p class="text-slate-700 mt-2">
+              Evita “liga-desliga” constante: só agir quando a variável sai de
+              uma faixa (ex.: 94–98% de OTIF).
+            </p>
+          </div>
+        </div>
+
+        <!-- Mini worksheet -->
+        <div class="mt-6 bg-slate-50 p-4 rounded-md not-prose">
+          <p class="font-semibold">🛠️ Roteiro rápido (2–3 min):</p>
+          <ol class="list-decimal list-inside text-slate-700 mt-2 space-y-1">
+            <li>
+              Escolha uma <em>variável controlada</em> (ex.: tempo de
+              atendimento).
+            </li>
+            <li>Defina <em>setpoint</em> e <em>faixa de histerese</em>.</li>
+            <li>Liste 1 indicador <em>leading</em> e 1 <em>lagging</em>.</li>
+            <li>Descreva sua regra de controle (gatilho → ação).</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Seção: Tarefa (TED) -->
+      <section
+        id="tarefa"
+        aria-label="Tarefa da Aula"
+        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📝 Tarefa (TED): Resposta Argumentativa
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow not-prose">
+          <p class="text-lg leading-relaxed mb-4">
+            Para a próxima aula, você deverá produzir uma resposta argumentativa
+            curta, baseada nos conceitos de adaptação e autorregulação.
+          </p>
+          <div class="bg-slate-50 p-4 rounded-md">
+            <p class="font-semibold">Questão:</p>
+            <blockquote class="text-lg italic text-slate-700 my-2">
+              “Em sua opinião, o home office tornou as empresas mais adaptáveis?
+              Por quê?”
+            </blockquote>
+            <p class="font-semibold mt-4">Instruções:</p>
+            <ol class="list-decimal list-inside mt-2 space-y-2">
+              <li>
+                Elabore uma resposta curta e objetiva (um ou dois parágrafos).
+              </li>
+              <li>
+                Use os conceitos de sistema aberto, ambiente e feedback na sua
+                argumentação.
+              </li>
+              <li>
+                Poste a sua resposta no fórum da disciplina no AVA. Prepare-se
+                para comentar sobre o tema na próxima aula.
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mini-Quiz de Autoavaliação -->
+      <section id="quiz" class="mb-12" aria-label="Quiz de Autoavaliação">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🧐 Mini-Quiz de Autoavaliação
+        </h2>
+        <div class="space-y-4">
+          <details>
+            <summary>
+              1. Quando um banco central aumenta as taxas de juro para controlar
+              a inflação, está a aplicar um ciclo de feedback...
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Negativo (de Equilíbrio). O objetivo
+                é corrigir um desvio (inflação alta) e trazer o sistema
+                económico de volta a um estado de estabilidade.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              2. A capacidade de uma organização manter a sua cultura e
+              identidade mesmo após uma grande mudança, como uma fusão, é um
+              exemplo de...
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Homeostase. É a tendência do sistema
+                de manter as suas variáveis internas essenciais estáveis, apesar
+                das perturbações externas.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              3. Verdadeiro ou Falso: Em sistemas de informação, o feedback
+              positivo é sempre desejável.
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Falso. O feedback positivo pode ser
+                desejável (ex: marketing viral), mas também pode ser perigoso
+                (ex: uma pequena falha de sistema que causa uma sobrecarga em
+                cascata e derruba todo o serviço).
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="quiz-extra" class="mb-12 bg-white p-8 rounded-lg shadow">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🧪 Quiz Extra (ENADE-Style)
+        </h2>
+
+        <form id="quizEnade" class="space-y-6">
+          <!-- Q1 -->
+          <fieldset class="border border-slate-200 rounded-lg p-4">
+            <legend class="font-semibold text-slate-700">
+              1) Em um sistema com atrasos significativos, a ação de controle
+              deve:
+            </legend>
+            <label class="block mt-2"
+              ><input type="radio" name="q1" value="A" /> A) Ser mais frequente
+              e com maior ganho</label
+            >
+            <label class="block"
+              ><input type="radio" name="q1" value="B" /> B) Incluir faixa de
+              histerese e ganho moderado</label
+            >
+            <label class="block"
+              ><input type="radio" name="q1" value="C" /> C) Desconsiderar
+              medições para evitar ruído</label
+            >
+            <label class="block"
+              ><input type="radio" name="q1" value="D" /> D) Alterar o setpoint
+              para baixo sempre</label
+            >
+            <label class="block"
+              ><input type="radio" name="q1" value="E" /> E) Ser aleatória para
+              “quebrar padrão”</label
+            >
+          </fieldset>
+
+          <!-- Q2 -->
+          <fieldset class="border border-slate-200 rounded-lg p-4">
+            <legend class="font-semibold text-slate-700">
+              2) O uso de previsão de demanda para ajustar compras antes do pico
+              é exemplo de:
+            </legend>
+            <label class="block mt-2"
+              ><input type="radio" name="q2" value="A" /> A) Feedback
+              negativo</label
+            >
+            <label class="block"
+              ><input type="radio" name="q2" value="B" /> B) Feedback
+              positivo</label
+            >
+            <label class="block"
+              ><input type="radio" name="q2" value="C" /> C) Feedforward</label
+            >
+            <label class="block"
+              ><input type="radio" name="q2" value="D" /> D) Histerese</label
+            >
+            <label class="block"
+              ><input type="radio" name="q2" value="E" /> E) Alostase</label
+            >
+          </fieldset>
+
+          <!-- Q3 -->
+          <fieldset class="border border-slate-200 rounded-lg p-4">
+            <legend class="font-semibold text-slate-700">
+              3) Ao revisar metas diante de mudança estrutural e persistente no
+              ambiente, a técnica adequada é:
+            </legend>
+            <label class="block mt-2"
+              ><input type="radio" name="q3" value="A" /> A) Manter metas e
+              aumentar o ganho do controlador</label
+            >
+            <label class="block"
+              ><input type="radio" name="q3" value="B" /> B) Aplicar feedforward
+              apenas</label
+            >
+            <label class="block"
+              ><input type="radio" name="q3" value="C" /> C) Reduzir a medição
+              (sensor) para estabilizar</label
+            >
+            <label class="block"
+              ><input type="radio" name="q3" value="D" /> D) Adotar alostase
+              (ajuste de setpoint)</label
+            >
+            <label class="block"
+              ><input type="radio" name="q3" value="E" /> E) Desligar o
+              controlador</label
+            >
+          </fieldset>
+
+          <button
+            type="button"
+            id="submitQuizEnade"
+            class="mt-2 inline-flex items-center px-4 py-2 rounded-lg bg-sky-600 text-white hover:bg-sky-700"
+          >
+            Corrigir
+          </button>
+          <p
+            id="quizScoreEnade"
+            class="mt-3 font-semibold text-slate-700"
+            aria-live="polite"
+          ></p>
+        </form>
+      </section>
+
+      <script>
+        // Answers for ENADE-style quiz
+        const ENADE_ANS = { q1: "B", q2: "C", q3: "D" }; // one correct option each
+
+        document
+          .getElementById("submitQuizEnade")
+          ?.addEventListener("click", () => {
+            let score = 0,
+              total = Object.keys(ENADE_ANS).length;
+            for (const k of Object.keys(ENADE_ANS)) {
+              const sel = document.querySelector(`input[name="${k}"]:checked`);
+              if (sel && sel.value === ENADE_ANS[k]) score++;
+            }
+            const out = document.getElementById("quizScoreEnade");
+            if (out) out.textContent = `Você acertou ${score} de ${total}.`;
+          });
+      </script>
+
+      <!-- Seção: Bibliografia -->
+      <section
+        id="bibliografia"
+        aria-label="Bibliografia"
+        class="prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📚 Bibliografia
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow space-y-4 not-prose">
+          <p>
+            <strong>MEIRELES, Manuel; SORDI, J. O. de.</strong>
+            <em>Administração de sistemas de informação.</em> 2. ed. São Paulo:
+            Atlas, 2019.
+          </p>
+          <p>
+            <strong>IMONIANA, Joshua Onome.</strong>
+            <em>Auditoria de sistemas de informação.</em> 3. ed. São Paulo:
+            Atlas, 2016.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-800 text-white mt-12" role="contentinfo">
+      <div class="container mx-auto px-6 py-4 text-center">
+        <p>&copy; 2025 - Disciplina de Teoria Geral de Sistemas</p>
+        <p class="text-sm text-slate-400">
+          Material desenvolvido para o curso de Sistemas de Informação.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -33,5 +33,19 @@
     "descricao": "Estudo dos elementos que caracterizam uma organização como sistema aberto: entradas, processamento, saídas, retroalimentação e ambiente. Análise de casos reais de empresas que adaptaram processos com base em estímulos ambientais, com aplicação prática do modelo entrada-processamento-saída.",
     "arquivo": "aula5.html",
     "ativo": true
+  },
+  {
+    "id": "aula6",
+    "titulo": "Aula 6: Fluxos e Transformação Organizacional",
+    "descricao": "Análise dos fluxos de materiais, informação e energia nas organizações e do processo de transformação, destacando interdependência entre subsistemas, cadeia de suprimentos e mecanismos de feedback (SIPOC/VSM). Inclui estudo de caso, mapeamento de fluxos e mini-quiz.",
+    "arquivo": "aula6.html",
+    "ativo": true
+  },
+  {
+    "id": "aula7",
+    "titulo": "Aula 7: Homeostase e Adaptação Organizacional",
+    "descricao": "Estudo da homeostase e da autorregulação em organizações como sistemas abertos: loops de feedback (negativo e positivo), feedforward e alostase; modelo de controle (setpoint–sensor–controlador–atuador), indicadores (leading/lagging) e faixa de histerese. Inclui estudo de caso, atividades guiadas e vídeos para fixação.",
+    "arquivo": "aula7.html",
+    "ativo": true
   }
 ]

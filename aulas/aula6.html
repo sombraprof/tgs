@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TGS - Aula 6: Fluxos e Transformação Organizacional</title>
+    <meta
+      name="description"
+      content="Aula 6 da disciplina Teoria Geral de Sistemas, focada em transformação organizacional, fluxos de informação e materiais, e a interdependência nas organizações como sistemas abertos."
+    />
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Estilo base para a fonte Inter */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc; /* bg-slate-50 */
+      }
+      /* Estilo para destacar os callouts */
+      .callout {
+        border-left-width: 4px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.5rem;
+      }
+      .callout-info {
+        background-color: #f0f9ff; /* bg-sky-50 */
+        border-color: #7dd3fc; /* border-sky-300 */
+        color: #0c4a6e; /* text-sky-800 */
+      }
+      .callout-practice {
+        background-color: #f0fdf4; /* bg-emerald-50 */
+        border-color: #6ee7b7; /* border-emerald-300 */
+        color: #065f46; /* text-emerald-800 */
+      }
+      /* Estilo para o quiz */
+      details > summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0.75rem;
+        background-color: #f1f5f9;
+        border-radius: 0.375rem;
+        transition: background-color 0.2s;
+      }
+      details > summary:hover {
+        background-color: #e2e8f0;
+      }
+      details[open] > summary {
+        background-color: #e2e8f0;
+      }
+      .quiz-answer {
+        padding: 1rem;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-top: none;
+        border-radius: 0 0 0.375rem 0.375rem;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <!-- Cabeçalho da Aula -->
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-sky-800">
+          Teoria Geral de Sistemas (TGS)
+        </h1>
+        <p class="text-xl text-slate-600 mt-2">
+          Aula 6: Fluxos e Transformação Organizacional
+        </p>
+      </div>
+    </header>
+
+    <!-- Corpo Principal da Aula -->
+    <main class="container mx-auto px-6 py-10">
+      <!-- Seção: Plano da Aula -->
+      <section
+        id="plano-aula"
+        aria-label="Plano da Aula"
+        class="mb-12 bg-sky-50 border border-sky-200 p-8 rounded-2xl shadow-lg"
+      >
+        <h2 class="text-3xl font-bold text-sky-700 mb-6 text-center">
+          Plano da Aula
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <!-- Conteúdo e Objetivo -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
+          >
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+            </h3>
+            <p class="font-bold text-slate-700">
+              Unidade II – A organização como um sistema aberto
+            </p>
+            <p class="text-slate-600 mt-1">
+              Transformação organizacional; fluxo de informações e energia nos
+              sistemas.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO ESPECÍFICO
+            </h3>
+            <p class="text-slate-600">
+              Identificar os processos de transformação e os fluxos sistêmicos
+              em organizações, compreendendo a interdependência entre suas
+              partes e o ambiente.
+            </p>
+          </div>
+          <!-- Metodologia e Recursos -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA E RECURSOS
+            </h3>
+            <p class="text-slate-600">
+              Aula expositiva com exemplificação de fluxos reais (cadeia de
+              suprimentos, sistemas logísticos, organogramas) e vídeos sobre
+              transformação digital.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pergunta Norteadora -->
+      <section
+        id="pergunta-norteadora"
+        aria-label="Pergunta Norteadora"
+        class="mb-12 callout callout-info"
+      >
+        <h3 class="font-bold text-lg mb-2">
+          <i class="fa-solid fa-question-circle mr-2"></i>Pergunta Norteadora
+        </h3>
+        <p>
+          Como a Amazon consegue entregar um produto na sua casa tão rápido? Que
+          fluxos de informação e de materiais você acha que acontecem desde o
+          clique em "comprar" até a campainha tocar?
+        </p>
+      </section>
+
+      <!-- Seção: Contexto Inicial -->
+      <section
+        id="contexto"
+        aria-label="Contexto Inicial"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          🌊 A Empresa em Movimento: Fluxos e Transformação
+        </h2>
+        <p>
+          Na aula anterior, estabelecemos que uma organização é um sistema
+          aberto. Hoje, vamos aprofundar essa ideia, entendendo que esse sistema
+          não é estático; ele é um organismo dinâmico, pulsante, movido por
+          <strong>fluxos</strong> constantes. Assim como o corpo humano depende
+          do fluxo sanguíneo para transportar oxigênio e nutrientes, uma empresa
+          depende de fluxos de
+          <strong>materiais, informação e energia</strong> para sobreviver e
+          crescer.
+        </p>
+        <p>
+          O "coração" da empresa é o seu
+          <strong>processo de transformação</strong>: a capacidade de converter
+          recursos (entradas) em produtos e serviços de valor (saídas).
+          Compreender como esses fluxos alimentam a transformação e como as
+          diferentes partes da organização (subsistemas) são interdependentes é
+          fundamental para qualquer profissional de SI que deseje projetar
+          tecnologias que otimizem e acelerem esses processos.
+        </p>
+      </section>
+
+      <!-- Seção: Fluxos Sistêmicos -->
+      <section
+        id="fluxos-sistemicos"
+        aria-label="Fluxos Sistêmicos"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          As Correntes Sanguíneas da Organização
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          <!-- Fluxo de Materiais/Energia -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i class="fa-solid fa-box-open text-3xl text-amber-600 mb-3"></i>
+            <h3 class="text-xl font-bold text-slate-700 mb-2">
+              Fluxo de Materiais e Energia
+            </h3>
+            <p class="text-slate-600">
+              Refere-se ao movimento físico de recursos através da organização.
+              É o fluxo tangível, que podemos ver e tocar.
+            </p>
+            <ul class="list-disc list-inside mt-4 text-slate-700">
+              <li>
+                <strong>Exemplo:</strong> Numa fábrica de automóveis, é o fluxo
+                do aço que chega do fornecedor, passa pela linha de montagem e
+                sai como um carro pronto.
+              </li>
+              <li>
+                <strong>Em SI:</strong> O hardware (servidores, computadores) e
+                a energia elétrica que os alimenta.
+              </li>
+            </ul>
+          </div>
+          <!-- Fluxo de Informação -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i class="fa-solid fa-wifi text-3xl text-sky-600 mb-3"></i>
+            <h3 class="text-xl font-bold text-slate-700 mb-2">
+              Fluxo de Informação
+            </h3>
+            <p class="text-slate-600">
+              É o fluxo intangível de dados, ordens, conhecimento e comunicação
+              que coordena e controla o fluxo de materiais. É o "sistema
+              nervoso" da empresa.
+            </p>
+            <ul class="list-disc list-inside mt-4 text-slate-700">
+              <li>
+                <strong>Exemplo:</strong> O pedido de compra que aciona o
+                fornecedor, a nota fiscal, o código de rastreamento da entrega.
+              </li>
+              <li>
+                <strong>Em SI:</strong> É a nossa matéria-prima. Cada linha de
+                código, cada registo na base de dados, cada e-mail.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção: A Cadeia de Suprimentos -->
+      <section
+        id="cadeia-suprimentos"
+        aria-label="Cadeia de Suprimentos como Exemplo de Fluxo"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          Exemplo Prático: A Cadeia de Suprimentos (Supply Chain)
+        </h2>
+        <div class="bg-white p-6 rounded-lg shadow text-center">
+          <p class="text-lg text-slate-600 mb-6">
+            A cadeia de suprimentos é o exemplo perfeito da interdependência
+            entre os fluxos de materiais e de informação. Um não funciona sem o
+            outro.
+          </p>
+          <!-- Accessible, responsive SVG diagram for Supply Chain -->
+          <figure class="mx-auto rounded-lg w-full max-w-5xl not-prose">
+            <svg
+              viewBox="0 0 1240 420"
+              role="img"
+              aria-labelledby="scTitle scDesc"
+              width="100%"
+              height="auto"
+            >
+              <title id="scTitle">Fluxo da Cadeia de Suprimentos</title>
+              <desc id="scDesc">
+                Da esquerda para a direita: Fornecedor de Matéria-Prima, Fábrica
+                (Transformação), Distribuidor, Varejista e Cliente. Uma seta
+                sólida representa o fluxo de materiais indo para a direita. Uma
+                seta tracejada de mão dupla acima representa o fluxo de
+                informação bidirecional.
+              </desc>
+
+              <!-- ========== MARKERS (arrows) ========== -->
+              <!-- Solid arrowhead for material flow -->
+              <defs>
+                <marker
+                  id="arrow-solid"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="8"
+                  refY="5"
+                  orient="auto"
+                >
+                  <path d="M0,0 L0,10 L10,5 z" fill="#334155"></path>
+                </marker>
+                <!-- Hollow/outlined arrowhead for info flow (keeps visibility over shapes) -->
+                <marker
+                  id="arrow-outline"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="8"
+                  refY="5"
+                  orient="auto"
+                >
+                  <path
+                    d="M0,0 L0,10 L10,5 z"
+                    fill="#ffffff"
+                    stroke="#0ea5e9"
+                    stroke-width="2"
+                  ></path>
+                </marker>
+              </defs>
+
+              <!-- ========== LAYOUT CONSTANTS (for readability) ==========
+         Boxes: width=200, height=80; x: 40, 280, 520, 760, 1000; y=120
+         Lines connect centers or edges at y=160
+         Note: Coordinates are chosen to remain readable on mobile.
+    -->
+
+              <!-- ========== BOXES (entities) ========== -->
+              <!-- Supplier -->
+              <rect
+                x="40"
+                y="120"
+                width="200"
+                height="80"
+                rx="14"
+                fill="#e0f2fe"
+                stroke="#38bdf8"
+              />
+              <text
+                x="140"
+                y="155"
+                text-anchor="middle"
+                font-size="16"
+                fill="#0c4a6e"
+              >
+                Fornecedor
+              </text>
+              <text
+                x="140"
+                y="175"
+                text-anchor="middle"
+                font-size="12"
+                fill="#0c4a6e"
+              >
+                Matéria-Prima
+              </text>
+
+              <!-- Factory -->
+              <rect
+                x="280"
+                y="120"
+                width="200"
+                height="80"
+                rx="14"
+                fill="#ecfeff"
+                stroke="#06b6d4"
+              />
+              <text
+                x="380"
+                y="150"
+                text-anchor="middle"
+                font-size="16"
+                fill="#0e7490"
+              >
+                Fábrica
+              </text>
+              <text
+                x="380"
+                y="172"
+                text-anchor="middle"
+                font-size="12"
+                fill="#0e7490"
+              >
+                (Transformação)
+              </text>
+
+              <!-- Distributor -->
+              <rect
+                x="520"
+                y="120"
+                width="200"
+                height="80"
+                rx="14"
+                fill="#f0f9ff"
+                stroke="#7dd3fc"
+              />
+              <text
+                x="620"
+                y="165"
+                text-anchor="middle"
+                font-size="16"
+                fill="#0369a1"
+              >
+                Distribuidor
+              </text>
+
+              <!-- Retailer -->
+              <rect
+                x="760"
+                y="120"
+                width="200"
+                height="80"
+                rx="14"
+                fill="#fef9c3"
+                stroke="#f59e0b"
+              />
+              <text
+                x="860"
+                y="165"
+                text-anchor="middle"
+                font-size="16"
+                fill="#92400e"
+              >
+                Varejista
+              </text>
+
+              <!-- Customer -->
+              <rect
+                x="1000"
+                y="120"
+                width="200"
+                height="80"
+                rx="14"
+                fill="#f0fdf4"
+                stroke="#6ee7b7"
+              />
+              <text
+                x="1100"
+                y="165"
+                text-anchor="middle"
+                font-size="16"
+                fill="#065f46"
+              >
+                Cliente
+              </text>
+
+              <!-- ========== MATERIAL FLOW (solid, left->right) ========== -->
+              <!-- Solid arrows between box edges at y=160 -->
+              <!-- NOTE: Slight gaps keep arrows from overlapping box borders. -->
+              <line
+                x1="240"
+                y1="160"
+                x2="280"
+                y2="160"
+                stroke="#334155"
+                stroke-width="3"
+                marker-end="url(#arrow-solid)"
+              />
+              <line
+                x1="480"
+                y1="160"
+                x2="520"
+                y2="160"
+                stroke="#334155"
+                stroke-width="3"
+                marker-end="url(#arrow-solid)"
+              />
+              <line
+                x1="720"
+                y1="160"
+                x2="760"
+                y2="160"
+                stroke="#334155"
+                stroke-width="3"
+                marker-end="url(#arrow-solid)"
+              />
+              <line
+                x1="960"
+                y1="160"
+                x2="1000"
+                y2="160"
+                stroke="#334155"
+                stroke-width="3"
+                marker-end="url(#arrow-solid)"
+              />
+
+              <!-- ========== INFORMATION FLOW (dashed, bidirectional) ========== -->
+              <!-- Curved path above boxes with arrowheads on both ends -->
+              <!-- TIP: Keep stroke-dasharray readable and high contrast -->
+              <path
+                d="M 60 70 C 360 20, 880 20, 1180 70"
+                fill="none"
+                stroke="#0ea5e9"
+                stroke-width="3"
+                stroke-dasharray="10 8"
+                marker-start="url(#arrow-outline)"
+                marker-end="url(#arrow-outline)"
+              />
+
+              <!-- ========== LEGEND (bottom) ========== -->
+              <!-- Material flow legend -->
+              <line
+                x1="40"
+                y1="320"
+                x2="180"
+                y2="320"
+                stroke="#334155"
+                stroke-width="4"
+                marker-end="url(#arrow-solid)"
+              />
+              <text x="190" y="325" font-size="14" fill="#334155">
+                Fluxo de Materiais (sentido único)
+              </text>
+
+              <!-- Information flow legend -->
+              <line
+                x1="40"
+                y1="355"
+                x2="180"
+                y2="355"
+                stroke="#0ea5e9"
+                stroke-width="4"
+                stroke-dasharray="10 8"
+                marker-start="url(#arrow-outline)"
+                marker-end="url(#arrow-outline)"
+              />
+              <text x="190" y="360" font-size="14" fill="#0ea5e9">
+                Fluxo de Informação (mão dupla)
+              </text>
+            </svg>
+
+            <figcaption class="text-sm text-slate-500 mt-2">
+              Fluxo físico (sólido) segue o sentido fornecedor→cliente; o fluxo
+              de informação (tracejado) conecta todos bidirecionalmente.
+            </figcaption>
+          </figure>
+          <div class="prose prose-slate max-w-none lg:prose-lg text-left mt-6">
+            <ul>
+              <li>
+                O <strong>Fluxo de Materiais</strong> (o produto físico) move-se
+                numa direção: da matéria-prima ao cliente.
+              </li>
+              <li>
+                O <strong>Fluxo de Informação</strong> (pedidos, pagamentos,
+                rastreamento, feedback) move-se em
+                <strong>ambas as direções</strong>, coordenando toda a operação.
+                Um pedido do cliente (informação) inicia todo o fluxo de
+                materiais.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Metodologia Ativa -->
+      <section
+        id="metodologia-ativa"
+        aria-label="Metodologia Ativa: Estudo de Caso Amazon"
+        class="mb-12 callout callout-practice"
+      >
+        <h2 class="text-2xl font-bold mb-4">
+          <i class="fa-brands fa-amazon mr-2"></i>Estudo de Caso: A Máquina
+          Logística da Amazon
+        </h2>
+        <p class="mb-4">
+          Vamos usar o exemplo da Amazon para identificar os fluxos em ação. Em
+          grupo, discutam e mapeiem:
+        </p>
+        <div class="bg-white/50 p-4 rounded-md">
+          <ol class="list-decimal list-inside mt-2 space-y-2">
+            <li>
+              <strong>Fluxo de Informação Inicial:</strong> O que acontece no
+              sistema da Amazon quando você clica em "Comprar"? (Entrada de
+              informação).
+            </li>
+            <li>
+              <strong>Fluxo de Materiais no Armazém:</strong> Como a informação
+              do seu pedido se transforma num fluxo físico dentro do centro de
+              distribuição?
+            </li>
+            <li>
+              <strong>Fluxo de Informação Externo:</strong> Como o sistema da
+              Amazon se comunica com a transportadora (ambiente)? Qual
+              informação é trocada?
+            </li>
+            <li>
+              <strong>Feedback:</strong> Qual o papel do código de rastreamento
+              e da sua avaliação da entrega no sistema da Amazon?
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- CONCEITOS-CHAVE (adicionar após "Contexto Inicial") -->
+      <section
+        id="conceitos-chave"
+        aria-label="Conceitos-Chave"
+        class="mb-12 bg-white p-8 rounded-lg shadow"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🧭 Conceitos-chave
+        </h2>
+        <!-- Each term uses a compact card style -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="border border-slate-200 rounded-xl p-4">
+            <h3 class="font-bold text-slate-700">Throughput</h3>
+            <p class="text-slate-600 text-sm mt-1">
+              Taxa de saída do sistema (itens/unidade de tempo). Em logística,
+              pedidos despachados por hora.
+            </p>
+          </article>
+          <article class="border border-slate-200 rounded-xl p-4">
+            <h3 class="font-bold text-slate-700">Lead Time</h3>
+            <p class="text-slate-600 text-sm mt-1">
+              Tempo total “pedido→entrega”. Inclui esperas, filas e
+              processamento.
+            </p>
+          </article>
+          <article class="border border-slate-200 rounded-xl p-4">
+            <h3 class="font-bold text-slate-700">
+              WIP (Trabalho em Progresso)
+            </h3>
+            <p class="text-slate-600 text-sm mt-1">
+              Itens em processamento. Excesso de WIP aumenta filas e lead time.
+            </p>
+          </article>
+          <article class="border border-slate-200 rounded-xl p-4">
+            <h3 class="font-bold text-slate-700">Gargalo</h3>
+            <p class="text-slate-600 text-sm mt-1">
+              Etapa que limita o throughput do sistema. Otimizações fora do
+              gargalo têm pouco efeito.
+            </p>
+          </article>
+          <article class="border border-slate-200 rounded-xl p-4">
+            <h3 class="font-bold text-slate-700">OTIF / Fill Rate</h3>
+            <p class="text-slate-600 text-sm mt-1">
+              On-Time In-Full e taxa de atendimento. Medem eficácia do fluxo
+              fim-a-fim.
+            </p>
+          </article>
+          <article class="border border-slate-200 rounded-xl p-4">
+            <h3 class="font-bold text-slate-700">Feedback & Homeostase</h3>
+            <p class="text-slate-600 text-sm mt-1">
+              Loops que estabilizam (negativo) ou amplificam (positivo) o
+              comportamento do sistema.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SIPOC & VSM (colocar após "Cadeia de Suprimentos") -->
+      <section
+        id="sipoc-vsm"
+        aria-label="SIPOC e VSM"
+        class="mb-12 bg-white p-8 rounded-lg shadow"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          📋 SIPOC + Mini VSM
+        </h2>
+        <figure class="not-prose">
+          <!-- Accessible inline SVG diagram -->
+          <svg
+            viewBox="0 0 1000 280"
+            class="w-full"
+            role="img"
+            aria-labelledby="sipocTitle sipocDesc"
+          >
+            <title id="sipocTitle">Diagrama SIPOC + Mini VSM</title>
+            <desc id="sipocDesc">
+              Fornecedores, Entradas, Processo, Saídas, Clientes e tempos de
+              espera/processamento.
+            </desc>
+            <!-- Boxes -->
+            <!-- NOTE: Using basic shapes for clarity; labels are high-contrast -->
+            <rect
+              x="20"
+              y="20"
+              width="160"
+              height="80"
+              rx="12"
+              fill="#e0f2fe"
+              stroke="#38bdf8"
+            ></rect>
+            <text
+              x="100"
+              y="65"
+              text-anchor="middle"
+              font-size="16"
+              fill="#0c4a6e"
+            >
+              Fornecedores
+            </text>
+
+            <rect
+              x="200"
+              y="20"
+              width="160"
+              height="80"
+              rx="12"
+              fill="#ecfeff"
+              stroke="#06b6d4"
+            ></rect>
+            <text
+              x="280"
+              y="65"
+              text-anchor="middle"
+              font-size="16"
+              fill="#0e7490"
+            >
+              Entradas
+            </text>
+
+            <rect
+              x="380"
+              y="20"
+              width="240"
+              height="80"
+              rx="12"
+              fill="#f0f9ff"
+              stroke="#7dd3fc"
+            ></rect>
+            <text
+              x="500"
+              y="55"
+              text-anchor="middle"
+              font-size="16"
+              fill="#0369a1"
+            >
+              Processo
+            </text>
+            <text
+              x="500"
+              y="75"
+              text-anchor="middle"
+              font-size="12"
+              fill="#0369a1"
+            >
+              P1 → P2 → P3 (gargalo em P2)
+            </text>
+
+            <rect
+              x="640"
+              y="20"
+              width="160"
+              height="80"
+              rx="12"
+              fill="#f0fdf4"
+              stroke="#6ee7b7"
+            ></rect>
+            <text
+              x="720"
+              y="65"
+              text-anchor="middle"
+              font-size="16"
+              fill="#065f46"
+            >
+              Saídas
+            </text>
+
+            <rect
+              x="820"
+              y="20"
+              width="160"
+              height="80"
+              rx="12"
+              fill="#fef9c3"
+              stroke="#f59e0b"
+            ></rect>
+            <text
+              x="900"
+              y="65"
+              text-anchor="middle"
+              font-size="16"
+              fill="#92400e"
+            >
+              Clientes
+            </text>
+
+            <!-- Flow arrows -->
+            <line
+              x1="180"
+              y1="60"
+              x2="200"
+              y2="60"
+              stroke="#64748b"
+              stroke-width="2"
+              marker-end="url(#arrow)"
+            />
+            <line
+              x1="360"
+              y1="60"
+              x2="380"
+              y2="60"
+              stroke="#64748b"
+              stroke-width="2"
+              marker-end="url(#arrow)"
+            />
+            <line
+              x1="620"
+              y1="60"
+              x2="640"
+              y2="60"
+              stroke="#64748b"
+              stroke-width="2"
+              marker-end="url(#arrow)"
+            />
+            <line
+              x1="800"
+              y1="60"
+              x2="820"
+              y2="60"
+              stroke="#64748b"
+              stroke-width="2"
+              marker-end="url(#arrow)"
+            />
+
+            <!-- Mini VSM timing bars under the process -->
+            <rect x="380" y="130" width="70" height="14" fill="#94a3b8"></rect>
+            <text
+              x="415"
+              y="160"
+              text-anchor="middle"
+              font-size="12"
+              fill="#334155"
+            >
+              Espera 2m
+            </text>
+
+            <rect x="455" y="130" width="50" height="14" fill="#22c55e"></rect>
+            <text
+              x="480"
+              y="160"
+              text-anchor="middle"
+              font-size="12"
+              fill="#166534"
+            >
+              Proc. 1m
+            </text>
+
+            <rect x="510" y="130" width="90" height="14" fill="#94a3b8"></rect>
+            <text
+              x="555"
+              y="160"
+              text-anchor="middle"
+              font-size="12"
+              fill="#334155"
+            >
+              Espera 3m
+            </text>
+
+            <rect x="605" y="130" width="60" height="14" fill="#22c55e"></rect>
+            <text
+              x="635"
+              y="160"
+              text-anchor="middle"
+              font-size="12"
+              fill="#166534"
+            >
+              Proc. 1m
+            </text>
+
+            <!-- Arrow marker definition -->
+            <defs>
+              <marker
+                id="arrow"
+                markerWidth="8"
+                markerHeight="8"
+                refX="6"
+                refY="4"
+                orient="auto-start-reverse"
+              >
+                <path d="M0,0 L0,8 L8,4 z" fill="#64748b"></path>
+              </marker>
+            </defs>
+          </svg>
+          <figcaption class="text-sm text-slate-500 mt-2">
+            SIPOC para leitura sistêmica + Mini VSM destacando esperas (cinza) e
+            processamento (verde).
+          </figcaption>
+        </figure>
+        <div class="prose prose-slate max-w-none lg:prose-lg mt-6">
+          <ul>
+            <li>
+              <strong>Onde a informação vira ação?</strong> No gatilho do pedido
+              (ERP/WMS), que movimenta picking/packing (fluxo de materiais).
+            </li>
+            <li>
+              <strong>Como reduzir lead time?</strong> Diminuindo esperas
+              (filas), equilibrando WIP e aliviando o gargalo.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- QUICK ACTIVITY: 10–12 min -->
+      <div
+        class="mt-6 bg-white p-4 rounded-lg border border-slate-200 not-prose"
+      >
+        <h3 class="font-semibold text-slate-800 mb-2">
+          ⚡ Atividade Relâmpago (10–12 min)
+        </h3>
+        <ol class="list-decimal list-inside space-y-1 text-slate-700">
+          <li>
+            Marque no diagrama SIPOC onde um <em>dado</em> dispara uma
+            <em>ação física</em>.
+          </li>
+          <li>
+            Liste 2 pontos de espera e 1 gargalo provável. Sugira 1 métrica
+            (ex.: OTIF).
+          </li>
+          <li>
+            Explique em 2 linhas como um webhook (evento) pode reduzir o lead
+            time.
+          </li>
+        </ol>
+      </div>
+
+      <!-- RUBRICA TED (adicionar ao final da seção TED) -->
+      <div class="mt-6 not-prose">
+        <h3 class="font-semibold text-slate-800 mb-3">
+          📏 Rubrica de Avaliação (TED)
+        </h3>
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-sm border border-slate-200 rounded-lg">
+            <thead class="bg-slate-100 text-slate-700">
+              <tr>
+                <th class="px-4 py-2 text-left">Critério</th>
+                <th class="px-4 py-2 text-left">Excelente (2)</th>
+                <th class="px-4 py-2 text-left">Adequado (1)</th>
+                <th class="px-4 py-2 text-left">Insuficiente (0)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="px-4 py-2 font-medium">Correção do fluxo</td>
+                <td class="px-4 py-2">Sequência correta e completa</td>
+                <td class="px-4 py-2">Pequenos deslizes</td>
+                <td class="px-4 py-2">Etapas incorretas/omissões</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium">Integração info↔material</td>
+                <td class="px-4 py-2">Vínculos claros entre dados e ação</td>
+                <td class="px-4 py-2">Vínculos parciais</td>
+                <td class="px-4 py-2">Sem integração</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium">Clareza visual</td>
+                <td class="px-4 py-2">Legível, consistente</td>
+                <td class="px-4 py-2">Alguma confusão</td>
+                <td class="px-4 py-2">Confuso/incompleto</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 font-medium">Justificativa</td>
+                <td class="px-4 py-2">Justifica escolhas em 3–5 linhas</td>
+                <td class="px-4 py-2">Justifica parcialmente</td>
+                <td class="px-4 py-2">Sem justificativa</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- QUIZ COM PONTUAÇÃO (adicionar após o mini-quiz atual) -->
+      <section id="quiz-pontuado" class="mb-12 bg-white p-8 rounded-lg shadow">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🧪 Quiz Rápido (Pontuado)
+        </h2>
+
+        <!-- Use radio buttons for accessibility -->
+        <form id="quizForm" class="space-y-6">
+          <!-- Q1 -->
+          <fieldset class="border border-slate-200 rounded-lg p-4">
+            <legend class="font-semibold text-slate-700">
+              1) Se o WIP aumenta sem ampliar capacidade, o que tende a ocorrer?
+            </legend>
+            <label class="block mt-2"
+              ><input type="radio" name="q1" value="A" /> A) Throughput aumenta
+              proporcionalmente</label
+            >
+            <label class="block"
+              ><input type="radio" name="q1" value="B" /> B) Lead time tende a
+              aumentar</label
+            >
+            <label class="block"
+              ><input type="radio" name="q1" value="C" /> C) Gargalo
+              desaparece</label
+            >
+            <label class="block"
+              ><input type="radio" name="q1" value="D" /> D) OTIF aumenta
+              automaticamente</label
+            >
+            <label class="block"
+              ><input type="radio" name="q1" value="E" /> E) Nada muda</label
+            >
+          </fieldset>
+
+          <!-- Q2 -->
+          <fieldset class="border border-slate-200 rounded-lg p-4">
+            <legend class="font-semibold text-slate-700">
+              2) Em um sistema aberto, o que melhor representa feedback
+              negativo?
+            </legend>
+            <label class="block mt-2"
+              ><input type="radio" name="q2" value="A" /> A) Promoção viral que
+              aumenta demanda sem limite</label
+            >
+            <label class="block"
+              ><input type="radio" name="q2" value="B" /> B) Controle de estoque
+              que reduz compras quando há excesso</label
+            >
+            <label class="block"
+              ><input type="radio" name="q2" value="C" /> C) Falha em cascata na
+              rede</label
+            >
+            <label class="block"
+              ><input type="radio" name="q2" value="D" /> D) Automação que
+              duplica ordens</label
+            >
+            <label class="block"
+              ><input type="radio" name="q2" value="E" /> E) Atraso fixo em
+              transporte</label
+            >
+          </fieldset>
+
+          <!-- Q3 -->
+          <fieldset class="border border-slate-200 rounded-lg p-4">
+            <legend class="font-semibold text-slate-700">
+              3) OTIF mede principalmente:
+            </legend>
+            <label class="block mt-2"
+              ><input type="radio" name="q3" value="A" /> A) Utilização de
+              CPU</label
+            >
+            <label class="block"
+              ><input type="radio" name="q3" value="B" /> B) Entregas no prazo e
+              completas</label
+            >
+            <label class="block"
+              ><input type="radio" name="q3" value="C" /> C) Tamanho do
+              lote</label
+            >
+            <label class="block"
+              ><input type="radio" name="q3" value="D" /> D) Custos de
+              picking</label
+            >
+            <label class="block"
+              ><input type="radio" name="q3" value="E" /> E) Inventário
+              médio</label
+            >
+          </fieldset>
+
+          <!-- Q4 -->
+          <fieldset class="border border-slate-200 rounded-lg p-4">
+            <legend class="font-semibold text-slate-700">
+              4) RFID contribui para qual fluxo?
+            </legend>
+            <label class="block mt-2"
+              ><input type="radio" name="q4" value="A" /> A) Apenas
+              materiais</label
+            >
+            <label class="block"
+              ><input type="radio" name="q4" value="B" /> B) Informação, que
+              sincroniza materiais</label
+            >
+            <label class="block"
+              ><input type="radio" name="q4" value="C" /> C) Energia</label
+            >
+            <label class="block"
+              ><input type="radio" name="q4" value="D" /> D) Financeiro
+              apenas</label
+            >
+            <label class="block"
+              ><input type="radio" name="q4" value="E" /> E) Nenhum</label
+            >
+          </fieldset>
+
+          <!-- Q5 -->
+          <fieldset class="border border-slate-200 rounded-lg p-4">
+            <legend class="font-semibold text-slate-700">
+              5) Para reduzir lead time, qual prática tende a ajudar primeiro?
+            </legend>
+            <label class="block mt-2"
+              ><input type="radio" name="q5" value="A" /> A) Aumentar WIP sem
+              mudar capacidade</label
+            >
+            <label class="block"
+              ><input type="radio" name="q5" value="B" /> B) Atacar o
+              gargalo</label
+            >
+            <label class="block"
+              ><input type="radio" name="q5" value="C" /> C) Adicionar
+              aprovações manuais</label
+            >
+            <label class="block"
+              ><input type="radio" name="q5" value="D" /> D) Esconder
+              filas</label
+            >
+            <label class="block"
+              ><input type="radio" name="q5" value="E" /> E) Aumentar tamanho do
+              lote sempre</label
+            >
+          </fieldset>
+
+          <button
+            type="button"
+            id="submitQuiz"
+            class="mt-2 inline-flex items-center px-4 py-2 rounded-lg bg-sky-600 text-white hover:bg-sky-700"
+          >
+            Corrigir
+          </button>
+          <p
+            id="quizScore"
+            class="mt-3 font-semibold text-slate-700"
+            aria-live="polite"
+          ></p>
+        </form>
+      </section>
+
+      <script>
+        // Simple quiz grading logic (no external deps)
+        // NOTE: Keep answers centralized for maintainability.
+        const ANSWERS = { q1: "B", q2: "B", q3: "B", q4: "B", q5: "B" };
+
+        document.getElementById("submitQuiz")?.addEventListener("click", () => {
+          // Compute score by checking selected radio inputs
+          let score = 0;
+          let total = Object.keys(ANSWERS).length;
+
+          for (const key of Object.keys(ANSWERS)) {
+            const selected = document.querySelector(
+              `input[name="${key}"]:checked`
+            );
+            if (selected && selected.value === ANSWERS[key]) score++;
+          }
+
+          // Announce score and provide light feedback
+          const msg = `Você acertou ${score} de ${total}.`;
+          const feedback =
+            score === total
+              ? "Excelente! Entendimento sólido dos fluxos."
+              : score >= 3
+              ? "Bom! Reveja WIP/lead time e feedback."
+              : "Sugiro reler SIPOC/VSM e os conceitos-chave.";
+          const out = document.getElementById("quizScore");
+          if (out) out.textContent = `${msg} ${feedback}`;
+        });
+      </script>
+
+      <!-- GLOSSÁRIO E LEITURAS -->
+      <section
+        id="glossario-leituras"
+        aria-label="Glossário e Leituras"
+        class="mb-12 bg-slate-50 border border-slate-200 p-8 rounded-2xl"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          📑 Glossário & Leituras
+        </h2>
+        <details class="mb-4">
+          <summary>Glossário rápido</summary>
+          <ul class="list-disc list-inside text-slate-700 mt-3">
+            <li>
+              <strong>SIPOC:</strong>
+              Fornecedores-Entradas-Processo-Saídas-Clientes.
+            </li>
+            <li>
+              <strong>VSM:</strong> Mapeamento do Fluxo de Valor (tempo de
+              espera vs. processamento).
+            </li>
+            <li>
+              <strong>WMS/TMS/ERP:</strong> Sistemas que orquestram fluxos de
+              informação e materiais.
+            </li>
+          </ul>
+        </details>
+        <details>
+          <summary>Leituras curtas sugeridas</summary>
+          <ul class="list-disc list-inside text-slate-700 mt-3">
+            <li>
+              Cap. introdutórios de cadeias de suprimentos (qualquer manual de
+              logística).
+              <!-- Keep generic to avoid broken links -->
+            </li>
+            <li>
+              Capítulos sobre processos e métricas nos livros já citados (Stair
+              & Reynolds; Silva et al.).
+            </li>
+          </ul>
+        </details>
+      </section>
+
+      <!-- VÍDEOS RECOMENDADOS -->
+      <section
+        id="videos-recomendados"
+        aria-label="Vídeos para Fixação"
+        class="mb-12 bg-white p-8 rounded-lg shadow"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🎬 Vídeos para fixar o conteúdo
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Video 1: Supply Chain overview (PT-BR) -->
+          <figure class="not-prose">
+            <!-- Responsive 16:9 wrapper -->
+            <div class="relative w-full" style="padding-bottom: 56.25%">
+              <!-- NOTE: Accessible iframe with lazy loading and strict referrer policy -->
+              <iframe
+                class="absolute inset-0 w-full h-full rounded-lg"
+                src="https://www.youtube.com/embed/V8tJLKC2D4o"
+                title="Supply Chain: o que é e como funciona (fluxos de materiais e informação)"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              >
+              </iframe>
+            </div>
+            <figcaption class="text-sm text-slate-600 mt-2">
+              Cadeia de Suprimentos: conceitos, atores e a interdependência
+              entre <em>fluxo de materiais</em> e <em>fluxo de informação</em>.
+            </figcaption>
+            <!-- Fallback link if embed is blocked -->
+            <details class="mt-2">
+              <summary class="text-sky-700 hover:underline text-sm">
+                Problemas para carregar? Abrir no YouTube
+              </summary>
+              <a
+                class="text-sky-700 underline text-sm"
+                href="https://www.youtube.com/watch?v=V8tJLKC2D4o"
+                target="_blank"
+                rel="noopener"
+                >Assistir no YouTube</a
+              >
+            </details>
+          </figure>
+
+          <!-- Video 2: Feedback, entropia e homeostase na TGS (PT-BR) -->
+          <figure class="not-prose">
+            <div class="relative w-full" style="padding-bottom: 56.25%">
+              <!-- NOTE: Video focuses on feedback (retroação), homeostase e entropia na visão sistêmica -->
+              <iframe
+                class="absolute inset-0 w-full h-full rounded-lg"
+                src="https://www.youtube.com/embed/8pOWFeVPZ6o"
+                title="Retroação (feedback), entropia e homeostase na Teoria Geral de Sistemas"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              >
+              </iframe>
+            </div>
+            <figcaption class="text-sm text-slate-600 mt-2">
+              Retroalimentação (feedback) e homeostase: como
+              <em>loops de informação</em> estabilizam (ou amplificam) o
+              comportamento do sistema.
+            </figcaption>
+            <details class="mt-2">
+              <summary class="text-sky-700 hover:underline text-sm">
+                Problemas para carregar? Abrir no YouTube
+              </summary>
+              <a
+                class="text-sky-700 underline text-sm"
+                href="https://www.youtube.com/watch?v=8pOWFeVPZ6o"
+                target="_blank"
+                rel="noopener"
+                >Assistir no YouTube</a
+              >
+            </details>
+          </figure>
+        </div>
+
+        <!-- Small usage tips for students -->
+        <p class="text-sm text-slate-500 mt-6">
+          Dica: ative as legendas e ajuste a velocidade (⚙️) para anotar
+          definições de <em>lead time</em>, <em>WIP</em>, <em>gargalo</em> e a
+          relação <em>informação ↔ materiais</em>.
+        </p>
+      </section>
+
+      <!-- Seção: Tarefa (TED) -->
+      <section
+        id="tarefa"
+        aria-label="Tarefa da Aula"
+        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📝 Tarefa (TED): Estudo Orientado de Fluxograma
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow not-prose">
+          <p class="text-lg leading-relaxed mb-4">
+            Para a próxima aula, a sua tarefa será aplicar o conhecimento sobre
+            fluxos a um processo organizacional.
+          </p>
+          <div class="bg-slate-50 p-4 rounded-md">
+            <p class="font-semibold">Instruções:</p>
+            <ol class="list-decimal list-inside mt-2 space-y-2">
+              <li>
+                Acesse o AVA da disciplina e faça o download do arquivo PDF
+                "TED_Aula_6_Fluxograma".
+              </li>
+              <li>
+                O arquivo contém um fluxograma que representa um processo de
+                transformação organizacional (ex: processo de matrícula de um
+                aluno), mas com algumas partes em branco.
+              </li>
+              <li>
+                Sua tarefa é preencher os espaços em branco, identificando as
+                etapas corretas do fluxo de informação e/ou materiais.
+              </li>
+              <li>
+                Salve o PDF preenchido e submeta-o na atividade correspondente
+                no AVA.
+              </li>
+            </ol>
+          </div>
+          <p class="mt-4 font-semibold">
+            <strong>Entrega:</strong> Individual, via upload do PDF preenchido
+            no AVA.
+          </p>
+        </div>
+      </section>
+
+      <!-- Mini-Quiz de Autoavaliação -->
+      <section id="quiz" class="mb-12" aria-label="Quiz de Autoavaliação">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🧐 Mini-Quiz de Autoavaliação
+        </h2>
+        <div class="space-y-4">
+          <details>
+            <summary>
+              1. Numa cadeia de suprimentos, o código de rastreamento de um
+              pedido é um exemplo de qual fluxo?
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Fluxo de Informação. Ele é um dado
+                que representa e permite monitorizar o fluxo de materiais (o
+                pacote físico).
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              2. A "Transformação Digital" nas empresas foca principalmente em
+              otimizar qual dos fluxos?
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> O Fluxo de Informação. A
+                transformação digital usa a tecnologia para tornar o fluxo de
+                informação mais rápido, inteligente e automatizado, o que, por
+                consequência, otimiza o fluxo de materiais e a tomada de
+                decisão.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              3. Verdadeiro ou Falso: Um organograma representa apenas a
+              hierarquia de poder numa empresa.
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Falso. Além da hierarquia, um
+                organograma representa o fluxo formal de comunicação e
+                autoridade, que é uma forma de fluxo de informação.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Seção: Bibliografia -->
+      <section
+        id="bibliografia"
+        aria-label="Bibliografia"
+        class="prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📚 Bibliografia
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow space-y-4 not-prose">
+          <p>
+            <strong>SILVA, K.C.N.D.; BARBOSA, C.; JUNIOR, R.S.C.</strong>
+            <em>Sistemas de informações gerenciais.</em> Porto Alegre: Grupo A,
+            2019.
+          </p>
+          <p>
+            <strong>STAIR, Ralph M.; REYNOLDS, George W.</strong>
+            <em>Princípios de sistemas de informação.</em> 14. ed. São Paulo:
+            Cengage Learning, 2021.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-800 text-white mt-12" role="contentinfo">
+      <div class="container mx-auto px-6 py-4 text-center">
+        <p>&copy; 2025 - Disciplina de Teoria Geral de Sistemas</p>
+        <p class="text-sm text-slate-400">
+          Material desenvolvido para o curso de Sistemas de Informação.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

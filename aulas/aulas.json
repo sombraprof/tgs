@@ -47,5 +47,26 @@
     "descricao": "Estudo da homeostase e da autorregulação em organizações como sistemas abertos: loops de feedback (negativo e positivo), feedforward e alostase; modelo de controle (setpoint–sensor–controlador–atuador), indicadores (leading/lagging) e faixa de histerese. Inclui estudo de caso, atividades guiadas e vídeos para fixação.",
     "arquivo": "aula7.html",
     "ativo": true
+  },
+  {
+    "id": "aula8",
+    "titulo": "Aula 8: Modelagem Sistêmica e Representação Gráfica (Fluxogramas e DFDs)",
+    "descricao": "Fundamentos de modelagem sistêmica com foco em fluxogramas (fluxo de controle) e DFDs (fluxo de dados): diferenças, símbolos, boas práticas, níveis (contexto, 0 e 1) e balanceamento. Construção guiada de exemplo (processo de matrícula), análise de erros comuns, checklist e rubrica de qualidade. Inclui vídeos tutoriais embutidos, mini-quiz diagnóstico e TED: elaboração de um fluxograma ou DFD nível 0 (matrícula, delivery ou clínica) em ferramenta digital.",
+    "arquivo": "aula8.html",
+    "ativo": true
+  },
+  {
+    "id": "aula9",
+    "titulo": "Aula 9: Sistemas de Informação e seu Papel nas Organizações",
+    "descricao": "Definição de Sistemas de Informação (SI) e discussão de seu papel operacional, tático e estratégico nas organizações. Conceitos centrais, funções típicas (captura, processamento, armazenamento e distribuição de dados), exemplos por categoria (ERP, CRM, SCM, BI e aplicativos do cotidiano) e debate orientado com casos reais (SAP, TOTVS, Magalu, Amazon). Inclui vídeos curtos embutidos, quiz rápido opcional e TED: fórum reflexivo no AVA com comentário mínimo a um colega.",
+    "arquivo": "aula9.html",
+    "ativo": true
+  },
+  {
+    "id": "aula10",
+    "titulo": "Aula 10: Níveis dos Sistemas de Informação (Operacional, Tático e Estratégico)",
+    "descricao": "Análise da pirâmide organizacional e dos três níveis de Sistemas de Informação: Operacional (TPS, ERP, OLTP), Tático (MIS, BI, Analytics) e Estratégico (ESS, dashboards executivos). Estudo do horizonte temporal, granularidade dos dados e tipos de decisão em cada nível. Comparação OLTP vs OLAP, casos reais (logística, marketing e decisões de diretoria), tabela comparativa, vídeos explicativos e TED: preenchimento de tabela com exemplos de SI por nível.",
+    "arquivo": "aula10.html",
+    "ativo": true
   }
 ]

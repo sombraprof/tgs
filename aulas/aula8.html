@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TGS - Aula 8: Modelagem Sistêmica e Representação Gráfica</title>
+    <meta
+      name="description"
+      content="Aula 8 - Modelagem sistêmica e uso de ferramentas gráficas (fluxogramas e DFDs) para representar sistemas organizacionais."
+    />
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      /* Base font + background (Inter + slate-50) */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc;
+      }
+
+      /* Callouts */
+      .callout {
+        border-left-width: 4px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.5rem;
+      }
+      .callout-info {
+        background-color: #f0f9ff;
+        border-color: #7dd3fc;
+        color: #0c4a6e;
+      }
+      .callout-practice {
+        background-color: #f0fdf4;
+        border-color: #6ee7b7;
+        color: #065f46;
+      }
+      .callout-warn {
+        background-color: #fff7ed;
+        border-color: #fdba74;
+        color: #7c2d12;
+      }
+
+      /* Quiz details */
+      details > summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0.75rem;
+        background-color: #f1f5f9;
+        border-radius: 0.375rem;
+        transition: background-color 0.2s;
+      }
+      details > summary:hover {
+        background-color: #e2e8f0;
+      }
+      details[open] > summary {
+        background-color: #e2e8f0;
+      }
+      .quiz-answer {
+        padding: 1rem;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-top: none;
+        border-radius: 0 0 0.375rem 0.375rem;
+      }
+
+      /* Accessible focus for interactive elements */
+      a:focus,
+      button:focus,
+      summary:focus {
+        outline: 3px solid #38bdf8;
+        outline-offset: 2px;
+      }
+
+      /* Simple table style helpers */
+      .tbl th,
+      .tbl td {
+        border-bottom: 1px solid #e2e8f0;
+        padding: 0.5rem 0.75rem;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-sky-800">
+          Teoria Geral de Sistemas (TGS)
+        </h1>
+        <p class="text-xl text-slate-600 mt-2">
+          Aula 8: Modelagem Sistêmica e Representação Gráfica
+        </p>
+        <!-- Class metadata row -->
+        <div
+          class="mt-4 flex flex-wrap gap-3 text-sm text-slate-500"
+          aria-label="Metadados da aula"
+        >
+          <span
+            class="inline-flex items-center gap-2 bg-slate-100 px-3 py-1 rounded-full"
+          >
+            <i class="fa-solid fa-layer-group"></i> Unidade II – A organização
+            como um sistema aberto
+          </span>
+          <span
+            class="inline-flex items-center gap-2 bg-slate-100 px-3 py-1 rounded-full"
+          >
+            <i class="fa-solid fa-clock"></i> Carga Horária (prevista): Teórica
+            1h • Prática 1h • Extensão 0h
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="container mx-auto px-6 py-10">
+      <!-- Plano da Aula -->
+      <section
+        id="plano-aula"
+        aria-label="Plano da Aula"
+        class="mb-12 bg-sky-50 border border-sky-200 p-8 rounded-2xl shadow-lg"
+      >
+        <h2 class="text-3xl font-bold text-sky-700 mb-6 text-center">
+          Plano da Aula
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <!-- Conteúdo e Objetivo -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
+          >
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+            </h3>
+            <p class="font-bold text-slate-700">
+              Unidade II – A organização como um sistema aberto
+            </p>
+            <p class="text-slate-600 mt-1">
+              Modelagem sistêmica; representação gráfica e simbólica de sistemas
+              organizacionais.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO ESPECÍFICO
+            </h3>
+            <p class="text-slate-600">
+              Compreender e aplicar ferramentas de modelagem sistêmica para
+              representar o funcionamento de sistemas organizacionais de forma
+              clara e estruturada.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA E RECURSOS
+            </h3>
+            <p class="text-slate-600">
+              Aula expositiva com demonstrações práticas de diagramas e mapas
+              sistêmicos, com uso de exemplos reais (quadro/slide + ferramenta
+              digital).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Objetos de Aprendizagem -->
+      <section
+        id="objetos-aprendizagem"
+        class="mb-12 bg-white p-8 rounded-lg shadow"
+      >
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          🎯 Ao final desta aula, você será capaz de:
+        </h2>
+        <ul class="list-disc list-inside space-y-2 text-slate-700">
+          <li>
+            Diferenciar <strong>fluxo de controle</strong> (Fluxograma) de
+            <strong>fluxo de dados</strong> (DFD).
+          </li>
+          <li>
+            Produzir um <strong>Fluxograma</strong> simples e um
+            <strong>DFD Nível 0</strong> corretos e legíveis.
+          </li>
+          <li>
+            Aplicar <strong>regras de níveis e balanceamento</strong> ao
+            decompor DFDs.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Pergunta Norteadora -->
+      <section
+        id="pergunta-norteadora"
+        aria-label="Pergunta Norteadora"
+        class="mb-12 callout callout-info"
+      >
+        <h3 class="font-bold text-lg mb-2">
+          <i class="fa-solid fa-question-circle mr-2"></i>Pergunta Norteadora
+        </h3>
+        <p>
+          Se tivesse de desenhar o fluxo de um pedido no iFood, do seu clique
+          até a entrega, você usaria <strong>fluxograma</strong> ou
+          <strong>DFD</strong>? Por quê? Quais símbolos representariam você, o
+          restaurante, o entregador e os <em>dados</em> trocados?
+        </p>
+      </section>
+
+      <!-- Contexto -->
+      <section
+        id="contexto"
+        aria-label="Contexto Inicial"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          🎨 Traduzindo a Realidade: O Poder da Modelagem
+        </h2>
+        <p>
+          Um bom modelo é como um mapa: simplifica o território para destacar o
+          essencial, permitindo que gestores, usuários e desenvolvedores
+          compartilhem uma visão comum. Modelos diferentes atendem perguntas
+          diferentes.
+        </p>
+        <div class="callout callout-warn">
+          <strong>Mapa ≠ Território:</strong> DFDs são lógico-funcionais (sem
+          tecnologia específica). Fluxogramas mostram ordem/decisão, não
+          <em>o que</em> circula de dados entre fronteiras.
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- FUNDAMENTOS – FLUXOGRAMAS                                           -->
+      <!-- Place BEFORE the "Ferramentas Essenciais" section                    -->
+      <!-- =================================================================== -->
+      <section
+        id="fundamentos-fluxograma"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          🧭 Fundamentos: Fluxogramas (Flowcharts)
+        </h2>
+        <p>
+          O fluxograma é um <strong>modelo de fluxo de controle</strong>:
+          descreve a <em>sequência</em> de etapas e as <em>decisões</em> de um
+          processo. É ideal para algoritmos, procedimentos e regras de negócio
+          em que importa o <strong>“o que vem a seguir?”</strong>.
+        </p>
+
+        <!-- NOTE (EN): Best practices as a compact checklist -->
+        <div class="callout callout-info">
+          <h3 class="font-semibold">Boas práticas de notação</h3>
+          <ul class="list-disc list-inside">
+            <li>
+              <strong>Início/Fim</strong> (elipses) claros; um ponto de entrada
+              e saída do processo.
+            </li>
+            <li>
+              <strong>Processos</strong> (retângulos) nomeados com
+              <strong>verbo + objeto</strong> (ex.: “Validar Pedido”).
+            </li>
+            <li>
+              <strong>Decisões</strong> (losangos) com saídas
+              <em>rotuladas</em> (“Sim/Não”).
+            </li>
+            <li>
+              Fluxo preferencial <strong>topo→baixo</strong> ou
+              <strong>esquerda→direita</strong>; evite cruzamento de setas.
+            </li>
+            <li>
+              Use <strong>conectores</strong> se o diagrama ficar longo;
+              mantenha a <strong>granularidade</strong> consistente.
+            </li>
+          </ul>
+        </div>
+
+        <!-- NOTE (EN): Small, concrete example in prose -->
+        <h3>Microexemplo (atendimento de clínica)</h3>
+        <p>
+          <em>Início → Recepcionar Paciente → Verificar Cadastro?</em> →
+          <strong>Sim</strong>: <em>Confirmar Dados</em> →
+          <em>Encaminhar para Triagem</em> → <em>Fim</em> •
+          <strong>Não</strong>: <em>Realizar Cadastro</em> →
+          <em>Confirmar Dados</em> …
+        </p>
+
+        <p class="text-slate-600 text-sm">
+          Referências de símbolos e uso prático são úteis para padronizar (ex.:
+          guias de símbolos e de “como desenhar” com regras de layout).
+          <!-- Sources cited separately in the chat -->
+        </p>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- FUNDAMENTOS – DFD                                                   -->
+      <!-- =================================================================== -->
+      <section
+        id="fundamentos-dfd"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          📡 Fundamentos: Diagrama de Fluxo de Dados (DFD)
+        </h2>
+        <p>
+          O DFD modela o <strong>fluxo de informações</strong> entre
+          <em>processos</em>, <em>entidades externas</em> e
+          <em>armazenamentos</em>. Responde a
+          <strong>“de onde vêm e para onde vão os dados?”</strong>. É uma visão
+          <strong>lógica</strong> (não tecnológica) do sistema.
+        </p>
+
+        <div class="grid lg:grid-cols-3 gap-6 not-prose">
+          <!-- NOTE (EN): Cards summarizing the four primitives -->
+          <div class="border rounded-xl p-5">
+            <h3 class="font-bold text-slate-700 mb-1">Entidade Externa</h3>
+            <p class="text-slate-700 text-sm">
+              Origem/destino de dados fora da fronteira (ex.: Cliente, Sistema
+              Financeiro).
+            </p>
+          </div>
+          <div class="border rounded-xl p-5">
+            <h3 class="font-bold text-slate-700 mb-1">Processo</h3>
+            <p class="text-slate-700 text-sm">
+              Transforma dados (nomeie com <strong>verbo + objeto</strong>, ex.:
+              “Emitir Boleto”).
+            </p>
+          </div>
+          <div class="border rounded-xl p-5">
+            <h3 class="font-bold text-slate-700 mb-1">Armazenamento</h3>
+            <p class="text-slate-700 text-sm">
+              Dados persistidos (ex.: Registros de Alunos, Vagas Disponíveis).
+            </p>
+          </div>
+        </div>
+
+        <div class="callout callout-info mt-6">
+          <h3 class="font-semibold">Regras essenciais</h3>
+          <ul class="list-disc list-inside">
+            <li>
+              Nomeie <strong>todos os fluxos</strong> com
+              <strong>substantivos</strong> (ex.: “Dados de Inscrição”).
+            </li>
+            <li>
+              Evite <strong>Entidade↔Entidade</strong> e
+              <strong>Store↔Store</strong> diretos; <em>sempre</em> passe por um
+              <strong>Processo</strong>.
+            </li>
+            <li>
+              Cada <strong>Processo</strong> possui
+              <strong>≥1 entrada</strong> e <strong>≥1 saída</strong>.
+            </li>
+            <li>
+              Mantenha coerência de nomes entre níveis (ver “Níveis e
+              Balanceamento” abaixo).
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="mt-6">Níveis e Balanceamento</h3>
+        <p>
+          Inicie pelo <strong>Diagrama de Contexto</strong> (visão macro do
+          sistema e suas entidades), detalhe em
+          <strong>Nível 0</strong> (processos principais) e, quando necessário,
+          decomponha em <strong>Nível 1</strong> (subprocessos). O
+          <strong>balanceamento</strong> garante que entradas/saídas vistas num
+          nível <em>reapareçam</em> (de forma somada ou decomposta) nos níveis
+          inferiores — sem “criar” ou “sumir” dados.
+        </p>
+
+        <!-- NOTE (EN): Quick example in prose -->
+        <h4 class="font-semibold mt-4">Microexemplo (matrícula)</h4>
+        <p>
+          <em>Contexto:</em> Aluno ↔ <strong>Sistema de Matrícula</strong> ↔
+          Financeiro. <em>Nível 0:</em> “Processar Matrícula” recebe
+          <em>Dados</em>, consulta <em>Vagas</em>, grava <em>Registros</em>,
+          envia <em>Confirmação</em> ao Aluno e <em>Dados de Pagamento</em> ao
+          Financeiro. <em>Nível 1:</em> “Processar Matrícula” se decompõe em
+          <em>Validar Documentos</em>, <em>Checar Elegibilidade</em>,
+          <em>Confirmar Vaga</em>.
+        </p>
+
+        <p class="text-slate-600 text-sm">
+          Há diferentes estilos de notação (ex.:
+          <strong>Yourdon/DeMarco</strong> e
+          <strong>Gane &amp; Sarson</strong>); mudam os símbolos de
+          processo/store, mas a <em>semântica</em> permanece.
+          <!-- Sources cited separately in the chat -->
+        </p>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- QUANDO USAR O QUÊ + ERROS COMUNS                                   -->
+      <!-- =================================================================== -->
+      <section
+        id="quando-usar-erros"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          🔀 Quando usar Fluxograma vs. DFD (e erros comuns)
+        </h2>
+
+        <!-- NOTE (EN): A concise bullets block to aid decision -->
+        <div class="grid lg:grid-cols-2 gap-6 not-prose">
+          <div class="border rounded-xl p-5">
+            <h3 class="font-bold text-slate-700 mb-2">
+              Use Fluxograma quando…
+            </h3>
+            <ul class="list-disc list-inside text-slate-700">
+              <li>
+                há <strong>regras de decisão</strong> e
+                <strong>ordem de passos</strong> importantes;
+              </li>
+              <li>
+                precisa explicar um procedimento a alguém (ex.:
+                <em>triagem</em> na clínica);
+              </li>
+              <li>
+                vai programar um algoritmo e quer validar a lógica com o time.
+              </li>
+            </ul>
+          </div>
+          <div class="border rounded-xl p-5">
+            <h3 class="font-bold text-slate-700 mb-2">Use DFD quando…</h3>
+            <ul class="list-disc list-inside text-slate-700">
+              <li>
+                precisa definir <strong>fronteiras</strong> do sistema e
+                <strong>interfaces</strong> com externos;
+              </li>
+              <li>
+                deseja mapear <strong>o que circula</strong> (dados) e
+                <strong>onde persiste</strong> (stores);
+              </li>
+              <li>
+                vai elicitar requisitos lógicos antes de telas/tecnologia.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout callout-warn mt-6">
+          <h3 class="font-semibold">Erros comuns (e como evitar)</h3>
+          <ul class="list-disc list-inside">
+            <li>
+              <strong>DFD com decisão “Sim/Não”</strong>: decisões são do
+              <em>fluxograma</em>; no DFD, foque no <strong>que</strong> flui
+              (dados).
+            </li>
+            <li>
+              <strong>Entidade ↔ Store direto</strong>: sempre intermedie por
+              <strong>Processo</strong> (transformação/validação).
+            </li>
+            <li>
+              <strong>Desbalanceamento</strong> entre níveis: preserve
+              entradas/saídas ao decompor.
+            </li>
+            <li>
+              <strong>Rotulagem fraca</strong>: fluxos devem ter
+              <strong>substantivos</strong> (“Solicitação”, “Comprovante”), e
+              processos <strong>verbo+objeto</strong>.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Ferramentas de Modelagem -->
+      <section
+        id="ferramentas-modelagem"
+        aria-label="Principais Ferramentas de Modelagem"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          Ferramentas Essenciais
+        </h2>
+        <div class="space-y-8">
+          <!-- Fluxograma -->
+          <article class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold text-slate-700 mb-3">
+              <i class="fa-solid fa-sitemap text-sky-600 mr-3"></i>Fluxogramas
+              (Flowcharts)
+            </h3>
+            <p class="text-lg text-slate-600 mb-4">
+              Foco na <strong>sequência lógica</strong> de um processo.
+              Responde: <em>o que acontece em seguida?</em> Útil para algoritmos
+              e regras de negócio.
+            </p>
+
+            <!-- Inline SVG: simple checkout flowchart -->
+            <!-- NOTE (EN): Minimal, accessible SVG example (start -> process -> decision -> outputs). -->
+            <div class="w-full overflow-x-auto">
+              <svg
+                role="img"
+                aria-label="Fluxograma de checkout em e-commerce"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 920 220"
+                class="mx-auto w-full max-w-4xl"
+              >
+                <desc>
+                  Exemplo: Início → Selecionar Itens → Decisão: Tem Cadastro? →
+                  Sim: Login → Pagamento → Fim. Não: Criar Conta → Pagamento →
+                  Fim.
+                </desc>
+                <!-- defs -->
+                <defs>
+                  <marker
+                    id="arrow"
+                    markerWidth="10"
+                    markerHeight="10"
+                    refX="9"
+                    refY="3"
+                    orient="auto"
+                  >
+                    <path d="M0,0 L10,3 L0,6 Z"></path>
+                  </marker>
+                  <style>
+                    .node {
+                      fill: #ffffff;
+                      stroke: #0ea5e9;
+                      stroke-width: 2;
+                    }
+                    .text {
+                      font: 600 12px Inter, sans-serif;
+                      fill: #0f172a;
+                    }
+                    .edge {
+                      stroke: #334155;
+                      stroke-width: 2;
+                      fill: none;
+                      marker-end: url(#arrow);
+                    }
+                  </style>
+                </defs>
+
+                <!-- Nodes -->
+                <rect
+                  class="node"
+                  rx="20"
+                  ry="20"
+                  x="20"
+                  y="20"
+                  width="140"
+                  height="40"
+                ></rect>
+                <text class="text" x="90" y="45" text-anchor="middle">
+                  Início
+                </text>
+
+                <rect
+                  class="node"
+                  x="200"
+                  y="20"
+                  width="180"
+                  height="40"
+                ></rect>
+                <text class="text" x="290" y="45" text-anchor="middle">
+                  Selecionar Itens
+                </text>
+
+                <polygon
+                  class="node"
+                  points="450,40 490,20 530,40 490,60"
+                ></polygon>
+                <text class="text" x="490" y="45" text-anchor="middle">
+                  Cadastro?
+                </text>
+
+                <rect class="node" x="600" y="0" width="140" height="40"></rect>
+                <text class="text" x="670" y="25" text-anchor="middle">
+                  Login
+                </text>
+
+                <rect
+                  class="node"
+                  x="600"
+                  y="80"
+                  width="140"
+                  height="40"
+                ></rect>
+                <text class="text" x="670" y="105" text-anchor="middle">
+                  Criar Conta
+                </text>
+
+                <rect
+                  class="node"
+                  x="780"
+                  y="40"
+                  width="120"
+                  height="40"
+                ></rect>
+                <text class="text" x="840" y="65" text-anchor="middle">
+                  Pagamento
+                </text>
+
+                <rect
+                  class="node"
+                  rx="20"
+                  ry="20"
+                  x="780"
+                  y="140"
+                  width="120"
+                  height="40"
+                ></rect>
+                <text class="text" x="840" y="165" text-anchor="middle">
+                  Fim
+                </text>
+
+                <!-- Edges -->
+                <line class="edge" x1="160" y1="40" x2="200" y2="40"></line>
+                <line class="edge" x1="380" y1="40" x2="450" y2="40"></line>
+                <path class="edge" d="M530,40 C560,40 570,20 600,20"></path>
+                <text class="text" x="565" y="15">Sim</text>
+                <path class="edge" d="M490,60 C490,90 600,90 600,100"></path>
+                <text class="text" x="505" y="85">Não</text>
+                <path class="edge" d="M740,20 C760,20 760,60 780,60"></path>
+                <path class="edge" d="M740,100 C760,100 760,60 780,60"></path>
+                <path class="edge" d="M840,80 C840,100 840,120 840,140"></path>
+              </svg>
+            </div>
+          </article>
+
+          <!-- DFD -->
+          <article class="p-6 bg-white rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold text-slate-700 mb-3">
+              <i class="fa-solid fa-database text-purple-600 mr-3"></i>Diagrama
+              de Fluxo de Dados (DFD)
+            </h3>
+            <p class="text-lg text-slate-600 mb-4">
+              Foco no <strong>fluxo de informações</strong> entre processos,
+              entidades externas e armazenamentos. Responde:
+              <em>de onde vêm e para onde vão os dados?</em>
+            </p>
+
+            <!-- Inline SVG: simple DFD level 0 -->
+            <!-- NOTE (EN): Minimal DFD example (Aluno -> Processo -> BD -> Financeiro). -->
+            <div class="w-full overflow-x-auto">
+              <svg
+                role="img"
+                aria-label="DFD Nível 0 do processo de matrícula"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 920 320"
+                class="mx-auto w-full max-w-4xl"
+              >
+                <desc>
+                  Exemplo: Entidade Aluno envia Dados e Documentos para Processo
+                  Processar Matrícula; Processo consulta Vagas e grava Registros
+                  de Alunos; devolve Confirmação ao Aluno e envia Dados de
+                  Pagamento ao Financeiro.
+                </desc>
+                <defs>
+                  <marker
+                    id="arrow2"
+                    markerWidth="10"
+                    markerHeight="10"
+                    refX="9"
+                    refY="3"
+                    orient="auto"
+                  >
+                    <path d="M0,0 L10,3 L0,6 Z"></path>
+                  </marker>
+                  <style>
+                    .ent {
+                      fill: #ffffff;
+                      stroke: #a78bfa;
+                      stroke-width: 2;
+                    }
+                    .proc {
+                      fill: #ffffff;
+                      stroke: #0ea5e9;
+                      stroke-width: 2;
+                    }
+                    .store {
+                      fill: #ffffff;
+                      stroke: #22c55e;
+                      stroke-width: 2;
+                    }
+                    .edge {
+                      stroke: #1f2937;
+                      stroke-width: 2;
+                      fill: none;
+                      marker-end: url(#arrow2);
+                    }
+                    .text {
+                      font: 600 12px Inter, sans-serif;
+                      fill: #0f172a;
+                    }
+                    .cap {
+                      font: 600 11px Inter, sans-serif;
+                      fill: #334155;
+                    }
+                  </style>
+                </defs>
+
+                <rect class="ent" x="20" y="40" width="120" height="60"></rect>
+                <text class="text" x="80" y="75" text-anchor="middle">
+                  Aluno
+                </text>
+
+                <circle class="proc" cx="460" cy="70" r="60"></circle>
+                <text class="text" x="460" y="65" text-anchor="middle">
+                  Processar
+                </text>
+                <text class="text" x="460" y="82" text-anchor="middle">
+                  Matrícula
+                </text>
+
+                <rect
+                  class="store"
+                  x="760"
+                  y="40"
+                  width="140"
+                  height="60"
+                  rx="4"
+                  ry="4"
+                ></rect>
+                <text class="text" x="830" y="65" text-anchor="middle">
+                  Registros de
+                </text>
+                <text class="text" x="830" y="82" text-anchor="middle">
+                  Alunos
+                </text>
+
+                <rect
+                  class="store"
+                  x="760"
+                  y="140"
+                  width="140"
+                  height="60"
+                  rx="4"
+                  ry="4"
+                ></rect>
+                <text class="text" x="830" y="165" text-anchor="middle">
+                  Vagas
+                </text>
+                <text class="text" x="830" y="182" text-anchor="middle">
+                  Disponíveis
+                </text>
+
+                <rect class="ent" x="20" y="200" width="120" height="60"></rect>
+                <text class="text" x="80" y="235" text-anchor="middle">
+                  Financeiro
+                </text>
+
+                <path class="edge" d="M140,70 C240,70 260,70 400,70"></path>
+                <text class="cap" x="220" y="60">Dados + Documentos</text>
+
+                <path class="edge" d="M520,70 C600,70 640,70 760,70"></path>
+                <text class="cap" x="620" y="60">Gravar/Atualizar</text>
+
+                <path class="edge" d="M420,110 C320,180 220,210 140,230"></path>
+                <text class="cap" x="260" y="190">Dados de Pagamento</text>
+
+                <path class="edge" d="M760,170 C640,170 600,140 520,110"></path>
+                <text class="cap" x="640" y="155">Consulta Vagas</text>
+
+                <path class="edge" d="M400,70 C260,70 200,70 140,70"></path>
+                <text class="cap" x="220" y="90">Confirmação</text>
+              </svg>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Legenda de Símbolos -->
+      <section id="legenda" class="mb-12 bg-white p-8 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          🗂️ Legenda de Símbolos
+        </h2>
+
+        <!-- Flowchart legend -->
+        <h3 class="text-lg font-semibold text-slate-700 mb-2">Fluxograma</h3>
+        <div class="overflow-x-auto">
+          <table class="tbl w-full text-sm">
+            <thead class="text-slate-600">
+              <tr>
+                <th>Ícone</th>
+                <th>Nome</th>
+                <th>Uso típico</th>
+                <th>Rotulagem</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span
+                    class="inline-block px-3 py-1 rounded-full border border-sky-400"
+                    >Elipse</span
+                  >
+                </td>
+                <td>Início / Fim</td>
+                <td>Marca início ou término do fluxo</td>
+                <td>Substantivo curto (ex.: “Início”, “Fim”)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span
+                    class="inline-block px-3 py-1 rounded border border-sky-400"
+                    >Retângulo</span
+                  >
+                </td>
+                <td>Processo</td>
+                <td>Ação / atividade</td>
+                <td><strong>Verbo + objeto</strong> (ex.: “Validar Pedido”)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span
+                    class="inline-block px-3 py-1 skew-x-12 rounded border border-sky-400"
+                    >Losango</span
+                  >
+                </td>
+                <td>Decisão</td>
+                <td>Condição com saídas (geralmente 2)</td>
+                <td>Rotular saídas (“Sim/Não”)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span
+                    class="inline-block px-3 py-1 rounded border border-sky-400"
+                    >Conector</span
+                  >
+                </td>
+                <td>Conector</td>
+                <td>Evitar cruzar linhas / pular seção</td>
+                <td>Letra/identificador (A, B, C…)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- DFD legend -->
+        <h3 class="text-lg font-semibold text-slate-700 mt-6 mb-2">DFD</h3>
+        <div class="overflow-x-auto">
+          <table class="tbl w-full text-sm">
+            <thead class="text-slate-600">
+              <tr>
+                <th>Ícone</th>
+                <th>Nome</th>
+                <th>Uso típico</th>
+                <th>Rotulagem</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span
+                    class="inline-block px-3 py-1 rounded-full border border-purple-400"
+                    >Círculo</span
+                  >
+                </td>
+                <td>Processo</td>
+                <td>Transformação de dados</td>
+                <td><strong>Verbo + objeto</strong> (ex.: “Emitir Boleto”)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span
+                    class="inline-block px-3 py-1 rounded border border-lime-500"
+                    >Retângulo (store)</span
+                  >
+                </td>
+                <td>Armazenamento</td>
+                <td>Dados persistidos</td>
+                <td>Substantivo (ex.: “Registros de Alunos”)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span
+                    class="inline-block px-3 py-1 rounded border border-purple-400"
+                    >Retângulo</span
+                  >
+                </td>
+                <td>Entidade Externa</td>
+                <td>Origem/destino de dados fora do sistema</td>
+                <td>Substantivo (ex.: “Aluno”, “Financeiro”)</td>
+              </tr>
+              <tr>
+                <td>➝</td>
+                <td>Fluxo de Dados</td>
+                <td>Movimento da informação</td>
+                <td>
+                  <strong>Substantivo</strong> (ex.: “Dados de Inscrição”)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Comparativo Fluxograma × DFD -->
+      <section id="comparativo" class="mb-12 bg-white p-8 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          🔀 Fluxograma × DFD
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="border rounded-xl p-5">
+            <h3 class="font-bold text-slate-700 mb-2">Fluxograma</h3>
+            <ul class="list-disc list-inside space-y-1 text-slate-700">
+              <li><strong>Foco:</strong> sequência e controle.</li>
+              <li><strong>Responde:</strong> “o que acontece em seguida?”.</li>
+              <li>
+                <strong>Uso:</strong> algoritmos, regras de negócio,
+                procedimentos.
+              </li>
+              <li>
+                <strong>Não mostra:</strong> fronteiras de dados e
+                origem/destino de informações.
+              </li>
+            </ul>
+          </div>
+          <div class="border rounded-xl p-5">
+            <h3 class="font-bold text-slate-700 mb-2">DFD</h3>
+            <ul class="list-disc list-inside space-y-1 text-slate-700">
+              <li><strong>Foco:</strong> fluxo de dados e fronteiras.</li>
+              <li>
+                <strong>Responde:</strong> “de onde vêm e para onde vão os
+                dados?”.
+              </li>
+              <li>
+                <strong>Uso:</strong> visão lógica de sistemas de informação.
+              </li>
+              <li>
+                <strong>Não mostra:</strong> ordem/temporalidade e decisões.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Níveis e Balanceamento (DFD) -->
+      <section
+        id="niveis-balanceamento"
+        class="mb-12 bg-white p-8 rounded-lg shadow"
+      >
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          📐 Níveis e Balanceamento (DFD)
+        </h2>
+        <p class="text-slate-700 mb-3">
+          <strong>Níveis:</strong> comece pelo <em>Contexto</em> (visão macro),
+          detalhe no <em>Nível 0</em> (processos principais) e decompõe no
+          <em>Nível 1</em> (subprocessos) quando necessário.
+        </p>
+        <p class="text-slate-700 mb-3">
+          <strong>Balanceamento:</strong> entradas/saídas do processo no nível
+          superior devem aparecer (somadas ou decompostas) no nível inferior —
+          sem “criar” ou “sumir” dados.
+        </p>
+        <ul class="list-disc list-inside text-slate-700 space-y-1">
+          <li>
+            Evite <strong>entidade ↔ entidade</strong> e
+            <strong>store ↔ store</strong> diretamente.
+          </li>
+          <li>
+            Cada <strong>processo</strong> deve ter
+            <strong>≥1 entrada e ≥1 saída</strong>.
+          </li>
+          <li>
+            Nomear <strong>todos</strong> os fluxos com
+            <strong>substantivos</strong>.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Erros Comuns (antes/depois) -->
+      <section id="erros-comuns" class="mb-12 callout callout-warn">
+        <h2 class="text-xl font-bold mb-3">
+          <i class="fa-solid fa-triangle-exclamation mr-2"></i>Erros Comuns (e
+          como corrigir)
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Wrong -->
+          <div class="bg-white/70 p-4 rounded-md">
+            <h3 class="font-semibold text-slate-700 mb-2">DFD incorreto</h3>
+            <!-- NOTE (EN): Wrong example: entity to store directly. -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 140"
+              class="w-full"
+            >
+              <defs>
+                <marker
+                  id="arrW"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="9"
+                  refY="3"
+                  orient="auto"
+                >
+                  <path d="M0,0 L10,3 L0,6 Z"></path>
+                </marker>
+                <style>
+                  .ent {
+                    fill: #fff;
+                    stroke: #a78bfa;
+                    stroke-width: 2;
+                  }
+                  .store {
+                    fill: #fff;
+                    stroke: #22c55e;
+                    stroke-width: 2;
+                  }
+                  .edge {
+                    stroke: #b91c1c;
+                    stroke-width: 2;
+                    fill: none;
+                    marker-end: url(#arrW);
+                  }
+                  .txt {
+                    font: 600 12px Inter, sans-serif;
+                    fill: #0f172a;
+                  }
+                </style>
+              </defs>
+              <rect
+                class="ent"
+                x="20"
+                y="40"
+                width="120"
+                height="50"
+                rx="4"
+              ></rect>
+              <text class="txt" x="80" y="70" text-anchor="middle">Aluno</text>
+              <rect
+                class="store"
+                x="340"
+                y="40"
+                width="120"
+                height="50"
+                rx="4"
+              ></rect>
+              <text class="txt" x="400" y="70" text-anchor="middle">
+                Registros
+              </text>
+              <path class="edge" d="M140,65 C200,65 260,65 340,65"></path>
+            </svg>
+            <p class="mt-2 text-sm text-slate-700">
+              <strong>Problema:</strong> fluxo direto <em>Entidade → Store</em>.
+            </p>
+          </div>
+          <!-- Right -->
+          <div class="bg-white/70 p-4 rounded-md">
+            <h3 class="font-semibold text-slate-700 mb-2">DFD correto</h3>
+            <!-- NOTE (EN): Right example: entity -> process -> store. -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 180"
+              class="w-full"
+            >
+              <defs>
+                <marker
+                  id="arrR"
+                  markerWidth="10"
+                  markerHeight="10"
+                  refX="9"
+                  refY="3"
+                  orient="auto"
+                >
+                  <path d="M0,0 L10,3 L0,6 Z"></path>
+                </marker>
+                <style>
+                  .ent {
+                    fill: #fff;
+                    stroke: #a78bfa;
+                    stroke-width: 2;
+                  }
+                  .proc {
+                    fill: #fff;
+                    stroke: #0ea5e9;
+                    stroke-width: 2;
+                  }
+                  .store {
+                    fill: #fff;
+                    stroke: #22c55e;
+                    stroke-width: 2;
+                  }
+                  .edge {
+                    stroke: #111827;
+                    stroke-width: 2;
+                    fill: none;
+                    marker-end: url(#arrR);
+                  }
+                  .txt {
+                    font: 600 12px Inter, sans-serif;
+                    fill: #0f172a;
+                  }
+                </style>
+              </defs>
+              <rect
+                class="ent"
+                x="20"
+                y="40"
+                width="120"
+                height="50"
+                rx="4"
+              ></rect>
+              <text class="txt" x="80" y="70" text-anchor="middle">Aluno</text>
+              <circle class="proc" cx="240" cy="65" r="35"></circle>
+              <text class="txt" x="240" y="60" text-anchor="middle">
+                Validar
+              </text>
+              <text class="txt" x="240" y="78" text-anchor="middle">Dados</text>
+              <rect
+                class="store"
+                x="360"
+                y="40"
+                width="120"
+                height="50"
+                rx="4"
+              ></rect>
+              <text class="txt" x="420" y="70" text-anchor="middle">
+                Registros
+              </text>
+              <path class="edge" d="M140,65 C170,65 190,65 205,65"></path>
+              <path class="edge" d="M275,65 C310,65 335,65 360,65"></path>
+            </svg>
+            <p class="mt-2 text-sm text-slate-700">
+              <strong>Solução:</strong> intermediar por
+              <em>Processo</em> (transformação de dados).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Metodologia Ativa -->
+      <section
+        id="metodologia-ativa"
+        aria-label="Metodologia Ativa: Demonstração Prática"
+        class="mb-12 callout callout-practice"
+      >
+        <h2 class="text-2xl font-bold mb-4">
+          <i class="fa-solid fa-pen-ruler mr-2"></i>Vamos Modelar Juntos:
+          Processo de Matrícula
+        </h2>
+        <p class="mb-4">
+          Imagine que precisamos criar um sistema para o processo de matrícula
+          de um novo aluno. Como modelar o fluxo de informação?
+        </p>
+        <div class="bg-white/50 p-4 rounded-md">
+          <p class="font-semibold">Análise Rápida (DFD Nível 0):</p>
+          <ul class="list-disc list-inside mt-2 space-y-2">
+            <li><strong>Entidade Externa:</strong> Aluno.</li>
+            <li>
+              <strong>Entradas:</strong> “Dados de Inscrição” e “Documentos”.
+            </li>
+            <li><strong>Processo Central:</strong> “Processar Matrícula”.</li>
+            <li>
+              <strong>Armazenamentos:</strong> “Vagas Disponíveis” (consulta) e
+              “Registros de Alunos” (gravação).
+            </li>
+            <li>
+              <strong>Saídas:</strong> “Confirmação de Matrícula” ao Aluno e
+              “Dados de Pagamento” ao Financeiro.
+            </li>
+          </ul>
+          <p class="mt-4">
+            Esse DFD oferece uma visão clara das interações, servindo de mapa
+            inicial para o projeto.
+          </p>
+        </div>
+      </section>
+
+      <!-- Tarefa (TED) -->
+      <section
+        id="tarefa"
+        aria-label="Tarefa da Aula"
+        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📝 Tarefa (TED): Elaboração de Diagrama
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow not-prose">
+          <p class="text-lg leading-relaxed mb-4">
+            Coloque em prática as competências de modelagem criando um diagrama
+            de um processo do cotidiano.
+          </p>
+          <div class="bg-slate-50 p-4 rounded-md">
+            <p class="font-semibold">Instruções:</p>
+            <ol class="list-decimal list-inside mt-2 space-y-2">
+              <li>
+                Escolha <strong>um</strong>: matrícula, delivery, ou atendimento
+                em clínica.
+              </li>
+              <li>
+                Crie um <strong>Fluxograma</strong> (sequência e decisões) ou um
+                <strong>DFD Nível 0</strong> (fluxo de dados).
+              </li>
+              <li>
+                Use ferramenta digital (<strong>draw.io/diagrams.net</strong>,
+                <strong>Lucidchart</strong> ou similar).
+              </li>
+              <li>
+                Garanta legibilidade e padronização dos símbolos/rotulações.
+              </li>
+            </ol>
+          </div>
+
+          <!-- Checklist (expandable) -->
+          <details class="mt-4">
+            <summary>
+              ✅ Checklist de Qualidade (anexe preenchido à entrega)
+            </summary>
+            <div class="mt-3 p-4 border rounded-md bg-white">
+              <ul class="list-disc list-inside space-y-1 text-slate-700">
+                <li>
+                  Todos os <strong>fluxos</strong> têm
+                  <strong>rótulos substantivos</strong>.
+                </li>
+                <li>
+                  <strong>Processos</strong> com
+                  <strong>verbo + objeto</strong>.
+                </li>
+                <li>
+                  Sem ligações diretas <strong>entidade↔entidade</strong> ou
+                  <strong>store↔store</strong>.
+                </li>
+                <li>
+                  Cada processo tem <strong>≥1 entrada</strong> e
+                  <strong>≥1 saída</strong>.
+                </li>
+                <li>
+                  <strong>Nomes consistentes</strong> entre níveis
+                  (balanceamento).
+                </li>
+                <li>
+                  Fluxograma: decisões binárias rotuladas; início e fim claros;
+                  sem cruzamento de setas.
+                </li>
+                <li>Tamanho de fonte e espaçamento legíveis.</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Rubrica (expandable) -->
+          <details class="mt-3">
+            <summary>📏 Rubrica de Avaliação (0–10)</summary>
+            <div class="mt-3 p-4 border rounded-md bg-white overflow-x-auto">
+              <table class="tbl w-full text-sm">
+                <thead class="text-slate-600">
+                  <tr>
+                    <th>Critério</th>
+                    <th>0–2</th>
+                    <th>3–4</th>
+                    <th>5</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Correção da notação</strong></td>
+                    <td>Vários erros</td>
+                    <td>Alguns erros</td>
+                    <td>Sem erros</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Clareza e legibilidade</strong></td>
+                    <td>Confuso</td>
+                    <td>Razoável</td>
+                    <td>Claro</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <strong>Completude</strong> (entradas/saídas, processos
+                      mínimos)
+                    </td>
+                    <td>Lacunas</td>
+                    <td>Quase completo</td>
+                    <td>Completo</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Consistência/Balanceamento (DFD)</strong></td>
+                    <td>Inconsistente</td>
+                    <td>Pequenas falhas</td>
+                    <td>Consistente</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+
+          <p class="mt-4 font-semibold">
+            <strong>Entrega:</strong> Exporte em PNG/JPG ou PDF e envie no AVA
+            até a próxima aula. <br />
+            <span class="text-slate-600 text-sm"
+              >Dica: anexe também o arquivo fonte (.drawio ou .vsdx) para
+              feedback.</span
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- Mini-Quiz -->
+      <section id="quiz" class="mb-12" aria-label="Quiz de Autoavaliação">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🧐 Mini-Quiz de Autoavaliação
+        </h2>
+        <div class="space-y-4">
+          <details>
+            <summary>
+              1. Qual diagrama destaca a sequência lógica e decisões (se/então)
+              em um processo?
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Fluxograma — detalha a lógica e o
+                controle passo a passo.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              2. Em um DFD, um “Cliente” que envia um formulário é:
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Entidade Externa — origem/destino de
+                dados fora da fronteira do sistema.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              3. Verdadeiro ou falso: DFD mostra a ordem temporal de execução
+              dos processos.
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Falso — DFD foca no
+                <strong>fluxo de dados</strong>; sequência temporal é papel do
+                fluxograma.
+              </p>
+            </div>
+          </details>
+          <!-- Diagnostic items -->
+          <details>
+            <summary>
+              4. (Diagnóstico) Em um DFD, é correto ligar uma entidade
+              diretamente a um armazenamento?
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Não — o fluxo de dados deve passar
+                por um <strong>processo</strong>.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              5. (Diagnóstico) Um fluxograma possui uma decisão com três saídas.
+              Correto?
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Em geral, não — reestruture em
+                decisões binárias encadeadas para manter clareza.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Vídeos Recomendados (embutidos) -->
+      <section id="videos" class="mb-12 bg-white p-8 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          🎥 Vídeos Recomendados (curtos e gratuitos)
+        </h2>
+
+        <!-- NOTE (EN): Responsive iframe wrapper using Tailwind's arbitrary padding for 16:9 -->
+        <div class="grid gap-8 md:grid-cols-2">
+          <!-- Video 1: Fluxograma no diagrams.net (draw.io) -->
+          <article class="space-y-2">
+            <h3 class="font-semibold text-slate-700">
+              Fluxograma no diagrams.net (draw.io) — passo a passo básico
+            </h3>
+            <p class="text-sm text-slate-600">
+              Introdução prática para criar fluxogramas no diagrams.net, ideal
+              para quem está começando.
+            </p>
+            <div
+              class="relative w-full overflow-hidden rounded-lg shadow border border-slate-200"
+              style="padding-top: 56.25%"
+            >
+              <!-- NOTE (EN): Privacy-enhanced domain + lazy loading -->
+              <iframe
+                class="absolute inset-0 h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/E8cbpOE0s0w"
+                title="Fluxograma no diagrams.net (draw.io) — tutorial básico"
+                loading="lazy"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <p class="text-xs text-slate-500">
+              Se o player não carregar,
+              <a
+                class="text-sky-700 underline"
+                href="https://www.youtube.com/watch?v=E8cbpOE0s0w"
+                target="_blank"
+                rel="noopener noreferrer"
+                >abra o vídeo no YouTube</a
+              >.
+            </p>
+          </article>
+
+          <!-- Video 2: DFD (Contexto/Nível 0) no draw.io -->
+          <article class="space-y-2">
+            <h3 class="font-semibold text-slate-700">
+              DFD (Diagrama de Contexto / Nível 0) no draw.io
+            </h3>
+            <p class="text-sm text-slate-600">
+              Tutorial objetivo mostrando como desenhar um diagrama de
+              contexto/DFD nível 0 para delimitar fronteiras e fluxos de dados.
+            </p>
+            <div
+              class="relative w-full overflow-hidden rounded-lg shadow border border-slate-200"
+              style="padding-top: 56.25%"
+            >
+              <iframe
+                class="absolute inset-0 h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/zA0Xnb2_Cok"
+                title="Como fazer um Diagrama de Contexto / DFD Nível 0 no draw.io"
+                loading="lazy"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <p class="text-xs text-slate-500">
+              Se o player não carregar,
+              <a
+                class="text-sky-700 underline"
+                href="https://www.youtube.com/watch?v=zA0Xnb2_Cok"
+                target="_blank"
+                rel="noopener noreferrer"
+                >abra o vídeo no YouTube</a
+              >.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Bibliografia -->
+      <section
+        id="bibliografia"
+        aria-label="Bibliografia"
+        class="prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📚 Bibliografia
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow space-y-4 not-prose">
+          <p>
+            <strong>PALMISANO, Angelo; ROSINI, Alessandro Marco.</strong>
+            <em
+              >Administração de sistemas de informação e a gestão do
+              conhecimento.</em
+            >
+            2. ed. São Paulo: Cengage Learning, 2012.
+          </p>
+          <p>
+            <strong>STAIR, Ralph M.; REYNOLDS, George W.</strong>
+            <em>Princípios de sistemas de informação.</em> 14. ed. São Paulo:
+            Cengage Learning, 2021.
+          </p>
+        </div>
+        <p class="text-sm text-slate-500 mt-3">
+          Sugestão de prática: diagramar no
+          <a
+            class="text-sky-700 underline"
+            href="https://www.diagrams.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >diagrams.net</a
+          >
+          (compatível com Google Drive e GitHub).
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white mt-12" role="contentinfo">
+      <div class="container mx-auto px-6 py-4 text-center">
+        <p>&copy; 2025 - Disciplina de Teoria Geral de Sistemas</p>
+        <p class="text-sm text-slate-400">
+          Material desenvolvido para o curso de Sistemas de Informação.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

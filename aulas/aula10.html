@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      TGS - Aula 10: Níveis dos Sistemas de Informação (Operacional, Tático,
+      Estratégico)
+    </title>
+    <meta
+      name="description"
+      content="Aula 10 de TGS sobre os níveis dos Sistemas de Informação: Operacional (TPS), Tático (MIS/BI) e Estratégico (ESS). Análise de tipos de decisão, ferramentas e arquitetura de dados (OLTP vs OLAP)."
+    />
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Base styles */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc; /* bg-slate-50 */
+      }
+      /* Callout styles */
+      .callout {
+        border-left-width: 4px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.5rem;
+      }
+      .callout-warn {
+        background-color: #fffbeb; /* bg-amber-50 */
+        border-color: #fcd34d; /* border-amber-300 */
+        color: #92400e; /* text-amber-800 */
+      }
+      /* Quiz styles */
+      details > summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0.75rem;
+        background-color: #f1f5f9;
+        border-radius: 0.375rem;
+        transition: background-color 0.2s;
+      }
+      details > summary:hover {
+        background-color: #e2e8f0;
+      }
+      details[open] > summary {
+        background-color: #e2e8f0;
+      }
+      .quiz-answer {
+        padding: 1rem;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-top: none;
+        border-radius: 0 0 0.375rem 0.375rem;
+      }
+      /* Print styles */
+      @media print {
+        body {
+          font-size: 12pt;
+        }
+        header,
+        footer,
+        .no-print {
+          display: none;
+        }
+        section {
+          box-shadow: none !important;
+          border: 1px solid #e2e8f0;
+          margin-bottom: 1rem;
+        }
+        .bg-white,
+        .bg-slate-50,
+        .bg-sky-50 {
+          background-color: #fff !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md no-print">
+      <div class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-sky-800">
+          Teoria Geral de Sistemas (TGS)
+        </h1>
+        <h2 class="text-2xl font-semibold text-slate-700 mt-2">
+          Aula 10: Níveis dos Sistemas de Informação (Operacional, Tático e
+          Estratégico)
+        </h2>
+        <!-- Metadata chips -->
+        <div class="flex flex-wrap gap-2 mt-4 text-sm">
+          <span
+            class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full font-medium"
+            ><i class="fa-solid fa-layer-group mr-2"></i>Unidade III – Sistemas
+            de Informação Administrativos</span
+          >
+          <span
+            class="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-medium"
+            ><i class="fa-solid fa-clock mr-2"></i>Teórica 1h • Prática 1h</span
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-10">
+      <!-- Table of Contents -->
+      <nav
+        aria-label="Sumário da Aula"
+        class="mb-12 bg-white p-6 rounded-lg shadow-sm no-print"
+      >
+        <h3 class="font-bold text-lg text-slate-800 mb-3">Navegue pela Aula</h3>
+        <ul class="flex flex-wrap gap-x-4 gap-y-2 text-sky-600 font-semibold">
+          <li>
+            <a href="#mapa-conceitual" class="hover:underline"
+              >Mapa Conceitual</a
+            >
+          </li>
+          <li>
+            <a href="#tabela-comparativa" class="hover:underline"
+              >Tabela Comparativa</a
+            >
+          </li>
+          <li>
+            <a href="#arquitetura-dados" class="hover:underline"
+              >Arquitetura de Dados</a
+            >
+          </li>
+          <li><a href="#casos" class="hover:underline">Casos Reais</a></li>
+          <li><a href="#videos" class="hover:underline">Vídeos</a></li>
+          <li><a href="#tarefa" class="hover:underline">Tarefa (TED)</a></li>
+          <li><a href="#quiz" class="hover:underline">Quiz</a></li>
+          <li>
+            <a href="#bibliografia" class="hover:underline">Bibliografia</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Plan Section -->
+      <section
+        id="plano-aula"
+        aria-label="Plano da Aula"
+        class="mb-12 bg-sky-50 border border-sky-200 p-8 rounded-2xl shadow-lg"
+      >
+        <h2 class="text-3xl font-bold text-sky-700 mb-6 text-center">
+          Plano da Aula
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+            </h3>
+            <p class="text-slate-600">
+              Níveis dos SI: operacional, tático e estratégico.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVOS
+            </h3>
+            <ul class="list-disc list-inside text-slate-600 space-y-1">
+              <li>
+                Diferenciar os níveis de atuação dos SI e suas características.
+              </li>
+              <li>Mapear ferramentas e sistemas típicos de cada nível.</li>
+              <li>Relacionar cada nível ao tipo de decisão correspondente.</li>
+            </ul>
+          </div>
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2"
+          >
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA E RECURSOS
+            </h3>
+            <p class="text-slate-600">
+              Aula expositiva com exemplos práticos, quadro comparativo, vídeos
+              curtos e discussão de casos. Recursos: Slides, vídeos, quadro
+              interativo.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conceptual Map Section -->
+      <section
+        id="mapa-conceitual"
+        aria-label="Mapa Conceitual dos Níveis de SI"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          A Pirâmide Organizacional e os Sistemas de Informação
+        </h2>
+        <p class="text-lg text-slate-600 mb-6">
+          Uma organização tem diferentes necessidades de informação em cada um
+          de seus níveis. A pirâmide a seguir ilustra como os Sistemas de
+          Informação são projetados para atender a cada camada, da operação
+          diária à estratégia de longo prazo.
+        </p>
+        <div class="bg-white p-6 rounded-lg shadow text-center">
+          <svg
+            viewBox="0 0 800 450"
+            class="w-full"
+            role="img"
+            aria-labelledby="pyramid-title"
+          >
+            <title id="pyramid-title">
+              Pirâmide dos Níveis de Sistemas de Informação
+            </title>
+            <!-- Pyramid layers -->
+            <polygon
+              points="400,50 700,400 100,400"
+              fill="#f8fafc"
+              stroke="#cbd5e1"
+              stroke-width="2"
+            />
+            <line
+              x1="150"
+              y1="300"
+              x2="650"
+              y2="300"
+              stroke="#cbd5e1"
+              stroke-width="2"
+            />
+            <line
+              x1="275"
+              y1="175"
+              x2="525"
+              y2="175"
+              stroke="#cbd5e1"
+              stroke-width="2"
+            />
+            <!-- Strategic Level -->
+            <g>
+              <text
+                x="400"
+                y="100"
+                font-size="24"
+                font-weight="bold"
+                text-anchor="middle"
+                fill="#be185d"
+              >
+                Nível Estratégico
+              </text>
+              <text
+                x="400"
+                y="130"
+                font-size="16"
+                text-anchor="middle"
+                fill="#831843"
+              >
+                ESS / Dashboards Executivos
+              </text>
+              <text
+                x="400"
+                y="155"
+                font-size="14"
+                text-anchor="middle"
+                fill="#500724"
+              >
+                Horizonte: Anos | Dados: Tendências | Decisões: Não Estruturadas
+              </text>
+            </g>
+            <!-- Tactical Level -->
+            <g>
+              <text
+                x="400"
+                y="220"
+                font-size="24"
+                font-weight="bold"
+                text-anchor="middle"
+                fill="#0284c7"
+              >
+                Nível Tático
+              </text>
+              <text
+                x="400"
+                y="250"
+                font-size="16"
+                text-anchor="middle"
+                fill="#0369a1"
+              >
+                MIS / BI / Analytics
+              </text>
+              <text
+                x="400"
+                y="275"
+                font-size="14"
+                text-anchor="middle"
+                fill="#075985"
+              >
+                Horizonte: Meses | Dados: Consolidados | Decisões:
+                Semiestruturadas
+              </text>
+            </g>
+            <!-- Operational Level -->
+            <g>
+              <text
+                x="400"
+                y="345"
+                font-size="24"
+                font-weight="bold"
+                text-anchor="middle"
+                fill="#166534"
+              >
+                Nível Operacional
+              </text>
+              <text
+                x="400"
+                y="375"
+                font-size="16"
+                text-anchor="middle"
+                fill="#15803d"
+              >
+                TPS / ERP / OLTP
+              </text>
+              <text
+                x="400"
+                y="400"
+                font-size="14"
+                text-anchor="middle"
+                fill="#16a34a"
+              >
+                Horizonte: Dias | Dados: Detalhados | Decisões: Estruturadas
+              </text>
+            </g>
+          </svg>
+        </div>
+        <div class="callout callout-warn mt-6">
+          <h4 class="font-bold">
+            <i class="fa-solid fa-triangle-exclamation mr-2"></i>Erro Comum
+          </h4>
+          <p>
+            Não confunda a ferramenta com o nível. Um ERP (ferramenta) opera
+            primariamente no nível operacional, mas fornece dados essenciais
+            para os níveis tático e estratégico. O nível é definido pela
+            <strong>finalidade</strong> da informação e pelo
+            <strong>tipo de decisão</strong> que ela apoia.
+          </p>
+        </div>
+      </section>
+
+      <!-- Detailed Levels Explanation Section -->
+      <section
+        id="explicacao-niveis"
+        aria-label="Explicação Detalhada dos Níveis da Pirâmide"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          Explicação Detalhada dos Níveis da Pirâmide
+        </h2>
+
+        <!-- Operacional -->
+        <article class="bg-white p-6 rounded-lg shadow mb-6">
+          <h3 class="text-2xl font-bold text-green-700 mb-2">
+            <i class="fa-solid fa-cogs mr-2"></i>Nível Operacional
+          </h3>
+          <p class="text-slate-600 mb-3">
+            Este nível corresponde à <strong>base da pirâmide</strong>. É onde
+            as operações diárias acontecem, envolvendo tarefas rotineiras e
+            repetitivas. O objetivo é garantir que processos básicos sejam
+            executados de forma correta, rápida e eficiente.
+          </p>
+          <ul class="list-disc list-inside text-slate-600 space-y-1">
+            <li><strong>Tipo de decisão:</strong> Estruturada e repetitiva.</li>
+            <li>
+              <strong>Usuários:</strong> Operadores, funcionários de linha de
+              frente, supervisores.
+            </li>
+            <li>
+              <strong>Ferramentas comuns:</strong> TPS (Transaction Processing
+              Systems), ERP (Enterprise Resource Planning), CRM Operacional.
+            </li>
+            <li>
+              <strong>Exemplo:</strong> Registrar a venda de um produto no caixa
+              ou dar baixa no estoque após uma entrega.
+            </li>
+          </ul>
+        </article>
+
+        <!-- Tático -->
+        <article class="bg-white p-6 rounded-lg shadow mb-6">
+          <h3 class="text-2xl font-bold text-sky-700 mb-2">
+            <i class="fa-solid fa-chart-line mr-2"></i>Nível Tático
+          </h3>
+          <p class="text-slate-600 mb-3">
+            O nível tático corresponde ao <strong>meio da pirâmide</strong>. Ele
+            atua como uma ponte entre as operações e a estratégia, focando no
+            <strong>planejamento de médio prazo</strong>. Os dados já aparecem
+            consolidados e agregados, servindo para ajustes e otimizações.
+          </p>
+          <ul class="list-disc list-inside text-slate-600 space-y-1">
+            <li><strong>Tipo de decisão:</strong> Semiestruturada.</li>
+            <li>
+              <strong>Usuários:</strong> Gerentes, coordenadores, analistas de
+              negócio.
+            </li>
+            <li>
+              <strong>Ferramentas comuns:</strong> MIS (Management Information
+              Systems), BI (Business Intelligence), relatórios OLAP, dashboards
+              analíticos.
+            </li>
+            <li>
+              <strong>Exemplo:</strong> Comparar o desempenho de campanhas de
+              marketing e decidir onde investir mais nos próximos meses.
+            </li>
+          </ul>
+        </article>
+
+        <!-- Estratégico -->
+        <article class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-2xl font-bold text-pink-700 mb-2">
+            <i class="fa-solid fa-chess-king mr-2"></i>Nível Estratégico
+          </h3>
+          <p class="text-slate-600 mb-3">
+            O topo da pirâmide representa o nível estratégico. Neste estágio, as
+            decisões são voltadas para o <strong>longo prazo</strong> e buscam
+            definir o rumo da organização. São decisões únicas, de alto risco e
+            grande impacto sobre toda a empresa.
+          </p>
+          <ul class="list-disc list-inside text-slate-600 space-y-1">
+            <li>
+              <strong>Tipo de decisão:</strong> Não estruturada e inovadora.
+            </li>
+            <li>
+              <strong>Usuários:</strong> Alta administração: diretores,
+              presidentes, C-level.
+            </li>
+            <li>
+              <strong>Ferramentas comuns:</strong> ESS (Executive Support
+              Systems), dashboards executivos, sistemas de apoio à decisão
+              (DSS).
+            </li>
+            <li>
+              <strong>Exemplo:</strong> Decidir a abertura de uma filial em
+              outro país ou a diversificação para um novo mercado.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Comparison Table Section -->
+      <section
+        id="tabela-comparativa"
+        aria-label="Tabela Comparativa dos Níveis de SI"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6 flex items-center"
+        >
+          Análise Comparativa dos Níveis de SI
+          <span
+            class="ml-3 bg-sky-500 text-white text-xs font-bold px-2 py-1 rounded-full"
+            >NOVO</span
+          >
+        </h2>
+        <div class="overflow-x-auto bg-white p-6 rounded-lg shadow">
+          <table class="min-w-full text-left text-sm">
+            <thead class="border-b font-medium bg-slate-100">
+              <tr>
+                <th scope="col" class="px-4 py-3">Característica</th>
+                <th scope="col" class="px-4 py-3 text-green-700">
+                  Operacional
+                </th>
+                <th scope="col" class="px-4 py-3 text-sky-700">Tático</th>
+                <th scope="col" class="px-4 py-3 text-pink-700">Estratégico</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="px-4 py-3 font-semibold">Finalidade</td>
+                <td class="px-4 py-3">Executar e monitorar tarefas diárias.</td>
+                <td class="px-4 py-3">
+                  Controlar, gerenciar e planejar a médio prazo.
+                </td>
+                <td class="px-4 py-3">
+                  Definir metas e estratégias de longo prazo.
+                </td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-4 py-3 font-semibold">Horizonte de Tempo</td>
+                <td class="px-4 py-3">Horas, dias, semanas.</td>
+                <td class="px-4 py-3">Semanas, meses, até um ano.</td>
+                <td class="px-4 py-3">Meses, anos.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold">Granularidade dos Dados</td>
+                <td class="px-4 py-3">Detalhada, transacional.</td>
+                <td class="px-4 py-3">Sumarizada, agregada.</td>
+                <td class="px-4 py-3">Altamente agregada, tendências.</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-4 py-3 font-semibold">Tipo de Decisão</td>
+                <td class="px-4 py-3">Estruturada, repetitiva.</td>
+                <td class="px-4 py-3">Semiestruturada.</td>
+                <td class="px-4 py-3">Não estruturada, única.</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold">Exemplos de Sistemas</td>
+                <td class="px-4 py-3">
+                  TPS (Sistema de Processamento de Transações), ERP, CRM
+                  (operacional).
+                </td>
+                <td class="px-4 py-3">MIS (SIG), BI, OLAP, Analytics.</td>
+                <td class="px-4 py-3">
+                  ESS (Sistema de Apoio ao Executivo), Dashboards Executivos,
+                  OKRs.
+                </td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-4 py-3 font-semibold">Usuários-Alvo</td>
+                <td class="px-4 py-3">Operadores, supervisores.</td>
+                <td class="px-4 py-3">Gerentes de departamento, analistas.</td>
+                <td class="px-4 py-3">Diretores, C-level (CEO, CFO).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Data Architecture Section -->
+      <section
+        id="arquitetura-dados"
+        aria-label="Relação com Arquitetura de Dados"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          Arquitetura de Dados: OLTP vs. OLAP
+        </h2>
+        <div
+          class="bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+        >
+          <p>
+            A separação dos níveis de SI reflete-se diretamente na arquitetura
+            de dados. Sistemas <strong>operacionais</strong> são baseados em
+            <strong>OLTP (Online Transaction Processing)</strong>, otimizados
+            para registrar transações rápidas (inserir, atualizar, apagar). Já
+            os sistemas <strong>táticos e estratégicos</strong> usam
+            <strong>OLAP (Online Analytical Processing)</strong>, otimizados
+            para consultas complexas e análises sobre grandes volumes de dados,
+            geralmente armazenados em um <strong>Data Warehouse (DWH)</strong>.
+            Processos de <strong>ETL/ELT</strong> (Extração, Transformação e
+            Carga) são a ponte que move e prepara os dados do ambiente OLTP para
+            o OLAP.
+          </p>
+          <div class="not-prose mt-4 bg-slate-50 p-4 rounded-md">
+            <h4 class="font-bold text-slate-700">
+              <i class="fa-solid fa-list-check mr-2"></i>Guia Rápido: Como
+              Diagnosticar o Nível de um SI
+            </h4>
+            <ul class="list-disc list-inside mt-2 text-slate-600">
+              <li>
+                <strong>É sobre o AGORA?</strong> Se a informação é em tempo
+                real e detalhada para executar uma tarefa, é
+                <strong>Operacional</strong>.
+              </li>
+              <li>
+                <strong
+                  >É sobre o PASSADO RECENTE para planejar o FUTURO
+                  PRÓXIMO?</strong
+                >
+                Se analisa dados de semanas/meses para ajustar táticas, é
+                <strong>Tático</strong>.
+              </li>
+              <li>
+                <strong>É sobre o FUTURO DISTANTE?</strong> Se usa tendências
+                para decisões de longo prazo, é <strong>Estratégico</strong>.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Real Cases Section -->
+      <section id="casos" aria-label="Casos Reais" class="mb-12">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          Casos Reais e Perguntas-Guia
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-green-700">Operacional</h3>
+            <p class="mt-2">
+              Um operador de logística usa o ERP para verificar se um item está
+              em stock e dar baixa no sistema assim que o pedido é separado para
+              envio.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-sky-700">Tático</h3>
+            <p class="mt-2">
+              Um gerente de marketing analisa um dashboard de BI para comparar
+              as vendas de duas campanhas de publicidade no último trimestre e
+              decidir em qual canal investir mais no próximo mês.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-bold text-pink-700">Estratégico</h3>
+            <p class="mt-2">
+              A diretoria de uma empresa analisa um painel com KPIs de
+              crescimento de mercado e rentabilidade dos últimos 3 anos para
+              decidir se abre uma filial noutro país.
+            </p>
+          </div>
+        </div>
+        <div class="prose prose-slate max-w-none lg:prose-lg mt-6">
+          <h4>Perguntas para Debate:</h4>
+          <ul>
+            <li>
+              Em cada caso, qual foi a decisão tomada? Qual o seu horizonte de
+              tempo e risco?
+            </li>
+            <li>
+              Que tipo de métrica foi crucial para a decisão em cada nível?
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section
+        id="videos"
+        aria-label="Vídeos Complementares"
+        class="mb-12 no-print"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          Vídeos para Aprofundar
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Vídeo 1: Níveis de SI (PT-BR) -->
+          <article class="bg-white p-4 rounded-lg shadow">
+            <h3 class="text-lg font-semibold mb-2">
+              Dimensões e Tipos de Sistemas de Informação (Níveis de SI)
+            </h3>
+            <div class="aspect-video">
+              <!-- NOTE (EN): Using youtube-nocookie domain for privacy. -->
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/yHHB44sjpU0"
+                title="Dimensões e Tipos de Sistemas de Informação - Prof. Marcel Rios"
+                frameborder="0"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                class="w-full h-full rounded"
+                aria-label="Vídeo: Dimensões e Tipos de SI, incluindo níveis Operacional, Tático e Estratégico"
+              ></iframe>
+            </div>
+            <p class="text-sm text-slate-500 mt-2">
+              Visão em português dos tipos e <strong>níveis</strong> de SI e sua
+              relação com decisões e processos.
+              <a
+                href="https://www.youtube.com/watch?v=yHHB44sjpU0"
+                target="_blank"
+                rel="noopener"
+                class="text-sky-600 hover:underline"
+                >Ver no YouTube</a
+              >.
+            </p>
+            <ul class="mt-2 text-sm text-slate-600 list-disc list-inside">
+              <li>Conecta níveis de SI à pirâmide organizacional.</li>
+              <li>
+                Diferencia finalidades (operacional vs tático vs estratégico).
+              </li>
+              <li>Exemplos práticos e comparativos rápidos.</li>
+            </ul>
+          </article>
+
+          <!-- Vídeo 2: OLTP vs OLAP (EN, visual/objetivo) -->
+          <article class="bg-white p-4 rounded-lg shadow">
+            <h3 class="text-lg font-semibold mb-2">
+              OLTP vs. OLAP (Arquitetura de Dados)
+            </h3>
+            <div class="aspect-video">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/PyFTYyagplg"
+                title="OLTP vs. OLAP Databases! Diferenças e quando usar"
+                frameborder="0"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+                class="w-full h-full rounded"
+                aria-label="Vídeo: Diferenças entre OLTP e OLAP com exemplos de uso e trade-offs"
+              ></iframe>
+            </div>
+            <p class="text-sm text-slate-500 mt-2">
+              Explica quando usar
+              <strong>OLTP</strong> (transacional/operacional) versus
+              <strong>OLAP</strong> (analítico/tático-estratégico), conectando à
+              seção da aula.
+              <a
+                href="https://www.youtube.com/watch?v=PyFTYyagplg"
+                target="_blank"
+                rel="noopener"
+                class="text-sky-600 hover:underline"
+                >Ver no YouTube</a
+              >.
+            </p>
+            <ul class="mt-2 text-sm text-slate-600 list-disc list-inside">
+              <li>
+                Contrasta cargas de trabalho (CRUD vs consultas analíticas).
+              </li>
+              <li>
+                Mostra impacto em performance e modelagem (DWH, cubos,
+                dashboards).
+              </li>
+              <li>Ajuda a responder o quiz sobre OLTP/OLAP.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- TED Section -->
+      <section id="tarefa" aria-label="Tarefa da Aula" class="mb-12">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📝 Tarefa (TED): Tabela Comparativa dos Níveis de SI
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow">
+          <p class="text-lg leading-relaxed mb-4">
+            No AVA, a sua tarefa será aplicar o conhecimento desta aula
+            preenchendo uma tabela comparativa.
+          </p>
+          <div class="bg-slate-50 p-4 rounded-md">
+            <p class="font-semibold">Instruções:</p>
+            <ol class="list-decimal list-inside mt-2 space-y-2">
+              <li>
+                Faça o download do modelo em PDF editável
+                "TED_Aula_10_Niveis_SI" no AVA.
+              </li>
+              <li>
+                Preencha a tabela comparativa entre os três níveis, incluindo
+                exemplos reais (uma empresa, ferramenta ou processo) para cada
+                um.
+              </li>
+              <li>
+                Para cada exemplo, descreva o tipo de decisão que o sistema
+                apoia.
+              </li>
+            </ol>
+            <h4 class="font-bold mt-4">Rubrica de Avaliação (0-10)</h4>
+            <ul class="list-disc list-inside text-sm mt-2">
+              <li>
+                <strong>Completude e Correção (0–4):</strong> Preenchimento
+                correto de todos os campos.
+              </li>
+              <li>
+                <strong>Exemplos e Evidências (0–3):</strong> Citação de casos
+                reais, métricas ou indicadores pertinentes.
+              </li>
+              <li>
+                <strong>Clareza e Organização (0–2):</strong> Apresentação limpa
+                e uso correto dos termos.
+              </li>
+              <li><strong>Pontualidade (0–1):</strong> Entrega no prazo.</li>
+            </ul>
+          </div>
+          <p class="mt-4 font-semibold">
+            <strong>Entrega:</strong> Até a próxima aula, via upload do PDF no
+            AVA.
+          </p>
+        </div>
+      </section>
+
+      <!-- Mini-Quiz Section -->
+      <section id="quiz" class="mb-12" aria-label="Quiz de Autoavaliação">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🧐 Mini-Quiz de Autoavaliação
+        </h2>
+        <div class="space-y-4">
+          <details>
+            <summary>
+              1. Em qual nível organizacional predominam as decisões
+              estruturadas e repetitivas?
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> No nível Operacional. As tarefas são
+                rotineiras e seguem regras bem definidas (ex: processar um
+                pagamento).
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>2. Diferencie OLTP e OLAP em uma frase.</summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> OLTP (Online Transaction Processing)
+                é otimizado para registrar transações rápidas (operacional),
+                enquanto OLAP (Online Analytical Processing) é otimizado para
+                analisar grandes volumes de dados históricos
+                (tático/estratégico).
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              3. Cite um KPI (Key Performance Indicator) típico do nível
+              estratégico.
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Exemplos incluem: Crescimento da
+                quota de mercado (Market Share), Retorno sobre o Investimento
+                (ROI), Lucratividade por linha de produto, ou Valor da Marca.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Bibliography Section -->
+      <section id="bibliografia" aria-label="Bibliografia">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📚 Bibliografia
+        </h2>
+        <div
+          class="bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+        >
+          <p>
+            <strong>STAIR, Ralph M.; REYNOLDS, George W.</strong>
+            <em>Princípios de sistemas de informação.</em> 14. ed. São Paulo:
+            Cengage Learning, 2021.
+          </p>
+          <p>
+            <strong>BATISTA, Emerson de Oliveira.</strong>
+            <em
+              >Sistemas de informação: o uso consciente da tecnologia para o
+              gerenciamento.</em
+            >
+            São Paulo: Saraiva, 2014.
+          </p>
+          <p>
+            <strong>LAUDON, Kenneth C.; LAUDON, Jane P.</strong>
+            <em>Sistemas de Informação Gerenciais.</em> 11. ed. São Paulo:
+            Pearson Prentice Hall, 2014. (Leitura complementar recomendada).
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white mt-12 no-print" role="contentinfo">
+      <div class="container mx-auto px-6 py-4 text-center">
+        <p>&copy; 2025 - Disciplina de Teoria Geral de Sistemas</p>
+        <p class="text-sm text-slate-400">
+          Material desenvolvido para o curso de Sistemas de Informação.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      TGS - Aula 9: Sistemas de Informação e seu Papel nas Organizações
+    </title>
+    <meta
+      name="description"
+      content="Aula 9 - Conceito de Sistemas de Informação (SI), sua taxonomia, níveis organizacionais e papel estratégico. Casos reais, vídeos, TED com rubrica e mini-quiz."
+    />
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc;
+      }
+
+      /* Callouts */
+      .callout {
+        border-left-width: 4px;
+        padding: 1.25rem;
+        border-radius: 0.5rem;
+      }
+      .callout-info {
+        background-color: #f0f9ff;
+        border-color: #7dd3fc;
+        color: #0c4a6e;
+      }
+      .callout-practice {
+        background-color: #f0fdf4;
+        border-color: #6ee7b7;
+        color: #065f46;
+      }
+      .callout-warn {
+        background-color: #fff7ed;
+        border-color: #fdba74;
+        color: #7c2d12;
+      }
+
+      /* Details summary style */
+      details > summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0.6rem;
+        background-color: #f1f5f9;
+        border-radius: 0.375rem;
+        transition: background-color 0.2s;
+      }
+      details > summary:hover {
+        background-color: #e2e8f0;
+      }
+      details[open] > summary {
+        background-color: #e2e8f0;
+      }
+
+      /* Tables */
+      .tbl th,
+      .tbl td {
+        border-bottom: 1px solid #e2e8f0;
+        padding: 0.5rem 0.75rem;
+      }
+
+      /* Focus styles */
+      a:focus,
+      button:focus,
+      summary:focus,
+      iframe:focus {
+        outline: 3px solid #38bdf8;
+        outline-offset: 2px;
+      }
+
+      /* Print improvements */
+      @media print {
+        header,
+        footer {
+          box-shadow: none !important;
+        }
+        .no-print {
+          display: none !important;
+        }
+        .page-break {
+          page-break-before: always;
+        }
+        body {
+          background: #fff;
+        }
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-sky-800">
+          Teoria Geral de Sistemas (TGS)
+        </h1>
+        <p class="text-xl text-slate-600 mt-2">
+          Aula 9: Sistemas de Informação e seu Papel nas Organizações
+        </p>
+        <div
+          class="mt-4 flex flex-wrap gap-3 text-sm text-slate-500"
+          aria-label="Metadados da aula"
+        >
+          <span
+            class="inline-flex items-center gap-2 bg-slate-100 px-3 py-1 rounded-full"
+          >
+            <i class="fa-solid fa-layer-group"></i> Unidade III – Sistemas de
+            Informação Administrativos
+          </span>
+          <span
+            class="inline-flex items-center gap-2 bg-slate-100 px-3 py-1 rounded-full"
+          >
+            <i class="fa-solid fa-clock"></i> Carga Horária (prevista): Teórica
+            1h • Discussão 1h
+          </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="container mx-auto px-6 py-10">
+      <!-- Plano da Aula -->
+      <section
+        id="plano-aula"
+        class="mb-12 bg-sky-50 border border-sky-200 p-8 rounded-2xl shadow-lg"
+      >
+        <h2 class="text-3xl font-bold text-sky-700 mb-6 text-center">
+          Plano da Aula
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2"
+          >
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+            </h3>
+            <p class="text-slate-600 mt-1">
+              Conceito de Sistemas de Informação (SI); papel dos SI nas
+              organizações; taxonomia e níveis organizacionais; casos reais e
+              debate.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVOS
+            </h3>
+            <ul class="list-disc list-inside text-slate-700">
+              <li>
+                Definir <strong>SI</strong> e situar no contexto organizacional.
+              </li>
+              <li>
+                Relacionar SI aos níveis
+                <strong>operacional, tático e estratégico</strong>.
+              </li>
+              <li>
+                Analisar casos reais e discutir benefícios e desafios
+                <em>sociotécnicos</em>.
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA E RECURSOS
+            </h3>
+            <p class="text-slate-600">
+              Aula expositiva + discussão orientada com estudos de caso; slides,
+              vídeos curtos; fórum no AVA para TED.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contexto -->
+      <section
+        id="contexto"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          🧠 O “Sistema Nervoso” das Organizações
+        </h2>
+        <p>
+          Um <strong>Sistema de Informação (SI)</strong> integra
+          <em>pessoas</em>, <em>processos</em>, <em>dados</em> e
+          <em>tecnologia</em> para coletar, processar, armazenar e disseminar
+          informações que suportam operações e decisão. É o tecido conjuntivo
+          que conecta áreas e acelera o ciclo
+          <em>dados → informação → ação → resultado</em>.
+        </p>
+        <div class="callout callout-info">
+          <strong>Em uma frase:</strong> SI converte dados em decisão e decisão
+          em valor (tempo, custo, qualidade, receita, conformidade).
+        </div>
+      </section>
+
+      <!-- Dimensões do SI -->
+      <section id="dimensoes-si" class="mb-12">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          As Três Dimensões de um SI
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i class="fa-solid fa-server text-4xl text-sky-600 mb-4"></i>
+            <h3 class="text-2xl font-bold text-slate-700 mb-2">Tecnologia</h3>
+            <p class="text-slate-600">
+              Infraestrutura de hardware, software, redes e dados (ERP, CRM,
+              bases, API, nuvem).
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i class="fa-solid fa-sitemap text-4xl text-purple-600 mb-4"></i>
+            <h3 class="text-2xl font-bold text-slate-700 mb-2">Organização</h3>
+            <p class="text-slate-600">
+              Estrutura, processos, políticas e estratégia. SI precisa
+              <strong>alinhar</strong> com o negócio.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <i class="fa-solid fa-users text-4xl text-emerald-600 mb-4"></i>
+            <h3 class="text-2xl font-bold text-slate-700 mb-2">Pessoas</h3>
+            <p class="text-slate-600">
+              Usuários, gestores e TI. Adoção, capacitação e cultura determinam
+              o sucesso.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- AS TRÊS DIMENSÕES DE UM SI -->
+      <section
+        id="dimensoes-si"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          🔎 As Três Dimensões de um Sistema de Informação
+        </h2>
+        <p class="text-slate-700">
+          Todo Sistema de Informação (SI) pode ser compreendido a partir de três
+          dimensões interdependentes: <strong>Tecnologia</strong>,
+          <strong>Organização</strong> e <strong>Pessoas</strong>. Essa visão é
+          recorrente em autores como Laudon & Laudon (2019) e Stair & Reynolds
+          (2020), sendo fundamental para analisar por que um SI é bem-sucedido
+          (ou fracassa).
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 not-prose mt-6">
+          <!-- Tecnologia -->
+          <article class="border rounded-xl p-5 bg-slate-50">
+            <h3 class="font-semibold text-slate-800">💻 Tecnologia</h3>
+            <p class="text-slate-700 text-sm">
+              Engloba <em>hardware</em>, <em>software</em>, banco de dados,
+              redes e infraestrutura. É a base operacional que possibilita
+              processar, armazenar e compartilhar informações.
+            </p>
+            <p class="text-slate-600 text-xs">
+              Ex.: uso de ERP (Totvs, SAP) para integrar processos.
+            </p>
+          </article>
+
+          <!-- Organização -->
+          <article class="border rounded-xl p-5 bg-slate-50">
+            <h3 class="font-semibold text-slate-800">🏢 Organização</h3>
+            <p class="text-slate-700 text-sm">
+              Refere-se a processos, rotinas, normas e a cultura institucional.
+              Mesmo sistemas avançados falham se não houver alinhamento
+              organizacional e reconfiguração de fluxos de trabalho.
+            </p>
+            <p class="text-slate-600 text-xs">
+              Ex.: redefinição de processos de compras ao adotar e-procurement.
+            </p>
+          </article>
+
+          <!-- Pessoas -->
+          <article class="border rounded-xl p-5 bg-slate-50">
+            <h3 class="font-semibold text-slate-800">👥 Pessoas</h3>
+            <p class="text-slate-700 text-sm">
+              Inclui usuários finais, gestores e especialistas que interagem com
+              o SI. Competências digitais, treinamento e aceitação cultural são
+              decisivos para o êxito da tecnologia.
+            </p>
+            <p class="text-slate-600 text-xs">
+              Ex.: colaboradores usando CRM para registro consistente de
+              clientes.
+            </p>
+          </article>
+        </div>
+
+        <p class="mt-6 text-slate-700">
+          A eficácia de um SI depende do
+          <strong>equilíbrio entre essas dimensões</strong>. Investir apenas em
+          tecnologia, sem adequar processos ou engajar pessoas, gera resistência
+          e subutilização.
+        </p>
+
+        <div class="mt-6 p-4 border-l-4 border-sky-500 bg-sky-50 rounded">
+          <p class="text-slate-700 text-sm">
+            <strong>Atividade reflexiva:</strong> Escolha um sistema que você
+            utiliza (Google Agenda, WhatsApp, sistema acadêmico, app de banco).
+            Identifique exemplos de cada dimensão (tecnologia, organização,
+            pessoas). Quais fragilidades você percebe em cada uma?
+          </p>
+        </div>
+
+        <p class="mt-4 text-xs text-slate-500">
+          Referências: LAUDON, K. C.; LAUDON, J. P.
+          <em>Sistemas de Informação Gerenciais</em>. Pearson, 2019. <br />
+          STAIR, R.; REYNOLDS, G. <em>Princípios de Sistemas de Informação</em>.
+          Cengage, 2020.
+        </p>
+      </section>
+
+      <!-- Taxonomia de SI + Níveis -->
+      <section
+        id="taxonomia"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          📚 Taxonomia de Sistemas de Informação e Níveis Organizacionais
+        </h2>
+        <p>Mapeie cada tipo ao problema e ao nível decisório que atende:</p>
+        <div class="overflow-x-auto not-prose">
+          <table class="tbl w-full text-sm">
+            <thead class="text-slate-600">
+              <tr>
+                <th>Categoria</th>
+                <th>Exemplos</th>
+                <th>Finalidade</th>
+                <th>Nível</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>TPS / Transacional</strong></td>
+                <td>PDV, folha, pedidos</td>
+                <td>Registrar e processar transações de rotina</td>
+                <td>Operacional</td>
+              </tr>
+              <tr>
+                <td><strong>MIS / SIG</strong></td>
+                <td>Relatórios gerenciais</td>
+                <td>Consolidar e acompanhar desempenho</td>
+                <td>Tático</td>
+              </tr>
+              <tr>
+                <td><strong>DSS / BI / Analytics</strong></td>
+                <td>Power BI, Tableau, Looker</td>
+                <td>Análises e suporte à decisão</td>
+                <td>Tático/Estratégico</td>
+              </tr>
+              <tr>
+                <td><strong>ESS / Executivo</strong></td>
+                <td>Painéis executivos</td>
+                <td>Visão macro, tendências, KPIs críticos</td>
+                <td>Estratégico</td>
+              </tr>
+              <tr>
+                <td><strong>ERP</strong></td>
+                <td>SAP, TOTVS, Oracle EBS</td>
+                <td>Integração de processos-chave</td>
+                <td>Operacional/Tático</td>
+              </tr>
+              <tr>
+                <td><strong>CRM</strong></td>
+                <td>Salesforce, RD Station, HubSpot</td>
+                <td>Relacionamento e ciclo de vendas</td>
+                <td>Tático</td>
+              </tr>
+              <tr>
+                <td><strong>SCM</strong></td>
+                <td>SAP SCM, Oracle SCM</td>
+                <td>Cadeia de suprimentos e logística</td>
+                <td>Tático</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout callout-warn mt-4">
+          <strong>Erros comuns:</strong>
+          <ul class="list-disc list-inside">
+            <li>
+              Confundir <em>tecnologia</em> com <em>SI</em> (SI ≠ “só
+              software”).
+            </li>
+            <li>
+              Esperar resultados estratégicos de um SI que atende apenas rotinas
+              operacionais.
+            </li>
+            <li>
+              Ignorar governança de dados (qualidade, segurança, privacidade) e
+              adoção pelos usuários.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- GLOSSÁRIO DE SIGLAS E TERMOS -->
+      <section
+        id="glossario"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          🔤 Glossário de Siglas e Termos
+        </h2>
+        <p class="text-slate-700">
+          Principais siglas usadas na disciplina e no mercado. Use como
+          referência rápida durante os estudos.
+        </p>
+
+        <!-- NOTE (EN): Using <dl> for accessibility-friendly definition list -->
+        <div class="not-prose grid md:grid-cols-2 gap-6 mt-6">
+          <div class="border rounded-xl p-5">
+            <dl class="space-y-3 text-sm">
+              <div>
+                <dt class="font-bold text-slate-800">
+                  TPS — Transaction Processing System
+                </dt>
+                <dd class="text-slate-700">
+                  Sistema transacional; registra rotinas do dia a dia (PDV,
+                  pedidos, folha).
+                </dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-800">
+                  MIS / SIG — Management Information System / Sistema de
+                  Informações Gerenciais
+                </dt>
+                <dd class="text-slate-700">
+                  Relatórios consolidados para controle e planejamento tático.
+                </dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-800">
+                  DSS / BI / Analytics — Decision Support System
+                </dt>
+                <dd class="text-slate-700">
+                  Suporte à decisão: análises, dashboards, modelos (Power BI,
+                  Tableau, Looker).
+                </dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-800">
+                  ESS — Executive Support System
+                </dt>
+                <dd class="text-slate-700">
+                  Visão executiva/estratégica (tendências, KPIs críticos, visão
+                  macro).
+                </dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-800">
+                  ERP — Enterprise Resource Planning
+                </dt>
+                <dd class="text-slate-700">
+                  Sistema integrado de gestão (finanças, compras, estoque,
+                  produção, RH).
+                </dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-800">
+                  CRM — Customer Relationship Management
+                </dt>
+                <dd class="text-slate-700">
+                  Gestão do relacionamento com clientes (marketing, vendas,
+                  pós-venda).
+                </dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-800">
+                  SCM — Supply Chain Management
+                </dt>
+                <dd class="text-slate-700">
+                  Gestão da cadeia de suprimentos (planejamento, compras,
+                  logística).
+                </dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="border rounded-xl p-5">
+            <dl class="space-y-3 text-sm">
+              <div>
+                <dt class="font-bold text-slate-800">DWH — Data Warehouse</dt>
+                <dd class="text-slate-700">
+                  Repositório histórico para análise (apoia BI/Analytics).
+                </dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-800">OLTP / OLAP</dt>
+                <dd class="text-slate-700">
+                  OLTP: transações operacionais; OLAP: análise multidimensional.
+                </dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-800">ETL / ELT</dt>
+                <dd class="text-slate-700">
+                  Extração, transformação e carga de dados (ou carga antes da
+                  transformação).
+                </dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-800">ESB / iPaaS</dt>
+                <dd class="text-slate-700">
+                  Barramento/Plataforma de integração entre sistemas (orquestra
+                  fluxos/APIs).
+                </dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-800">
+                  API — Application Programming Interface
+                </dt>
+                <dd class="text-slate-700">
+                  Contrato de integração entre sistemas (REST/GraphQL etc.).
+                </dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-800">KPI / SLA</dt>
+                <dd class="text-slate-700">
+                  KPI: indicador-chave de desempenho; SLA: acordo de nível de
+                  serviço.
+                </dd>
+              </div>
+              <div>
+                <dt class="font-bold text-slate-800">LGPD</dt>
+                <dd class="text-slate-700">
+                  Lei Geral de Proteção de Dados — base legal de privacidade no
+                  Brasil.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <p class="mt-6 text-xs text-slate-500">
+          Dica: volte a esta seção durante o TED e nas próximas aulas da Unidade
+          III para manter a terminologia consistente.
+        </p>
+      </section>
+
+      <!-- Casos reais + Debate -->
+      <section id="casos" class="mb-12 bg-white p-8 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          🏢 Casos Reais (para discussão orientada)
+        </h2>
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <article class="border rounded-xl p-5">
+            <h3 class="font-bold text-slate-700 mb-1">ERP (SAP)</h3>
+            <p class="text-sm text-slate-700">
+              Integra finanças, compras e estoque.
+              <strong>Benefícios:</strong> dado único, fechamento ágil.
+              <strong>Desafios:</strong> custo, mudança cultural.
+            </p>
+          </article>
+          <article class="border rounded-xl p-5">
+            <h3 class="font-bold text-slate-700 mb-1">ERP (TOTVS)</h3>
+            <p class="text-sm text-slate-700">
+              Aderência fiscal brasileira.
+              <strong>Benefícios:</strong> conformidade.
+              <strong>Desafios:</strong> parametrização, atualização.
+            </p>
+          </article>
+          <article class="border rounded-xl p-5">
+            <h3 class="font-bold text-slate-700 mb-1">
+              Varejo Digital (Magalu)
+            </h3>
+            <p class="text-sm text-slate-700">
+              Omnicanalidade e logística.
+              <strong>Benefícios:</strong> experiência integrada.
+              <strong>Desafios:</strong> escalabilidade.
+            </p>
+          </article>
+          <article class="border rounded-xl p-5">
+            <h3 class="font-bold text-slate-700 mb-1">Plataformas (Amazon)</h3>
+            <p class="text-sm text-slate-700">
+              Automação, dados e serviços.
+              <strong>Benefícios:</strong> elasticidade.
+              <strong>Desafios:</strong> custos e governança.
+            </p>
+          </article>
+        </div>
+
+        <div class="mt-6 callout callout-practice">
+          <h4 class="font-semibold">
+            <i class="fa-solid fa-comments mr-2"></i>Perguntas para debate
+          </h4>
+          <ul class="list-disc list-inside text-slate-700">
+            <li>Qual <strong>processo crítico</strong> o SI apoia no caso?</li>
+            <li>
+              Quais <strong>benefícios mensuráveis</strong> (tempo, custo,
+              qualidade, receita, compliance)?
+            </li>
+            <li>
+              Quais <strong>riscos</strong> (dados, pessoas, tecnologia) e como
+              mitigá-los?
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- VÍDEOS RECOMENDADOS (EMBUTIDOS) -->
+      <section id="videos" class="mb-12 bg-white p-8 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          🎥 Vídeos Curtos (introdução prática)
+        </h2>
+        <div class="grid gap-8 md:grid-cols-2">
+          <!-- Video 1: Introdução a Sistemas de Informação (UNIVESP) -->
+          <!-- NOTE (EN): Using youtube-nocookie, responsive 16:9 wrapper -->
+          <article class="space-y-2">
+            <h3 class="font-semibold text-slate-700">
+              Introdução a Sistemas de Informação (UNIVESP)
+            </h3>
+            <p class="text-sm text-slate-600">
+              Conceitos iniciais e visão de SI nas organizações.
+            </p>
+            <div
+              class="relative w-full overflow-hidden rounded-lg shadow border border-slate-200"
+              style="padding-top: 56.25%"
+            >
+              <iframe
+                class="absolute inset-0 h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/Pmkb8jwTccs"
+                title="Introdução a Sistemas de Informação - UNIVESP"
+                loading="lazy"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <p class="text-xs text-slate-500">
+              Se o player não carregar,
+              <a
+                class="text-sky-700 underline"
+                href="https://www.youtube.com/watch?v=Pmkb8jwTccs"
+                target="_blank"
+                rel="noopener noreferrer"
+                >abra no YouTube</a
+              >.
+            </p>
+          </article>
+
+          <!-- Video 2: O que é ERP? (introdução prática) -->
+          <article class="space-y-2">
+            <h3 class="font-semibold text-slate-700">
+              O que é ERP? (Introdução prática)
+            </h3>
+            <p class="text-sm text-slate-600">
+              Conceitos, módulos e benefícios de ERP no contexto empresarial.
+            </p>
+            <div
+              class="relative w-full overflow-hidden rounded-lg shadow border border-slate-200"
+              style="padding-top: 56.25%"
+            >
+              <iframe
+                class="absolute inset-0 h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/K7Go9bKVTk4"
+                title="O que é ERP? Enterprise Resource Planning"
+                loading="lazy"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <p class="text-xs text-slate-500">
+              Se o player não carregar,
+              <a
+                class="text-sky-700 underline"
+                href="https://www.youtube.com/watch?v=K7Go9bKVTk4"
+                target="_blank"
+                rel="noopener noreferrer"
+                >abra no YouTube</a
+              >.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Checklist de Qualidade de SI -->
+      <section id="checklist" class="mb-12 bg-white p-8 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          ✅ Checklist de Qualidade de um SI
+        </h2>
+        <ul class="list-disc list-inside text-slate-700">
+          <li>
+            <strong>Utilidade:</strong> resolve o problema certo? apoia o
+            objetivo de negócio?
+          </li>
+          <li>
+            <strong>Usabilidade & Adoção:</strong> usuários querem/ conseguem
+            usar?
+          </li>
+          <li>
+            <strong>Dados:</strong> qualidade, segurança, privacidade,
+            disponibilidade.
+          </li>
+          <li>
+            <strong>Integração:</strong> conversa com outros sistemas
+            (APIs/ETL)?
+          </li>
+          <li>
+            <strong>Medição:</strong> há KPIs claros (tempo, custo, qualidade,
+            receita, compliance)?
+          </li>
+          <li>
+            <strong>Sustentação:</strong> manutenção, custo total (TCO),
+            evolução.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Tarefa (TED) com Rubrica -->
+      <section
+        id="tarefa"
+        aria-label="Tarefa da Aula"
+        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📝 Tarefa (TED): Fórum Reflexivo
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow not-prose">
+          <p class="text-lg leading-relaxed mb-4">
+            No AVA, responda:
+            <strong
+              >“Qual sistema de informação você mais utiliza no seu cotidiano
+              (ex.: Google Agenda, WhatsApp, CRM, app de banco)? Ele cumpre bem
+              sua função? Por quê?”</strong
+            >
+          </p>
+          <ul class="list-disc list-inside text-slate-700">
+            <li>Escreva ao menos <strong>1 parágrafo</strong> (5–8 linhas).</li>
+            <li>
+              Inclua <strong>1 comentário construtivo</strong> na postagem de um
+              colega.
+            </li>
+            <li>
+              Cite um <strong>benefício mensurável</strong> e um
+              <strong>desafio</strong> percebido.
+            </li>
+          </ul>
+
+          <!-- Rubrica -->
+          <div class="mt-6 callout callout-info">
+            <h4 class="font-semibold">
+              <i class="fa-solid fa-list-check mr-2"></i>Rubrica (0–10)
+            </h4>
+            <ul class="list-disc list-inside">
+              <li>
+                <strong>Clareza e objetividade</strong> (0–3): escreve de forma
+                compreensível e direta.
+              </li>
+              <li>
+                <strong>Exemplos e evidências</strong> (0–3): traz caso real,
+                métrica ou evidência.
+              </li>
+              <li>
+                <strong>Relação com conceitos</strong> (0–2): conecta com
+                taxonomia/níveis ou checklist.
+              </li>
+              <li>
+                <strong>Interação</strong> (0–2): comentário construtivo ao
+                colega.
+              </li>
+            </ul>
+          </div>
+
+          <p class="mt-4 text-sm text-slate-600">
+            Prazo: até a próxima aula. Avaliação: participação e qualidade
+            argumentativa, conforme rubrica.
+          </p>
+        </div>
+      </section>
+
+      <!-- Mini-Quiz -->
+      <section id="quiz" class="mb-12" aria-label="Quiz rápido">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          🧐 Quiz Rápido
+        </h2>
+        <div class="space-y-3">
+          <details>
+            <summary>
+              1) Em qual nível um SI transacional (TPS) atua principalmente?
+            </summary>
+            <div class="mt-2 p-3 bg-white border rounded-md">Operacional.</div>
+          </details>
+          <details>
+            <summary>2) Cite um benefício de ERP e um desafio típico.</summary>
+            <div class="mt-2 p-3 bg-white border rounded-md">
+              Benefício: dados integrados. Desafio: custo e mudança cultural.
+            </div>
+          </details>
+          <details>
+            <summary>
+              3) O que diferencia um SI estratégico de um operacional?
+            </summary>
+            <div class="mt-2 p-3 bg-white border rounded-md">
+              Estratégico suporta decisões de longo prazo; operacional suporta
+              rotinas diárias.
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Competências -->
+      <section id="competencias" class="mb-12">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          🎯 Competências Trabalhadas
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow">
+          <ul class="list-disc list-inside space-y-2 text-slate-700">
+            <li>
+              <strong>(4)</strong> Analisar dados para apoiar decisões
+              organizacionais.
+            </li>
+            <li>
+              <strong>(11)</strong> Utilizar métodos e ferramentas adequadas ao
+              desenvolvimento e gestão de SI.
+            </li>
+            <li>
+              <strong>(12)</strong> Produzir e interpretar diagramas, gráficos e
+              tabelas.
+            </li>
+            <li>
+              <strong>(14)</strong> Especificar requisitos a partir de
+              necessidades organizacionais.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Bibliografia -->
+      <section
+        id="bibliografia"
+        class="prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📚 Bibliografia
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow space-y-4 not-prose">
+          <p>
+            <strong>MEIRELES, Manuel; SORDI, J. O. de.</strong>
+            <em>Administração de sistemas de informação.</em> 2. ed. São Paulo:
+            Atlas, 2019.
+          </p>
+          <p>
+            <strong>SILVA, K.C.N.D.; BARBOSA, C.; JUNIOR, R.S.C.</strong>
+            <em>Sistemas de informações gerenciais.</em> Porto Alegre: Grupo A,
+            2019.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white mt-12" role="contentinfo">
+      <div class="container mx-auto px-6 py-4 text-center">
+        <p>&copy; 2025 - Disciplina de Teoria Geral de Sistemas</p>
+        <p class="text-sm text-slate-400">
+          Material desenvolvido para o curso de Sistemas de Informação.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

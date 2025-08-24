@@ -1274,6 +1274,191 @@
         </p>
       </section>
 
+      <!-- TED Flowchart (Aula 6) — FIXED SPACING & ALIGNMENT -->
+<section id="ted-fluxograma" aria-label="TED: Fluxograma do Processo de Matrícula" class="mb-12">
+  <h2 class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6">
+    🧩 TED: Fluxograma do Processo de Matrícul
+  </h2>
+
+  <div class="bg-white p-6 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg">
+    <p><strong>Objetivo:</strong> Completar o fluxograma, preenchendo os blocos <code>[Preencher]</code> e validando o caminho das decisões.</p>
+  </div>
+
+  <figure class="not-prose bg-white p-6 rounded-lg shadow mt-6">
+    <!-- NOTE (EN): ViewBox height enlarged to avoid overlap with legend; lanes resized. -->
+    <svg viewBox="0 0 1100 880" class="w-full h-auto" role="img" aria-labelledby="flowTitle flowDesc">
+      <title id="flowTitle">Fluxograma da Matrícula (Versão para Alunos) — Alinhado</title>
+      <desc id="flowDesc">Fluxo com início, dados no portal, upload de documentos, conferência, decisão de pendências, pagamento, confirmação e fim. Conectores alinhados e legenda separada das raias.</desc>
+
+      <!-- ======= MARKERS ======= -->
+      <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+          <path d="M0,0 L0,10 L10,5 z" fill="#334155"></path>
+        </marker>
+        <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="1.5" stdDeviation="1.2" flood-color="#000000" flood-opacity="0.10"/>
+        </filter>
+      </defs>
+
+      <!-- ======= STYLES ======= -->
+      <style>
+        /* Text defaults */
+        .lbl { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; fill:#0f172a; }
+        .small { font-size: 12px; fill:#475569; }
+        .title { font-weight:700; font-size:15px; }
+        .body  { font-size:13px; }
+
+        /* Node shapes */
+        .terminator { fill:#e0f2fe; stroke:#38bdf8; }
+        .process    { fill:#ecfeff; stroke:#06b6d4; }
+        .decision   { fill:#fef9c3; stroke:#f59e0b; }
+        .io         { fill:#f0fdf4; stroke:#6ee7b7; }
+        .doc        { fill:#f8fafc; stroke:#94a3b8; }
+
+        /* Blank nodes (to fill) */
+        .blank { fill:#ffffff; stroke:#cbd5e1; stroke-dasharray:6 5; }
+        .blankText { fill:#334155; font-style:italic; }
+
+        /* Lines and layout helpers */
+        .node { stroke-width:1.75; filter:url(#softShadow); }
+        .conn { stroke:#334155; stroke-width:2.5; fill:none; marker-end:url(#arrow); }
+
+        /* Swimlanes */
+        .lane { fill:#e2e8f0; }
+        .laneText { fill:#1e293b; font-weight:600; }
+      </style>
+
+      <!-- ======= SWIMLANES (no overlap with legend) ======= -->
+      <!-- NOTE (EN): Lanes heights and Y positions adjusted to end at 760; legend starts after 800. -->
+      <g aria-label="Raia: Aluno">
+        <rect x="20" y="40" width="1060" height="220" class="lane" opacity="0.35" rx="10"></rect>
+        <text x="30" y="60" class="lbl small laneText">Raia 1 — Aluno</text>
+      </g>
+      <g aria-label="Raia: Secretaria Acadêmica">
+        <rect x="20" y="280" width="1060" height="220" class="lane" opacity="0.25" rx="10"></rect>
+        <text x="30" y="300" class="lbl small laneText">Raia 2 — Secretaria Acadêmica</text>
+      </g>
+      <g aria-label="Raia: Financeiro">
+        <rect x="20" y="520" width="1060" height="240" class="lane" opacity="0.2" rx="10"></rect>
+        <text x="30" y="540" class="lbl small laneText">Raia 3 — Financeiro</text>
+      </g>
+
+      <!-- ======= NODES (aligned on grid) ======= -->
+      <!-- Row Y centers: 110, 370, 595, 756 -->
+
+      <!-- Start (center 240,110) -->
+      <g transform="translate(120,84)">
+        <rect class="node terminator" x="0" y="0" rx="26" ry="26" width="240" height="52"></rect>
+        <text x="120" y="32" text-anchor="middle" class="lbl title">Início: Intenção de Matrícula</text>
+      </g>
+
+      <!-- I/O Fill Form (center 575,110) -->
+      <g transform="translate(450,80)">
+        <polygon class="node io" points="10,0 250,0 240,60 0,60"></polygon>
+        <text x="125" y="24" text-anchor="middle" class="lbl title">Preencher Dados no Portal</text>
+        <text x="125" y="44" text-anchor="middle" class="lbl body small">Cadastro + Curso + Turno</text>
+      </g>
+
+      <!-- Document Upload (center ~910,110) -->
+      <g transform="translate(800,80)">
+        <path class="node doc" d="M0,0 h220 v48 l-28,20 h-192 z"></path>
+        <text x="110" y="30" text-anchor="middle" class="lbl title">Upload de Documentos</text>
+      </g>
+
+      <!-- Conferência de Documentos (center 260,370) -->
+      <g transform="translate(130,335)">
+        <rect class="node process" x="0" y="0" rx="12" ry="12" width="260" height="70"></rect>
+        <text x="130" y="30" text-anchor="middle" class="lbl title">Conferência de Documentos</text>
+        <text x="130" y="50" text-anchor="middle" class="lbl small">Secretaria Acadêmica</text>
+      </g>
+
+      <!-- Decision: Pendências? (center 550,370) -->
+      <g transform="translate(450,290)">
+        <polygon class="node decision" points="100,0 200,80 100,160 0,80"></polygon>
+        <text x="100" y="70" text-anchor="middle" class="lbl title">Pendências?</text>
+      </g>
+
+      <!-- Student Adjustment (blank) (center 930,370) -->
+      <g transform="translate(800,335)">
+        <rect class="node blank" x="0" y="0" rx="12" ry="12" width="260" height="70"></rect>
+        <text x="130" y="32" text-anchor="middle" class="lbl title blankText">[Preencher]</text>
+        <text x="130" y="52" text-anchor="middle" class="lbl small blankText">Ex.: Reenviar documento legível</text>
+      </g>
+
+      <!-- Emit Boleto / Contract (center 260,595) -->
+      <g transform="translate(130,560)">
+        <rect class="node process" x="0" y="0" rx="12" ry="12" width="260" height="70"></rect>
+        <text x="130" y="30" text-anchor="middle" class="lbl title">Emitir Boleto / Contrato</text>
+        <text x="130" y="50" text-anchor="middle" class="lbl small">Financeiro</text>
+      </g>
+
+      <!-- Payment (blank I/O) (center 575,595) -->
+      <g transform="translate(450,565)">
+        <polygon class="node blank" points="10,0 250,0 240,60 0,60"></polygon>
+        <text x="125" y="24" text-anchor="middle" class="lbl title blankText">[Preencher]</text>
+        <text x="125" y="44" text-anchor="middle" class="lbl small blankText">Ex.: Pagamento da 1ª parcela</text>
+      </g>
+
+      <!-- Enrollment Confirmation (center 930,595) -->
+      <g transform="translate(800,560)">
+        <rect class="node process" x="0" y="0" rx="12" ry="12" width="260" height="70"></rect>
+        <text x="130" y="30" text-anchor="middle" class="lbl title">Confirmação de Matrícula</text>
+        <text x="130" y="50" text-anchor="middle" class="lbl small">Status atualizado no ERP/AVA</text>
+      </g>
+
+      <!-- End (center 575,756) -->
+      <g transform="translate(450,730)">
+        <rect class="node terminator" x="0" y="0" rx="26" ry="26" width="250" height="52"></rect>
+        <text x="125" y="32" text-anchor="middle" class="lbl title">Fim: Matrícula Ativa</text>
+      </g>
+
+      <!-- ======= CONNECTORS (aligned to centers/edges) ======= -->
+      <!-- Start -> Fill -->
+      <path class="conn" d="M360,110 H450"></path>
+      <!-- Fill -> Upload -->
+      <path class="conn" d="M700,110 H800"></path>
+      <!-- Upload -> Conferência (down-left elbow) -->
+      <path class="conn" d="M910,110 V260 H260 V335"></path>
+      <!-- Conferência -> Decisão -->
+      <path class="conn" d="M390,370 H450"></path>
+      <!-- Decisão (Yes) -> Ajuste (right) -->
+      <path class="conn" d="M650,370 H800"></path>
+      <text x="740" y="356" class="lbl small" text-anchor="middle">Sim</text>
+      <!-- Ajuste -> Conferência (loop back up-left) -->
+      <path class="conn" d="M930,370 V250 H260 V335"></path>
+      <!-- Decisão (No) -> Emitir Boleto (down-left) -->
+      <path class="conn" d="M550,450 V595 H130"></path>
+      <text x="565" y="520" class="lbl small">Não</text>
+      <!-- Emitir Boleto -> Pagamento -->
+      <path class="conn" d="M390,595 H450"></path>
+      <!-- Pagamento -> Confirmação -->
+      <path class="conn" d="M700,595 H800"></path>
+      <!-- Confirmação -> Fim (down-left to top of terminator) -->
+      <path class="conn" d="M930,595 V730 H575"></path>
+
+      <!-- ======= LEGEND (separated from lanes) ======= -->
+      <!-- NOTE (EN): Legend placed at y≈830; lanes end at y=760. -->
+      <g transform="translate(20,830)">
+        <rect x="0" y="-34" width="1060" height="34" rx="8" fill="#f8fafc" stroke="#e2e8f0"></rect>
+        <text x="10" y="-12" class="lbl small">Legenda:</text>
+        <rect x="80" y="-28" width="60" height="20" rx="10" class="terminator"></rect>
+        <text x="146" y="-14" class="lbl small">Início/Fim</text>
+        <rect x="220" y="-28" width="60" height="20" rx="6" class="process"></rect>
+        <text x="286" y="-14" class="lbl small">Processo</text>
+        <polygon points="360,-28 420,-28 410,-8 350,-8" class="io"></polygon>
+        <text x="426" y="-14" class="lbl small">Entrada/Saída</text>
+        <polygon points="520,-28 550,-8 520,12 490,-8" class="decision"></polygon>
+        <text x="556" y="-14" class="lbl small">Decisão</text>
+        <path d="M620,-28 h60 v14 l-12,10 h-48 z" class="doc"></path>
+        <text x="686" y="-14" class="lbl small">Documento</text>
+        <rect x="760" y="-28" width="60" height="20" rx="6" class="blank"></rect>
+        <text x="826" y="-14" class="lbl small">[Preencher]</text>
+      </g>
+    </svg>
+    <figcaption class="text-sm text-slate-500 mt-2">Alinhado: conectores horizontais/verticais e legenda fora das raias.</figcaption>
+  </figure>
+</section>
+
       <!-- Seção: Tarefa (TED) -->
       <section
         id="tarefa"

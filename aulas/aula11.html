@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TGS - Aula 11: Sistemas de Informação e a Tomada de Decisão</title>
+    <meta
+      name="description"
+      content="Aula 11 da disciplina Teoria Geral de Sistemas, focada em como os Sistemas de Informação apoiam os diferentes tipos de decisão (estruturadas, semiestruturadas, não estruturadas) nas organizações."
+    />
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Typography Plugin -->
+    <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Estilo base para a fonte Inter */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc; /* bg-slate-50 */
+      }
+      /* Estilo para destacar os callouts */
+      .callout {
+        border-left-width: 4px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.5rem;
+      }
+      .callout-info {
+        background-color: #f0f9ff; /* bg-sky-50 */
+        border-color: #7dd3fc; /* border-sky-300 */
+        color: #0c4a6e; /* text-sky-800 */
+      }
+      .callout-practice {
+        background-color: #f0fdf4; /* bg-emerald-50 */
+        border-color: #6ee7b7; /* border-emerald-300 */
+        color: #065f46; /* text-emerald-800 */
+      }
+      /* Estilo para o quiz */
+      details > summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0.75rem;
+        background-color: #f1f5f9;
+        border-radius: 0.375rem;
+        transition: background-color 0.2s;
+      }
+      details > summary:hover {
+        background-color: #e2e8f0;
+      }
+      details[open] > summary {
+        background-color: #e2e8f0;
+      }
+      .quiz-answer {
+        padding: 1rem;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-top: none;
+        border-radius: 0 0 0.375rem 0.375rem;
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <!-- Cabeçalho da Aula -->
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-sky-800">
+          Teoria Geral de Sistemas (TGS)
+        </h1>
+        <p class="text-xl text-slate-600 mt-2">
+          Aula 11: Sistemas de Informação e a Tomada de Decisão
+        </p>
+      </div>
+    </header>
+
+    <!-- Corpo Principal da Aula -->
+    <main class="container mx-auto px-6 py-10">
+      <!-- Seção: Plano da Aula -->
+      <section
+        id="plano-aula"
+        aria-label="Plano da Aula"
+        class="mb-12 bg-sky-50 border border-sky-200 p-8 rounded-2xl shadow-lg"
+      >
+        <h2 class="text-3xl font-bold text-sky-700 mb-6 text-center">
+          Plano da Aula
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <!-- Conteúdo e Objetivo -->
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
+          >
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
+            </h3>
+            <p class="font-bold text-slate-700">
+              Unidade III – Sistemas de Informação Administrativos
+            </p>
+            <p class="text-slate-600 mt-1">
+              Sistemas de informação e tomada de decisão nas organizações.
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO ESPECÍFICO
+            </h3>
+            <p class="text-slate-600">
+              Analisar como os sistemas de informação apoiam os diferentes tipos
+              de decisão e suas implicações para a eficácia organizacional.
+            </p>
+          </div>
+          <!-- Metodologia e Recursos -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA E RECURSOS
+            </h3>
+            <p class="text-slate-600">
+              Aula expositiva dialogada com análise de situações-problema,
+              utilizando slides e vídeos com simulações de decisões baseadas em
+              dados.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pergunta Norteadora -->
+      <section
+        id="pergunta-norteadora"
+        aria-label="Pergunta Norteadora"
+        class="mb-12 callout callout-info"
+      >
+        <h3 class="font-bold text-lg mb-2">
+          <i class="fa-solid fa-question-circle mr-2"></i>Pergunta Norteadora
+        </h3>
+        <p>
+          Se você fosse gerente de uma loja e o seu sistema de BI mostrasse que
+          as vendas de casacos caíram 80% numa semana de calor inesperado, que
+          decisão tomaria sobre o stock? Como o Sistema de Informação
+          transformou um "problema" numa "decisão informada"?
+        </p>
+      </section>
+
+      <!-- Seção: Contexto Inicial -->
+      <section
+        id="contexto"
+        aria-label="Contexto Inicial"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          🎯 Da Informação à Ação: O Propósito dos SI
+        </h2>
+        <p>
+          Na aula anterior, vimos que os Sistemas de Informação se organizam em
+          níveis (operacional, tático e estratégico). Mas por que essa divisão
+          existe? A resposta é simples: porque os
+          <strong>tipos de decisão</strong> tomadas em cada nível são
+          fundamentalmente diferentes. O propósito final de qualquer SI não é
+          apenas armazenar dados, mas sim transformar esses dados em informação
+          útil para apoiar a tomada de decisão e, consequentemente, gerar ação.
+        </p>
+        <blockquote
+          class="text-xl italic text-slate-600 border-l-4 border-sky-300 pl-4"
+        >
+          "A tomada de decisão é o processo de identificar e selecionar um curso
+          de ação para lidar com um problema específico ou aproveitar uma
+          oportunidade."
+          <footer class="text-base not-italic text-slate-500 mt-2">
+            — Adaptado de Stair & Reynolds (2021)
+          </footer>
+        </blockquote>
+        <p>
+          Herbert Simon, um dos pioneiros no estudo da decisão organizacional,
+          classificou as decisões em um espectro que vai das totalmente
+          programáveis até as completamente novas. Compreender esse espectro é
+          essencial para entender por que um operador de caixa precisa de um
+          sistema diferente de um CEO, e como a tecnologia pode auxiliar (ou até
+          automatizar) o processo decisório em cada contexto.
+        </p>
+      </section>
+
+      <!-- Seção: Tipos de Decisão -->
+      <section id="tipos-decisao" aria-label="Tipos de Decisão" class="mb-12">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          O Espectro da Tomada de Decisão
+        </h2>
+        <div class="overflow-x-auto bg-white p-6 rounded-lg shadow">
+          <table class="min-w-full text-left text-sm font-light">
+            <thead class="border-b font-medium bg-slate-100">
+              <tr>
+                <th scope="col" class="px-4 py-3">Tipo de Decisão</th>
+                <th scope="col" class="px-4 py-3">Características</th>
+                <th scope="col" class="px-4 py-3">Nível Organizacional</th>
+                <th scope="col" class="px-4 py-3">Exemplo de SI de Apoio</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b">
+                <td class="px-4 py-3 font-semibold text-green-700">
+                  Estruturada
+                </td>
+                <td class="px-4 py-3">
+                  Repetitiva, rotineira, com regras claras e procedimentos
+                  definidos. A resposta é quase automática.
+                </td>
+                <td class="px-4 py-3">Operacional</td>
+                <td class="px-4 py-3">
+                  <strong>TPS (Sistema de Processamento de Transações):</strong>
+                  Ex: Aprovar ou negar um pagamento com cartão de crédito com
+                  base no limite.
+                </td>
+              </tr>
+              <tr class="border-b bg-slate-50">
+                <td class="px-4 py-3 font-semibold text-sky-700">
+                  Semiestruturada
+                </td>
+                <td class="px-4 py-3">
+                  Parte do problema tem uma resposta clara, mas outra parte
+                  requer julgamento e análise.
+                </td>
+                <td class="px-4 py-3">Tático / Gerencial</td>
+                <td class="px-4 py-3">
+                  <strong>BI (Business Intelligence):</strong> Ex: Analisar um
+                  relatório de vendas para decidir qual produto terá mais
+                  investimento em marketing no próximo trimestre.
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-semibold text-pink-700">
+                  Não Estruturada
+                </td>
+                <td class="px-4 py-3">
+                  Complexa, única, sem procedimentos pré-definidos. Requer
+                  intuição, criatividade e análise de múltiplos fatores
+                  externos.
+                </td>
+                <td class="px-4 py-3">Estratégico</td>
+                <td class="px-4 py-3">
+                  <strong>ESS (Sistema de Apoio ao Executivo):</strong> Ex: Usar
+                  um dashboard com tendências de mercado para decidir se a
+                  empresa deve entrar num novo país.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Metodologia Ativa -->
+      <section
+        id="metodologia-ativa"
+        aria-label="Metodologia Ativa: Análise de Situação-Problema"
+        class="mb-12 callout callout-practice"
+      >
+        <h2 class="text-2xl font-bold mb-4">
+          <i class="fa-solid fa-lightbulb mr-2"></i>Análise de Situação-Problema
+        </h2>
+        <p class="mb-4">
+          Imagine que você é gerente de produto de uma plataforma de streaming
+          de música e o seu sistema de BI apresenta os seguintes dados:
+        </p>
+        <div class="bg-white/50 p-4 rounded-md">
+          <ul class="list-disc list-inside mt-2 space-y-2">
+            <li>
+              O número de utilizadores que ouvem playlists prontas aumentou 30%
+              no último semestre.
+            </li>
+            <li>
+              O tempo médio de audição de utilizadores que criam as suas
+              próprias playlists é 50% maior.
+            </li>
+            <li>
+              Um novo concorrente lançou uma funcionalidade de "playlists
+              colaborativas" que está a ter sucesso.
+            </li>
+          </ul>
+          <p class="font-semibold mt-4">Discussão em Grupo:</p>
+          <p>
+            Que tipo de decisão você precisa de tomar (estruturada, semi ou não
+            estruturada)? Que ações você poderia tomar com base nesses dados?
+            Como um SI poderia ajudar a implementar e medir o sucesso da sua
+            decisão?
+          </p>
+        </div>
+      </section>
+
+      <!-- Seção: Vídeo -->
+      <section id="video" aria-label="Vídeo Complementar" class="mb-12">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          Decisão Baseada em Dados na Prática
+        </h2>
+
+        <div class="bg-white p-4 rounded-lg shadow">
+          <h3 class="text-lg font-semibold mb-2">
+            Como a Netflix usa dados para tomar decisões
+          </h3>
+
+          <!-- NOTE (EN): Uses Tailwind aspect-ratio plugin; min heights keep the player tall enough -->
+          <div class="aspect-video min-h-[260px] md:min-h-[420px]">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/0CGQvdAbNcc"
+              title="Como a Netflix usa dados para tomar decisões (Tech Talk)"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              class="w-full h-full rounded"
+            ></iframe>
+          </div>
+
+          <p class="text-sm text-slate-500 mt-2">
+            Este vídeo (em inglês, com legendas) explica como a Netflix utiliza
+            os seus sistemas de informação para tomar decisões estratégicas,
+            desde a produção de conteúdo até à personalização da experiência do
+            utilizador.
+            <a
+              href="https://www.youtube.com/watch?v=0CGQvdAbNcc"
+              target="_blank"
+              rel="noopener"
+              class="text-sky-600 hover:underline"
+            >
+              Ver no YouTube </a
+            >.
+          </p>
+        </div>
+      </section>
+
+      <!-- Seção: Tarefa (TED) -->
+      <section
+        id="tarefa"
+        aria-label="Tarefa da Aula"
+        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📝 Tarefa (TED): Estudo de Caso Dirigido
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow not-prose">
+          <p class="text-lg leading-relaxed mb-4">
+            Para a próxima aula, a sua tarefa será analisar um mini-caso e
+            responder a questões orientadoras, aplicando os conceitos de apoio à
+            decisão.
+          </p>
+          <div class="bg-slate-50 p-4 rounded-md">
+            <p class="font-semibold">Mini-Caso:</p>
+            <p class="italic text-slate-700 my-2">
+              Uma gestora de uma rede de lojas de roupa recebe um relatório do
+              sistema de BI que mostra duas tendências fortes: (1) as vendas
+              online na região sudeste cresceram 40% no último ano, mas com uma
+              margem de lucro menor devido aos custos de envio; (2) uma nova
+              linha de produtos sustentáveis, embora com poucas vendas, tem uma
+              margem de lucro 60% maior e uma taxa de satisfação do cliente de
+              95%. Ela precisa de decidir a principal estratégia de investimento
+              para o próximo ano.
+            </p>
+            <p class="font-semibold mt-4">Questões Orientadoras:</p>
+            <ol class="list-decimal list-inside mt-2 space-y-2">
+              <li>
+                Que tipo de decisão a gestora precisa de tomar (estruturada,
+                semiestruturada ou não estruturada)? Justifique.
+              </li>
+              <li>
+                Quais são as duas principais opções de decisão que os dados do
+                SI apresentam?
+              </li>
+              <li>
+                Se você fosse a gestora, que outra informação (que talvez não
+                esteja no relatório atual) você buscaria no SI para tomar uma
+                decisão mais segura?
+              </li>
+            </ol>
+          </div>
+          <p class="mt-4 font-semibold">
+            <strong>Entrega:</strong> Poste as suas respostas no fórum da
+            disciplina no AVA.
+          </p>
+        </div>
+      </section>
+
+      <!-- Mini-Quiz de Autoavaliação -->
+      <section id="quiz" class="mb-12" aria-label="Quiz de Autoavaliação">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🧐 Mini-Quiz de Autoavaliação
+        </h2>
+        <div class="space-y-4">
+          <details>
+            <summary>
+              1. A decisão de reabastecer automaticamente o stock de um item
+              quando ele atinge 10 unidades é um exemplo de decisão...
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Estruturada. É uma decisão rotineira,
+                baseada numa regra clara ("SE stock < 10 ENTÃO comprar mais")
+                que pode ser totalmente automatizada por um Sistema de
+                Processamento de Transações (TPS) ou um ERP.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              2. Qual é o principal valor que um sistema de BI oferece a um
+              gestor tático?
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> A capacidade de transformar grandes
+                volumes de dados operacionais em informações consolidadas
+                (gráficos, relatórios, tendências), permitindo uma análise que
+                apoia decisões semiestruturadas, onde o julgamento do gestor
+                ainda é necessário.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              3. Verdadeiro ou Falso: Um Sistema de Apoio ao Executivo (ESS)
+              geralmente fornece dados extremamente detalhados e transacionais.
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Falso. Um ESS foca-se em dados
+                altamente sumarizados, indicadores de alto nível e tendências de
+                longo prazo para apoiar decisões não estruturadas, evitando a
+                sobrecarga de detalhes operacionais.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Seção: Bibliografia -->
+      <section
+        id="bibliografia"
+        aria-label="Bibliografia"
+        class="prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📚 Bibliografia
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow space-y-4 not-prose">
+          <p>
+            <strong>MEIRELES, Manuel; SORDI, J. O. de.</strong>
+            <em>Administração de sistemas de informação.</em> 2. ed. São Paulo:
+            Atlas, 2019.
+          </p>
+          <p>
+            <strong>PALMISANO, Angelo; ROSINI, Alessandro Marco.</strong>
+            <em
+              >Administração de sistemas de informação e a gestão do
+              conhecimento.</em
+            >
+            2. ed. São Paulo: Cengage Learning, 2012.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-800 text-white mt-12" role="contentinfo">
+      <div class="container mx-auto px-6 py-4 text-center">
+        <p>&copy; 2025 - Disciplina de Teoria Geral de Sistemas</p>
+        <p class="text-sm text-slate-400">
+          Material desenvolvido para o curso de Sistemas de Informação.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

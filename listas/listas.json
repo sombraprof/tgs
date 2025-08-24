@@ -4,5 +4,11 @@
     "descricao": "Fixe os conceitos fundamentais da Teoria Geral de Sistemas: definição, classificação e aplicação prática em Sistemas de Informação.",
     "arquivo": "lista1.json",
     "mostrar_solucoes": true
+  },
+  {
+    "titulo": "Lista 02: Revisão Sistêmica (Aulas 1 a 10)",
+    "descricao": "Lista de exercícios estilo ENADE com 20 questões (objetivas e discursivas) cobrindo os conteúdos das Aulas 1 a 10: sistemas, fluxos, homeostase, modelagem e níveis de Sistemas de Informação.",
+    "arquivo": "lista2.json",
+    "mostrar_solucoes": true
   }
 ]

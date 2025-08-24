@@ -68,5 +68,19 @@
     "descricao": "Análise da pirâmide organizacional e dos três níveis de Sistemas de Informação: Operacional (TPS, ERP, OLTP), Tático (MIS, BI, Analytics) e Estratégico (ESS, dashboards executivos). Estudo do horizonte temporal, granularidade dos dados e tipos de decisão em cada nível. Comparação OLTP vs OLAP, casos reais (logística, marketing e decisões de diretoria), tabela comparativa, vídeos explicativos e TED: preenchimento de tabela com exemplos de SI por nível.",
     "arquivo": "aula10.html",
     "ativo": true
+  },
+  {
+    "id": "aula11",
+    "titulo": "Aula 11: Sistemas de Informação e a Tomada de Decisão",
+    "descricao": "Tipos de decisão (estruturada, semiestruturada e não estruturada) e o ciclo de Herbert Simon (Inteligência–Concepção–Escolha–Implementação), conectando com os níveis Operacional–Tático–Estratégico e exemplos de SI (TPS/ERP, BI/Analytics, ESS). TED com rubrica, vídeo e quiz.",
+    "arquivo": "aula11.html",
+    "ativo": true
+  },
+  {
+    "id": "aula12",
+    "titulo": "Aula 12: Sistemas de Informação como Vantagem Competitiva",
+    "descricao": "Como os SI geram vantagem competitiva: estratégias de Porter (custo, diferenciação, foco), Cadeia de Valor, visão baseada em recursos (RBV) com análise VRIO, efeitos de rede e governança/LGPD como pilares de confiança. Laboratório de métricas (KPI↔alavancas de SI), atividade ativa (Jigsaw + VRIO Express + KPI) e checklist de sustentabilidade da vantagem. TED: resposta escrita no AVA com exemplo real, aplicação de VRIO e definição de um KPI impactado.",
+    "arquivo": "aula12.html",
+    "ativo": true
   }
 ]

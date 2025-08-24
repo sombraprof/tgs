@@ -1,0 +1,127 @@
+{
+  "id": "lista2",
+  "titulo": "Lista de Exercícios 02: Revisão Sistêmica (Aulas 1 a 10)",
+  "descricao": "Lista no estilo ENADE com 20 questões objetivas e discursivas cobrindo os principais tópicos das aulas 1 a 10 da disciplina de Teoria Geral de Sistemas, incluindo definição, classificação, fluxos, homeostase, modelagem e níveis de Sistemas de Informação.",
+  "questoes": [
+    {
+      "id": 1,
+      "enunciado": "Explique, em suas palavras, o objetivo central da Teoria Geral de Sistemas (TGS).",
+      "dica": "A TGS não se restringe à Computação, mas busca compreender princípios comuns em sistemas de diferentes naturezas.",
+      "solucao": "Resposta aberta. Exemplo: 'A TGS procura identificar leis gerais que explicam o funcionamento de qualquer sistema, analisando como as partes interagem para formar o todo.'"
+    },
+    {
+      "id": 2,
+      "enunciado": "Classifique os sistemas abaixo como abertos ou fechados e justifique: a) um aquário, b) um relógio mecânico, c) um smartphone.",
+      "dica": "Sistemas abertos trocam energia, informação ou matéria com o ambiente.",
+      "solucao": "a) Aberto – depende de trocas constantes com o ambiente (oxigênio, alimento). b) Fechado – funciona isolado após dar corda. c) Aberto – troca dados, energia e informações continuamente."
+    },
+    {
+      "id": 3,
+      "enunciado": "Qual é o papel da curricularização da extensão no ensino superior, segundo a Resolução CNE/CES nº 7/2018?",
+      "dica": "Pense na porcentagem mínima de carga horária dedicada à extensão e sua integração com ensino e pesquisa.",
+      "solucao": "A extensão deve corresponder a pelo menos 10% da carga horária total do curso e integrar-se ao ensino e à pesquisa, aproximando universidade e sociedade."
+    },
+    {
+      "id": 4,
+      "enunciado": "Dê um exemplo de entrada, processamento, saída e feedback em uma plataforma de e-commerce.",
+      "dica": "Entrada: pedido do cliente; Processamento: separação e envio; Saída: produto entregue; Feedback: avaliação do cliente.",
+      "solucao": "Exemplo: 'Entrada: pedido online. Processamento: separação no armazém. Saída: entrega do produto. Feedback: comentário e avaliação de satisfação do cliente.'"
+    },
+    {
+      "id": 5,
+      "enunciado": "Explique a diferença entre sistemas dinâmicos e sistemas estáticos, trazendo um exemplo para cada.",
+      "dica": "Dinâmicos mudam ao longo do tempo; estáticos mantêm-se invariáveis.",
+      "solucao": "Exemplo: 'Dinâmico: um ecossistema, pois está sempre em mudança. Estático: uma ponte de concreto, cuja estrutura permanece relativamente inalterada.'"
+    },
+    {
+      "id": 6,
+      "enunciado": "Por que uma organização pode ser considerada um sistema aberto?",
+      "dica": "Lembre-se da relação com entradas, saídas e o ambiente.",
+      "solucao": "Porque depende de recursos externos (entradas), transforma-os em produtos/serviços (processamento), gera saídas e recebe feedback constante do ambiente."
+    },
+    {
+      "id": 7,
+      "enunciado": "Dê um exemplo real de fluxo de materiais e um de fluxo de informação em uma empresa de logística.",
+      "dica": "Materiais são bens físicos; informação são dados que coordenam esses bens.",
+      "solucao": "Fluxo de materiais: transporte físico de pacotes. Fluxo de informação: código de rastreamento e notificação enviada ao cliente."
+    },
+    {
+      "id": 8,
+      "enunciado": "Explique o que é throughput e sua importância em um processo organizacional.",
+      "dica": "Relacione throughput com taxa de saída de itens/processos.",
+      "solucao": "Throughput é a quantidade de saídas produzidas em determinado tempo. É importante porque mede a eficiência e capacidade produtiva do sistema."
+    },
+    {
+      "id": 9,
+      "enunciado": "Qual a função de um feedback negativo em sistemas abertos?",
+      "dica": "Pense em estabilidade e correção de desvios.",
+      "solucao": "Feedback negativo busca estabilizar o sistema, corrigindo desvios e mantendo as variáveis dentro de limites aceitáveis."
+    },
+    {
+      "id": 10,
+      "enunciado": "O que significa setpoint em um modelo de controle sistêmico?",
+      "dica": "É o valor de referência esperado.",
+      "solucao": "Setpoint é o valor/meta desejada que o sistema tenta manter (exemplo: temperatura definida em um termostato)."
+    },
+    {
+      "id": 11,
+      "enunciado": "Explique a diferença entre feedback e feedforward.",
+      "dica": "Um atua depois do processo, o outro antes.",
+      "solucao": "Feedback atua após a saída, corrigindo erros. Feedforward antecipa problemas ajustando entradas antes que erros ocorram."
+    },
+    {
+      "id": 12,
+      "enunciado": "Nos Diagramas de Fluxo de Dados (DFD), o que representa uma entidade externa?",
+      "dica": "Entidades externas estão fora do sistema, mas interagem com ele.",
+      "solucao": "São atores ou sistemas externos que enviam ou recebem informações do sistema (exemplo: cliente, fornecedor)."
+    },
+    {
+      "id": 13,
+      "enunciado": "Cite um erro comum na elaboração de fluxogramas e seu impacto.",
+      "dica": "Fluxogramas devem ser claros e consistentes.",
+      "solucao": "Erro comum: não usar símbolos padronizados. Impacto: confusão na interpretação e risco de retrabalho."
+    },
+    {
+      "id": 14,
+      "enunciado": "Qual a principal função de um ERP (Enterprise Resource Planning) nas organizações?",
+      "dica": "Lembre que o ERP integra processos internos.",
+      "solucao": "Integrar processos e dados de diferentes áreas da organização (vendas, estoque, finanças) em um sistema unificado."
+    },
+    {
+      "id": 15,
+      "enunciado": "Explique como sistemas de Business Intelligence (BI) apoiam a tomada de decisão.",
+      "dica": "BI transforma dados em informação estratégica.",
+      "solucao": "BI coleta e analisa dados, gerando dashboards e relatórios que apoiam decisões táticas e estratégicas."
+    },
+    {
+      "id": 16,
+      "enunciado": "Qual o tipo de decisão predominante no nível operacional dos Sistemas de Informação?",
+      "dica": "O nível operacional lida com rotinas diárias.",
+      "solucao": "Decisões estruturadas e rotineiras, como registrar vendas ou processar pagamentos."
+    },
+    {
+      "id": 17,
+      "enunciado": "Qual a principal característica do nível tático dos Sistemas de Informação?",
+      "dica": "O nível tático serve de ponte entre o operacional e o estratégico.",
+      "solucao": "Focado em decisões semiestruturadas e de médio prazo, baseadas em dados consolidados."
+    },
+    {
+      "id": 18,
+      "enunciado": "Cite um exemplo de decisão típica do nível estratégico de SI.",
+      "dica": "Executivos usam dados de longo prazo.",
+      "solucao": "Decidir abrir uma filial em outro país com base em análises de mercado e tendências de anos anteriores."
+    },
+    {
+      "id": 19,
+      "enunciado": "Qual a diferença entre OLTP e OLAP?",
+      "dica": "Um é transacional, outro é analítico.",
+      "solucao": "OLTP registra transações em tempo real (ex: vendas). OLAP é voltado para análises e consultas complexas sobre dados históricos."
+    },
+    {
+      "id": 20,
+      "enunciado": "Explique por que um ERP, embora operacional, também é importante para níveis tático e estratégico.",
+      "dica": "A informação flui entre níveis da pirâmide organizacional.",
+      "solucao": "Embora atue no operacional, o ERP gera dados consolidados que alimentam análises táticas (relatórios de desempenho) e estratégicas (planejamento de longo prazo)."
+    }
+  ]
+}

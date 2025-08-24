@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TGS - Aula 12: SI como Vantagem Competitiva</title>
+    <meta
+      name="description"
+      content="Aula 12 da disciplina Teoria Geral de Sistemas: como os Sistemas de Informação são usados estrategicamente para gerar vantagem competitiva nas organizações (Porter, Cadeia de Valor, RBV/VRIO, efeitos de rede, governança)."
+    />
+
+    <!-- Tailwind CSS + plugins (typography + aspect-ratio) -->
+    <!-- NOTE (EN): Unify Tailwind plugins to avoid conflicts -->
+    <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography,aspect-ratio"></script>
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome (icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* Base typography */
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc; /* bg-slate-50 */
+      }
+
+      /* Callouts */
+      .callout {
+        border-left-width: 4px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 0.5rem;
+      }
+      .callout-info {
+        background-color: #f0f9ff;
+        border-color: #7dd3fc;
+        color: #0c4a6e;
+      }
+      .callout-practice {
+        background-color: #f0fdf4;
+        border-color: #6ee7b7;
+        color: #065f46;
+      }
+
+      /* Quiz accordions */
+      details > summary {
+        cursor: pointer;
+        font-weight: 600;
+        padding: 0.75rem;
+        background-color: #f1f5f9;
+        border-radius: 0.375rem;
+        transition: background-color 0.2s;
+      }
+      details > summary:hover {
+        background-color: #e2e8f0;
+      }
+      details[open] > summary {
+        background-color: #e2e8f0;
+      }
+      .quiz-answer {
+        padding: 1rem;
+        background-color: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-top: none;
+        border-radius: 0 0 0.375rem 0.375rem;
+      }
+
+      /* Print styles */
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        section {
+          box-shadow: none !important;
+          border: 1px solid #e2e8f0;
+          margin-bottom: 1rem;
+          background: #fff !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="text-slate-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+      <div class="container mx-auto px-6 py-8">
+        <h1 class="text-4xl font-bold text-sky-800">
+          Teoria Geral de Sistemas (TGS)
+        </h1>
+        <p class="text-xl text-slate-600 mt-2">
+          Aula 12: Sistemas de Informação como Fonte de Vantagem Competitiva
+        </p>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="container mx-auto px-6 py-10">
+      <!-- Plano da Aula -->
+      <section
+        id="plano-aula"
+        aria-label="Plano da Aula"
+        class="mb-12 bg-sky-50 border border-sky-200 p-8 rounded-2xl shadow-lg"
+      >
+        <h2 class="text-3xl font-bold text-sky-700 mb-6 text-center">
+          Plano da Aula
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+          <div
+            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
+          >
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-book-open mr-2" aria-hidden="true"></i
+              >CONTEÚDO
+            </h3>
+            <p class="font-bold text-slate-700">
+              Unidade III – Sistemas de Informação Administrativos
+            </p>
+            <p class="text-slate-600 mt-1">
+              Sistemas de informação como fonte de vantagem competitiva.
+            </p>
+          </div>
+
+          <!-- Objetivos mensuráveis (Bloom) -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-bullseye mr-2" aria-hidden="true"></i
+              >OBJETIVOS DE APRENDIZAGEM
+            </h3>
+            <ul class="list-disc list-inside text-slate-700 space-y-1">
+              <li>
+                Identificar como SI suportam estratégias genéricas de Porter
+                (custo, diferenciação, foco).
+              </li>
+              <li>
+                Analisar alavancas de SI na
+                <strong>cadeia de valor</strong> (Porter).
+              </li>
+              <li>
+                Avaliar iniciativas de SI com <strong>VRIO</strong> (RBV) para
+                julgar sustentabilidade da vantagem.
+              </li>
+              <li>
+                Propor um experimento com <strong>KPI</strong> e hipótese de
+                impacto mensurável.
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="font-semibold text-lg text-sky-800 mb-2">
+              <i class="fa-solid fa-gears mr-2" aria-hidden="true"></i
+              >METODOLOGIA E RECURSOS
+            </h3>
+            <p class="text-slate-600">
+              Aula expositiva com exemplos práticos (Netflix, Nubank, Amazon,
+              Shein), <strong>Jigsaw</strong> em grupo,
+              <strong>VRIO Express</strong> e definição de <strong>KPI</strong>.
+              Recursos: slides, quadro, vídeos curtos sobre uso estratégico de
+              dados.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pergunta Norteadora -->
+      <section
+        id="pergunta-norteadora"
+        class="mb-12 callout callout-info"
+        aria-label="Pergunta Norteadora"
+      >
+        <h3 class="font-bold text-lg mb-2">
+          <i class="fa-solid fa-question-circle mr-2" aria-hidden="true"></i
+          >Pergunta Norteadora
+        </h3>
+        <p>
+          Como uma empresa nativa digital (por ex., Shein), sem lojas físicas,
+          escalou globalmente desafiando incumbentes? Qual o papel dos
+          <strong>dados</strong> e dos
+          <strong>Sistemas de Informação</strong> nessa trajetória?
+        </p>
+      </section>
+
+      <!-- Contexto + Arcabouço -->
+      <section
+        id="contexto"
+        aria-label="Contexto Inicial"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-3xl font-semibold text-slate-800 mb-4">
+          🏆 SI: de Suporte Operacional a Vantagem Estratégica
+        </h2>
+        <p>
+          Vantagem competitiva (Porter) é superar concorrentes de forma
+          sustentável — por custo, diferenciação ou foco. Na perspectiva
+          <strong>RBV</strong> (Resource-Based View), a sustentabilidade depende
+          de recursos/capacidades que sejam <strong>Valiosos</strong>,
+          <strong>Raros</strong>, <strong>Difíceis de Imitar</strong> e com
+          <strong>Organização</strong> para capturar valor
+          (<strong>VRIO</strong>).
+        </p>
+        <p>
+          SI isoladamente tende a comoditizar. O que sustenta a vantagem é a
+          <strong>capacidade</strong> de aprender rápido (dados &amp;
+          experimentação), operar com excelência (processos), orquestrar
+          ecossistemas (efeitos de rede) e manter
+          <strong>governança/ética/LGPD</strong> para preservar a confiança.
+        </p>
+      </section>
+
+      <!-- Mapa Conceitual (SVG acessível) -->
+      <section id="mapa-conceitual" class="mb-12">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          Mapa Conceitual: Estratégia ↔ SI ↔ Valor
+        </h2>
+        <div class="bg-white p-6 rounded-lg shadow text-center">
+          <!-- NOTE (EN): Simple, high-contrast conceptual map -->
+          <svg
+            viewBox="0 0 900 340"
+            role="img"
+            aria-labelledby="mcTitle mcDesc"
+            class="w-full h-auto"
+          >
+            <title id="mcTitle">
+              Mapa Conceitual de Vantagem Competitiva com SI
+            </title>
+            <desc id="mcDesc">
+              Nós conectando Estratégias Genéricas, Cadeia de Valor, SI/Dados,
+              VRIO, KPIs e Governança/Ética (LGPD).
+            </desc>
+            <!-- Nodes -->
+            <defs>
+              <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+                <feDropShadow
+                  dx="0"
+                  dy="1"
+                  stdDeviation="2"
+                  flood-color="#94a3b8"
+                  flood-opacity="0.6"
+                />
+              </filter>
+            </defs>
+
+            <!-- Boxes -->
+            <g filter="url(#shadow)">
+              <rect
+                x="30"
+                y="30"
+                width="230"
+                height="70"
+                rx="12"
+                fill="#ecfeff"
+                stroke="#06b6d4"
+              />
+              <text
+                x="145"
+                y="65"
+                text-anchor="middle"
+                font-size="16"
+                fill="#0e7490"
+              >
+                Estratégias (Porter)
+              </text>
+              <text
+                x="145"
+                y="85"
+                text-anchor="middle"
+                font-size="12"
+                fill="#0e7490"
+              >
+                Custo • Diferenciação • Foco
+              </text>
+
+              <rect
+                x="340"
+                y="30"
+                width="220"
+                height="70"
+                rx="12"
+                fill="#f0f9ff"
+                stroke="#7dd3fc"
+              />
+              <text
+                x="450"
+                y="65"
+                text-anchor="middle"
+                font-size="16"
+                fill="#0369a1"
+              >
+                Cadeia de Valor
+              </text>
+              <text
+                x="450"
+                y="85"
+                text-anchor="middle"
+                font-size="12"
+                fill="#0369a1"
+              >
+                Onde SI reduz custo/aumenta valor
+              </text>
+
+              <rect
+                x="650"
+                y="30"
+                width="220"
+                height="70"
+                rx="12"
+                fill="#f0fdf4"
+                stroke="#6ee7b7"
+              />
+              <text
+                x="760"
+                y="65"
+                text-anchor="middle"
+                font-size="16"
+                fill="#065f46"
+              >
+                SI &amp; Dados
+              </text>
+              <text
+                x="760"
+                y="85"
+                text-anchor="middle"
+                font-size="12"
+                fill="#065f46"
+              >
+                Analytics • Automação • Plataforma
+              </text>
+
+              <rect
+                x="120"
+                y="180"
+                width="230"
+                height="70"
+                rx="12"
+                fill="#fef9c3"
+                stroke="#f59e0b"
+              />
+              <text
+                x="235"
+                y="215"
+                text-anchor="middle"
+                font-size="16"
+                fill="#92400e"
+              >
+                VRIO (RBV)
+              </text>
+              <text
+                x="235"
+                y="235"
+                text-anchor="middle"
+                font-size="12"
+                fill="#92400e"
+              >
+                Valioso • Raro • Inimitável • Organizado
+              </text>
+
+              <rect
+                x="360"
+                y="180"
+                width="180"
+                height="70"
+                rx="12"
+                fill="#e0f2fe"
+                stroke="#38bdf8"
+              />
+              <text
+                x="450"
+                y="215"
+                text-anchor="middle"
+                font-size="16"
+                fill="#0c4a6e"
+              >
+                KPIs
+              </text>
+              <text
+                x="450"
+                y="235"
+                text-anchor="middle"
+                font-size="12"
+                fill="#0c4a6e"
+              >
+                Conversão • Churn • Margem • OTIF
+              </text>
+
+              <rect
+                x="570"
+                y="180"
+                width="260"
+                height="70"
+                rx="12"
+                fill="#fee2e2"
+                stroke="#fca5a5"
+              />
+              <text
+                x="700"
+                y="215"
+                text-anchor="middle"
+                font-size="16"
+                fill="#7f1d1d"
+              >
+                Governança &amp; LGPD
+              </text>
+              <text
+                x="700"
+                y="235"
+                text-anchor="middle"
+                font-size="12"
+                fill="#7f1d1d"
+              >
+                Ética • Confiança • Sustentabilidade
+              </text>
+            </g>
+
+            <!-- Arrows -->
+            <defs>
+              <marker
+                id="arrow"
+                markerWidth="8"
+                markerHeight="8"
+                refX="6"
+                refY="4"
+                orient="auto-start-reverse"
+              >
+                <path d="M0,0 L0,8 L8,4 z" fill="#64748b"></path>
+              </marker>
+            </defs>
+            <line
+              x1="260"
+              y1="65"
+              x2="340"
+              y2="65"
+              stroke="#64748b"
+              stroke-width="2"
+              marker-end="url(#arrow)"
+            />
+            <line
+              x1="560"
+              y1="65"
+              x2="650"
+              y2="65"
+              stroke="#64748b"
+              stroke-width="2"
+              marker-end="url(#arrow)"
+            />
+            <line
+              x1="760"
+              y1="100"
+              x2="700"
+              y2="180"
+              stroke="#64748b"
+              stroke-width="2"
+              marker-end="url(#arrow)"
+            />
+            <line
+              x1="450"
+              y1="100"
+              x2="450"
+              y2="180"
+              stroke="#64748b"
+              stroke-width="2"
+              marker-end="url(#arrow)"
+            />
+            <line
+              x1="340"
+              y1="100"
+              x2="235"
+              y2="180"
+              stroke="#64748b"
+              stroke-width="2"
+              marker-end="url(#arrow)"
+            />
+          </svg>
+        </div>
+      </section>
+
+      <!-- SECTION: Guia detalhado do Mapa Conceitual (Estratégia ↔ SI ↔ Valor) -->
+      <section
+        id="guia-conceitos"
+        aria-label="Guia dos Conceitos do Mapa Estratégia ↔ SI ↔ Valor"
+        class="mb-12 bg-white p-8 rounded-2xl shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <!-- NOTE (EN): This section explains each concept from the conceptual map with examples and references. -->
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          Guia do Mapa: Estratégia ↔ SI ↔ Valor
+        </h2>
+
+        <!-- Estratégia -->
+        <h3 class="text-2xl font-bold text-slate-800">1) Estratégia</h3>
+        <p>
+          Em termos clássicos, empresas buscam vantagem competitiva por três
+          vias:
+          <strong>liderança em custo</strong>, <strong>diferenciação</strong> e
+          <strong>foco (nicho)</strong>. Na prática: reduzir custos ponta a
+          ponta (custo), criar experiências e atributos únicos (diferenciação)
+          ou dominar um segmento específico (foco).
+        </p>
+        <p>
+          A <strong>Cadeia de Valor</strong> ajuda a enxergar onde a vantagem
+          nasce: um sistema de atividades interligadas (logística, operações,
+          marketing, TI, etc.) que, combinadas, criam valor superior ao custo.
+          Mapear essas atividades mostra onde investir em dados, automação e
+          análises para aumentar margens ou elevar a percepção de valor do
+          cliente.
+        </p>
+        <div class="bg-sky-50 border border-sky-200 rounded-xl p-4 not-prose">
+          <!-- NOTE (EN): Short, concrete examples. -->
+          <p class="font-semibold text-slate-700">Exemplos rápidos</p>
+          <ul class="list-disc list-inside text-slate-700">
+            <li>
+              <strong>Custo:</strong> otimização de rotas e estoque reduzindo
+              km, tempo e rupturas.
+            </li>
+            <li>
+              <strong>Diferenciação:</strong> recomendações personalizadas
+              aumentam relevância e retenção.
+            </li>
+            <li>
+              <strong>Foco:</strong> produto/serviço digital desenhado para um
+              público específico com dores claras.
+            </li>
+          </ul>
+        </div>
+
+        <!-- SI & Dados -->
+        <h3 class="text-2xl font-bold text-slate-800 mt-10">
+          2) SI & Dados (como a TI habilita a estratégia)
+        </h3>
+        <p>
+          Sistemas de Informação (SI) conectam e potencializam a estratégia ao
+          <strong>integrar processos</strong>,
+          <strong>gerar informação de qualidade</strong> e
+          <strong>orquestrar decisões</strong>. Clássicos da estratégia mostram
+          como TI reconfigura cadeias de valor e a competição ao alterar custos
+          de transação, informação e coordenação.
+        </p>
+
+        <h4 class="text-xl font-semibold text-slate-800 mt-6">
+          2.1 Analytics/BI
+        </h4>
+        <p>
+          Consolida dados (OLTP → DWH/OLAP) para responder <em>o quê</em> e
+          <em>por quê</em> está acontecendo, suportando decisões
+          <em>semiestruturadas</em> (nível tático). Indicadores e relatórios
+          alinham a execução à estratégia.
+        </p>
+
+        <h4 class="text-xl font-semibold text-slate-800 mt-4">
+          2.2 Automação & Processos
+        </h4>
+        <p>
+          Workflow, RPA e integrações reduzem tempos de ciclo, erros e custos
+          operacionais — alavancas diretas para
+          <strong>liderança em custo</strong>. Ao mesmo tempo, padronização
+          eleva a qualidade percebida (apoio à <strong>diferenciação</strong>).
+        </p>
+
+        <h4 class="text-xl font-semibold text-slate-800 mt-4">
+          2.3 Plataformas & Efeitos de Rede
+        </h4>
+        <p>
+          Em plataformas digitais, o <strong>valor</strong> para cada usuário
+          cresce à medida que aumenta o número de usuários/participantes (<em
+            >efeitos de rede</em
+          >). Essa dinâmica pode criar vantagens difíceis de imitar (ex.:
+          marketplaces, apps de mensagens, ridesharing).
+        </p>
+
+        <h4 class="text-xl font-semibold text-slate-800 mt-4">
+          2.4 Governança de Dados & LGPD
+        </h4>
+        <p>
+          <strong>Governança de dados</strong> define políticas, papéis e
+          controles para garantir dados
+          <em>confiáveis, seguros e utilizáveis</em> em toda a organização (base
+          do valor analítico). Frameworks como o DAMA-DMBOK sistematizam essas
+          práticas.
+        </p>
+        <p>
+          No Brasil, a <strong>LGPD (Lei nº 13.709/2018)</strong> regula o
+          tratamento de dados pessoais e protege direitos fundamentais. Projetos
+          de SI que geram vantagem devem, portanto, nascer com
+          <em>privacidade e conformidade</em> desde o design.
+        </p>
+
+        <!-- Valor -->
+        <h3 class="text-2xl font-bold text-slate-800 mt-10">
+          3) Valor (como medir e demonstrar resultados)
+        </h3>
+        <p>
+          <strong>KPIs</strong> são indicadores-chave que acompanham objetivos
+          estratégicos e permitem avaliar impacto (financeiro, clientes,
+          processos, aprendizado/inovação). Bons SI trazem KPIs confiáveis,
+          tempestivos e acionáveis.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose">
+          <!-- NOTE (EN): KPI examples by strategic aim. -->
+          <div class="border border-slate-200 rounded-xl p-4">
+            <p class="font-semibold text-slate-700">
+              Exemplos de KPIs por objetivo
+            </p>
+            <ul class="list-disc list-inside text-slate-700">
+              <li>
+                <strong>Custo:</strong> Custo por pedido, % OTIF, tempo de
+                ciclo.
+              </li>
+              <li>
+                <strong>Diferenciação:</strong> NPS/CSAT, churn, LTV,
+                engajamento.
+              </li>
+              <li>
+                <strong>Foco:</strong> participação no nicho, margem média por
+                segmento, CAC no nicho.
+              </li>
+            </ul>
+          </div>
+          <div class="border border-slate-200 rounded-xl p-4">
+            <p class="font-semibold text-slate-700">Boas práticas (KPIs)</p>
+            <ul class="list-disc list-inside text-slate-700">
+              <li>Definir <em>owner</em>, fórmula, fonte e frequência.</li>
+              <li>
+                Preferir indicadores <em>leading</em> para ação, não só
+                <em>lagging</em>.
+              </li>
+              <li>Ligar o KPI a iniciativas e metas claras (OKRs/BSC).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Recursos e Vantagem Sustentável (VRIO) -->
+        <h3 class="text-2xl font-bold text-slate-800 mt-10">
+          4) Recursos que sustentam a vantagem (VRIO)
+        </h3>
+        <p>
+          Para que a vantagem seja <em>sustentável</em>, os recursos/capacidades
+          de SI precisam ser
+          <strong>Valiosos, Raros, Difíceis de Imitar</strong> e a organização
+          deve estar preparada para <strong>Explorá-los</strong> (VRIO).
+          Exemplos: dados proprietários de alta qualidade, modelos analíticos
+          exclusivos, engenharia de plataforma e cultura orientada a
+          experimentos.
+        </p>
+
+        <!-- Fechando o ciclo -->
+        <h3 class="text-2xl font-bold text-slate-800 mt-10">
+          5) Conectando tudo (passo a passo)
+        </h3>
+        <ol>
+          <li>
+            <strong>Escolha estratégica:</strong> Onde competir (segmento) e
+            como vencer (custo, diferenciação, foco).
+          </li>
+          <li>
+            <strong>Desenho do SI:</strong> Quais dados, integrações e
+            automações suportam a cadeia de valor?
+          </li>
+          <li>
+            <strong>Medição de valor:</strong> KPIs alinhados à estratégia, com
+            governança e conformidade.
+          </li>
+          <li>
+            <strong>Sustentação:</strong> Desenvolver recursos VRIO (dados,
+            modelos, talentos, cultura).
+          </li>
+          <li>
+            <strong>Escala:</strong> Se houver plataforma, explorar efeitos de
+            rede para vantagem cumulativa.
+          </li>
+        </ol>
+
+        <!-- Nota final -->
+        <div class="callout callout-info mt-6 not-prose">
+          <!-- NOTE (EN): Short reminder about ethics and compliance. -->
+          <p class="font-semibold">
+            Lembrete: vantagem competitiva baseada em dados precisa ser também
+            <em>ética</em> e <em>legal</em> — qualidade, privacidade e
+            transparência não são opcionais (LGPD).
+          </p>
+        </div>
+      </section>
+
+      <!-- Estratégias Competitivas (alavancas + risco/mitigação) -->
+      <section
+        id="estrategias-competitivas"
+        aria-label="Estratégias Competitivas e o Papel do SI"
+        class="mb-12"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-8"
+        >
+          Como os SI Habilitam Estratégias Competitivas
+        </h2>
+        <p class="text-lg text-slate-600 mb-6">
+          Os SI viabilizam <em>custo</em>, <em>diferenciação</em> e
+          <em>foco</em> por meio de alavancas operacionais e informacionais.
+        </p>
+        <ul class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <li class="bg-white p-5 rounded-lg border border-slate-200">
+            <h3 class="text-xl font-bold text-slate-700">Liderança em Custo</h3>
+            <p>
+              <em>Alavancas:</em> automação, predição, roteirização, estoque
+              enxuto.
+            </p>
+            <p class="text-sm mt-2">
+              <em>Risco:</em> comoditização. <em>Mitigação:</em> excelência
+              operacional + dados proprietários.
+            </p>
+            <p class="text-sm mt-1">
+              <strong>Ex.:</strong> logística preditiva e WMS/OMS integrados
+              reduzem desperdícios.
+            </p>
+          </li>
+          <li class="bg-white p-5 rounded-lg border border-slate-200">
+            <h3 class="text-xl font-bold text-slate-700">Diferenciação</h3>
+            <p>
+              <em>Alavancas:</em> personalização, UX superior,
+              conteúdos/serviços exclusivos.
+            </p>
+            <p class="text-sm mt-2">
+              <em>Risco:</em> cópia rápida. <em>Mitigação:</em> marca +
+              comunidade + dados de uso.
+            </p>
+            <p class="text-sm mt-1">
+              <strong>Ex.:</strong> recomendação e testes A/B aceleram
+              aprendizado de produto.
+            </p>
+          </li>
+          <li class="bg-white p-5 rounded-lg border border-slate-200">
+            <h3 class="text-xl font-bold text-slate-700">Foco (Nicho)</h3>
+            <p>
+              <em>Alavancas:</em> jornada específica, dados de domínio, serviço
+              sob medida.
+            </p>
+            <p class="text-sm mt-2">
+              <em>Risco:</em> saturação do nicho. <em>Mitigação:</em> expansão
+              adjacente orientada a dados.
+            </p>
+            <p class="text-sm mt-1">
+              <strong>Ex.:</strong> fintech digital focada em segmento
+              subatendido com UX simples.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Laboratório de Métricas (KPI x Alavanca de SI) -->
+      <section id="lab-metricas" class="mb-12 bg-white p-8 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          🔬 Laboratório de Métricas: de SI a Impacto
+        </h2>
+        <p class="text-slate-600 mb-4">
+          Relacione alavancas de SI com <strong>KPIs</strong> de negócio. Isso
+          ajuda a justificar “por que” a iniciativa gera vantagem.
+        </p>
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-sm border border-slate-200 rounded-lg">
+            <thead class="bg-slate-100 text-slate-700">
+              <tr>
+                <th class="px-4 py-2 text-left">KPI</th>
+                <th class="px-4 py-2 text-left">Alavanca de SI</th>
+                <th class="px-4 py-2 text-left">Hipótese de Impacto</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr>
+                <td class="px-4 py-2">Conversão</td>
+                <td class="px-4 py-2">Recomendação/Personalização</td>
+                <td class="px-4 py-2">
+                  “Se personalizarmos a vitrine, a conversão ↑ 10% em 8
+                  semanas.”
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Churn</td>
+                <td class="px-4 py-2">Propensão + Retenção proativa</td>
+                <td class="px-4 py-2">
+                  “Se atuarmos em risco alto, churn ↓ 15% em 1 trimestre.”
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">Margem</td>
+                <td class="px-4 py-2">Precificação dinâmica</td>
+                <td class="px-4 py-2">
+                  “Se otimizarmos preço por elasticidade, margem ↑ 2 p.p.”
+                </td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2">OTIF</td>
+                <td class="px-4 py-2">Previsão de demanda + roteirização</td>
+                <td class="px-4 py-2">
+                  “Se roteirizarmos com restrições, OTIF ↑ 8%.”
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- VRIO (flash) -->
+      <section id="vrio" class="mb-12 bg-white p-8 rounded-lg shadow">
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          🧭 VRIO: Sustentando a Vantagem
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="min-w-full text-sm border border-slate-200 rounded-lg">
+            <thead class="bg-slate-100">
+              <tr>
+                <th class="px-3 py-2 text-left">Recurso/Capacidade</th>
+                <th class="px-3 py-2">V</th>
+                <th class="px-3 py-2">R</th>
+                <th class="px-3 py-2">I</th>
+                <th class="px-3 py-2">O</th>
+                <th class="px-3 py-2 text-left">Implicação</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y">
+              <tr>
+                <td class="px-3 py-2">Dados proprietários de comportamento</td>
+                <td class="text-center">✓</td>
+                <td class="text-center">✓</td>
+                <td class="text-center">△</td>
+                <td class="text-center">✓</td>
+                <td class="px-3 py-2">
+                  Vantagem potencial (depende de capacidade de uso)
+                </td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2">Plataforma com efeitos de rede</td>
+                <td class="text-center">✓</td>
+                <td class="text-center">✓</td>
+                <td class="text-center">✓</td>
+                <td class="text-center">✓</td>
+                <td class="px-3 py-2">
+                  Vantagem sustentável (difícil de “clonar”)
+                </td>
+              </tr>
+              <tr>
+                <td class="px-3 py-2">
+                  Infraestrutura em nuvem “comoditizada”
+                </td>
+                <td class="text-center">✓</td>
+                <td class="text-center">✗</td>
+                <td class="text-center">✗</td>
+                <td class="text-center">✓</td>
+                <td class="px-3 py-2">Paridade competitiva (não diferencia)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Checklist de Sustentabilidade -->
+      <section
+        id="checklist"
+        class="mb-12 bg-white p-8 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2 class="text-2xl font-semibold text-slate-800 mb-2">
+          ✅ Checklist de Sustentabilidade da Vantagem
+        </h2>
+        <ul>
+          <li>
+            O ativo informacional é <strong>proprietário</strong> (ou facilmente
+            replicável)?
+          </li>
+          <li>
+            Temos <strong>capacidade</strong> de explorá-lo (talentos,
+            processos, MLOps, produto)?
+          </li>
+          <li>
+            Existe <strong>efeito de rede</strong> ou custos de troca do
+            cliente?
+          </li>
+          <li>
+            Há <strong>governança/ética/LGPD</strong> para sustentar confiança?
+          </li>
+          <li>
+            Aprendemos com <strong>experimentos</strong> (ciclo ágil de dados)?
+          </li>
+        </ul>
+      </section>
+
+      <!-- Metodologia Ativa -->
+      <section
+        id="metodologia-ativa"
+        aria-label="Metodologia Ativa"
+        class="mb-12 callout callout-practice"
+      >
+        <h2 class="text-2xl font-bold mb-2">
+          <i class="fa-solid fa-comments mr-2" aria-hidden="true"></i>Jigsaw +
+          VRIO Express + KPI (30–35 min)
+        </h2>
+        <ol class="list-decimal list-inside space-y-2">
+          <li>
+            <strong>Jigsaw (10’):</strong> grupos (Netflix, Amazon,
+            Nubank/Shein) mapeiam <em>2 alavancas</em> na cadeia de valor.
+          </li>
+          <li>
+            <strong>VRIO Express (10’):</strong> cada grupo classifica
+            <em>1 ativo</em> (dados, algoritmo, parceria) em V/R/I/O.
+          </li>
+          <li>
+            <strong>KPI &amp; hipótese (10–15’):</strong> definem
+            <em>1 KPI</em> e <em>1 hipótese</em> de impacto (quanto/tempo).
+          </li>
+        </ol>
+        <!-- Canvas orientador -->
+        <div class="bg-white/50 p-4 rounded-md mt-3">
+          <h3 class="font-semibold text-slate-800">Canvas VRIO + KPI (guia)</h3>
+          <ul class="list-disc list-inside text-slate-700">
+            <li>
+              <strong>Ativo informacional:</strong> (ex.: motor de recomendação)
+            </li>
+            <li>
+              <strong>VRIO:</strong> V [ ] R [ ] I [ ] O [ ] – justificar em 2
+              linhas.
+            </li>
+            <li>
+              <strong>KPI:</strong> (conversão, churn, margem, OTIF, LTV/CAC…)
+            </li>
+            <li>
+              <strong>Hipótese:</strong> “Se fizermos X, então Y melhora em Z%
+              em T semanas.”
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- TED -->
+      <section
+        id="tarefa"
+        aria-label="Tarefa da Aula"
+        class="mb-12 prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📝 Tarefa (TED): Atividade Escrita
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow not-prose">
+          <p class="text-lg leading-relaxed mb-4">
+            Responda no AVA (mín. 8 linhas):
+          </p>
+          <blockquote class="text-lg italic text-slate-700 my-2">
+            “Uma startup pode superar grandes empresas com o uso estratégico da
+            informação? Dê um exemplo real para justificar.”
+          </blockquote>
+          <div class="bg-slate-50 p-4 rounded-md">
+            <p class="font-semibold">Inclua na resposta:</p>
+            <ol class="list-decimal list-inside mt-2 space-y-2">
+              <li><strong>Caso real</strong> (qual/onde/quando).</li>
+              <li><strong>Alavanca de SI</strong> (o que/como).</li>
+              <li>
+                <strong>VRIO</strong> (qual dimensão sustenta a vantagem?).
+              </li>
+              <li><strong>Métrica</strong> (KPI impactada e por quê).</li>
+            </ol>
+          </div>
+          <!-- Rubrica -->
+          <h3 class="font-semibold text-slate-800 mt-5">📏 Rubrica (0–10)</h3>
+          <div class="overflow-x-auto">
+            <table
+              class="min-w-full text-sm border border-slate-200 rounded-lg"
+            >
+              <thead class="bg-slate-100 text-slate-700">
+                <tr>
+                  <th class="px-3 py-2 text-left">Critério</th>
+                  <th class="px-3 py-2">0</th>
+                  <th class="px-3 py-2">1</th>
+                  <th class="px-3 py-2">2</th>
+                  <th class="px-3 py-2">3</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr>
+                  <td class="px-3 py-2">Exemplo real (contexto)</td>
+                  <td class="px-3 py-2">Ausente</td>
+                  <td class="px-3 py-2">Vago</td>
+                  <td class="px-3 py-2">Adequado</td>
+                  <td class="px-3 py-2">Específico/atual</td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-2">Alavanca de SI (clareza)</td>
+                  <td>Ausente</td>
+                  <td>Genérica</td>
+                  <td>Clara</td>
+                  <td>Clara e conectada à estratégia</td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-2">VRIO (análise)</td>
+                  <td>Ausente</td>
+                  <td>Parcial</td>
+                  <td>Correta</td>
+                  <td>Correta e bem justificada</td>
+                </tr>
+                <tr>
+                  <td class="px-3 py-2">Métrica/KPI</td>
+                  <td>Ausente</td>
+                  <td>Genérica</td>
+                  <td>Adequada</td>
+                  <td>Adequada + plausível</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="text-xs text-slate-500 mt-2">
+              Nota = soma (máx. 12) normalizada para 10.
+            </p>
+          </div>
+          <p class="mt-4 font-semibold">
+            <strong>Entrega:</strong> Poste a sua resposta no fórum da
+            disciplina no AVA.
+          </p>
+        </div>
+      </section>
+
+      <!-- Mini-Quiz -->
+      <section id="quiz" class="mb-12" aria-label="Quiz de Autoavaliação">
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-6"
+        >
+          🧐 Mini-Quiz de Autoavaliação
+        </h2>
+        <div class="space-y-4">
+          <details>
+            <summary>
+              1) Uma companhia aérea de baixo custo que usa SI para otimizar
+              ocupação e tempo em solo segue qual estratégia?
+            </summary>
+            <div class="quiz-answer">
+              <p><strong>Resposta:</strong> Liderança em Custo.</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              2) O feed altamente personalizado de uma plataforma social é
+              exemplo de SI a serviço da...
+            </summary>
+            <div class="quiz-answer">
+              <p><strong>Resposta:</strong> Diferenciação.</p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              3) VRIO: Dados proprietários sem processos/competências para
+              explorá-los são...
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Valiosos, porém sem “O” (Organização)
+                — vantagem não sustentada.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>
+              4) Verdadeiro/Falso: Compliance (LGPD) e transparência podem se
+              tornar diferenciais competitivos.
+            </summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Verdadeiro. Confiança impacta
+                aquisição/retensão e reduz risco.
+              </p>
+            </div>
+          </details>
+          <details>
+            <summary>5) Em “foco (nicho)”, qual risco e como mitigar?</summary>
+            <div class="quiz-answer">
+              <p>
+                <strong>Resposta:</strong> Saturação do nicho; mitigar com
+                expansão adjacente orientada a dados.
+              </p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Glossário breve -->
+      <section
+        id="glossario"
+        class="mb-12 bg-slate-50 border border-slate-200 p-8 rounded-2xl"
+      >
+        <h2 class="text-2xl font-semibold text-slate-800 mb-4">
+          📑 Glossário Rápido
+        </h2>
+        <ul class="list-disc list-inside text-slate-700">
+          <li>
+            <strong>RBV/VRIO:</strong> visão baseada em recursos; Valioso, Raro,
+            Inimitável, Organizado.
+          </li>
+          <li>
+            <strong>Cadeia de Valor:</strong> atividades onde SI reduzem
+            custo/aumentam valor.
+          </li>
+          <li>
+            <strong>Efeito de Rede:</strong> valor cresce com nº de usuários
+            (plataformas).
+          </li>
+          <li>
+            <strong>LGPD:</strong> lei de proteção de dados — base de
+            confiança/ética.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Bibliografia -->
+      <section
+        id="bibliografia"
+        aria-label="Bibliografia"
+        class="prose prose-slate max-w-none lg:prose-lg"
+      >
+        <h2
+          class="text-3xl font-semibold text-slate-800 border-b-2 border-sky-500 pb-2 mb-4"
+        >
+          📚 Bibliografia
+        </h2>
+        <div class="bg-white p-8 rounded-lg shadow space-y-4 not-prose">
+          <p>
+            <strong>SILVA, K.C.N.D.; BARBOSA, C.; JUNIOR, R.S.C.</strong>
+            <em>Sistemas de informações gerenciais.</em> Porto Alegre: Grupo A,
+            2019.
+          </p>
+          <p>
+            <strong>STAIR, Ralph M.; REYNOLDS, George W.</strong>
+            <em>Princípios de sistemas de informação.</em> 14. ed. São Paulo:
+            Cengage Learning, 2021.
+          </p>
+          <p class="text-sm text-slate-500">
+            Leitura complementar sugerida: PORTER, M. E.
+            <em>Vantagem Competitiva</em>; BARNEY, J. B.
+            <em>Firm Resources and Sustained Competitive Advantage</em>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-white mt-12" role="contentinfo">
+      <div class="container mx-auto px-6 py-4 text-center">
+        <p>&copy; 2025 - Disciplina de Teoria Geral de Sistemas</p>
+        <p class="text-sm text-slate-400">
+          Material desenvolvido para o curso de Sistemas de Informação.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

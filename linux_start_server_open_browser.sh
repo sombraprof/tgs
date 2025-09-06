@@ -8,7 +8,7 @@ pkill -f firefox
 
 # 2️⃣ Checar se a porta está ocupada e matar processo se necessário
 if lsof -i :$PORT >/dev/null 2>&1; then
-  echo "..⚠️.. Porta $PORT já está em uso. Matando processo..."
+  echo "⚠️ Porta $PORT já está em uso. Matando processo..."
   kill -9 $(lsof -t -i :$PORT)
   sleep 1
 fi

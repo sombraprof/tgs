@@ -4,83 +4,563 @@
     "titulo": "Aula 1: Definição e Tipos de Sistemas",
     "descricao": "Introdução à disciplina, apresentação do plano de ensino e conceitos fundamentais da Teoria Geral de Sistemas: definição de sistema, contexto histórico e classificação dos principais tipos.",
     "arquivo": "aula1.html",
-    "ativo": true
+    "ativo": true,
+    "unidade": "Unidade I – Definição e Tipos de Sistemas",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
   },
   {
     "id": "aula2",
     "titulo": "Aula 2: Curricularização da Extensão",
     "descricao": "Exploração do papel da extensão universitária e sua obrigatoriedade segundo a Resolução CNE/CES nº 7/2018, abordando a integração entre ensino, pesquisa e extensão e a importância dessas atividades na formação profissional em Sistemas de Informação.",
     "arquivo": "aula2.html",
-    "ativo": true
+    "ativo": true,
+    "unidade": "Curricularização da Extensão",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
   },
   {
     "id": "aula3",
     "titulo": "Aula 3: Componentes Essenciais de um Sistema",
     "descricao": "Estudo detalhado do conceito de sistema e de seus componentes fundamentais (entradas, processamento, saídas e feedback). Aplicação prática desses elementos em sistemas organizacionais e de informação, com exemplos e exercícios de mapeamento.",
     "arquivo": "aula3.html",
-    "ativo": true
+    "ativo": true,
+    "unidade": "Unidade I – Definição e Tipos de Sistemas",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
   },
   {
     "id": "aula4",
     "titulo": "Aula 4: Tipos de Sistemas: Classificações e Exemplos",
     "descricao": "Classificação de sistemas em diferentes categorias: abertos e fechados, dinâmicos e estáveis, permanentes e temporários. Análise de exemplos práticos e aplicação em contextos organizacionais para compreender como essas diferenças influenciam o design e a gestão de sistemas.",
     "arquivo": "aula4.html",
-    "ativo": true
+    "ativo": true,
+    "unidade": "Unidade I – Definição e Tipos de Sistemas",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
   },
   {
     "id": "aula5",
     "titulo": "Aula 5: A Organização como Sistema Aberto",
     "descricao": "Estudo dos elementos que caracterizam uma organização como sistema aberto: entradas, processamento, saídas, retroalimentação e ambiente. Análise de casos reais de empresas que adaptaram processos com base em estímulos ambientais, com aplicação prática do modelo entrada-processamento-saída.",
     "arquivo": "aula5.html",
-    "ativo": true
+    "ativo": true,
+    "unidade": "Unidade II – A organização como um sistema aberto",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
   },
   {
     "id": "aula6",
     "titulo": "Aula 6: Fluxos e Transformação Organizacional",
     "descricao": "Análise dos fluxos de materiais, informação e energia nas organizações e do processo de transformação, destacando interdependência entre subsistemas, cadeia de suprimentos e mecanismos de feedback (SIPOC/VSM). Inclui estudo de caso, mapeamento de fluxos e mini-quiz.",
     "arquivo": "aula6.html",
-    "ativo": true
+    "ativo": true,
+    "unidade": "Unidade II – A organização como um sistema aberto",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [
+      "../js/quiz.js"
+    ],
+    "init": null
   },
   {
     "id": "aula7",
     "titulo": "Aula 7: Homeostase e Adaptação Organizacional",
     "descricao": "Estudo da homeostase e da autorregulação em organizações como sistemas abertos: loops de feedback (negativo e positivo), feedforward e alostase; modelo de controle (setpoint–sensor–controlador–atuador), indicadores (leading/lagging) e faixa de histerese. Inclui estudo de caso, atividades guiadas e vídeos para fixação.",
     "arquivo": "aula7.html",
-    "ativo": true
+    "ativo": true,
+    "unidade": "Unidade II – A organização como um sistema aberto",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [
+      "../js/quiz.js"
+    ],
+    "init": null
   },
   {
     "id": "aula8",
     "titulo": "Aula 8: Modelagem Sistêmica e Representação Gráfica (Fluxogramas e DFDs)",
     "descricao": "Fundamentos de modelagem sistêmica com foco em fluxogramas (fluxo de controle) e DFDs (fluxo de dados): diferenças, símbolos, boas práticas, níveis (contexto, 0 e 1) e balanceamento. Construção guiada de exemplo (processo de matrícula), análise de erros comuns, checklist e rubrica de qualidade. Inclui vídeos tutoriais embutidos, mini-quiz diagnóstico e TED: elaboração de um fluxograma ou DFD nível 0 (matrícula, delivery ou clínica) em ferramenta digital.",
     "arquivo": "aula8.html",
-    "ativo": true
+    "ativo": true,
+    "unidade": "Unidade II – A organização como um sistema aberto",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
   },
   {
     "id": "aula9",
     "titulo": "Aula 9: Sistemas de Informação e seu Papel nas Organizações",
     "descricao": "Definição de Sistemas de Informação (SI) e discussão de seu papel operacional, tático e estratégico nas organizações. Conceitos centrais, funções típicas (captura, processamento, armazenamento e distribuição de dados), exemplos por categoria (ERP, CRM, SCM, BI e aplicativos do cotidiano) e debate orientado com casos reais (SAP, TOTVS, Magalu, Amazon). Inclui vídeos curtos embutidos, quiz rápido opcional e TED: fórum reflexivo no AVA com comentário mínimo a um colega.",
     "arquivo": "aula9.html",
-    "ativo": true
+    "ativo": true,
+    "unidade": "Unidade III – Sistemas de Informação Administrativos",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
   },
   {
     "id": "aula10",
     "titulo": "Aula 10: Níveis dos Sistemas de Informação (Operacional, Tático e Estratégico)",
     "descricao": "Análise da pirâmide organizacional e dos três níveis de Sistemas de Informação: Operacional (TPS, ERP, OLTP), Tático (MIS, BI, Analytics) e Estratégico (ESS, dashboards executivos). Estudo do horizonte temporal, granularidade dos dados e tipos de decisão em cada nível. Comparação OLTP vs OLAP, casos reais (logística, marketing e decisões de diretoria), tabela comparativa, vídeos explicativos e TED: preenchimento de tabela com exemplos de SI por nível.",
     "arquivo": "aula10.html",
-    "ativo": true
+    "ativo": true,
+    "unidade": "Unidade III – Sistemas de Informação Administrativos",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
   },
   {
     "id": "aula11",
     "titulo": "Aula 11: Sistemas de Informação e a Tomada de Decisão",
     "descricao": "Tipos de decisão (estruturada, semiestruturada e não estruturada) e o ciclo de Herbert Simon (Inteligência–Concepção–Escolha–Implementação), conectando com os níveis Operacional–Tático–Estratégico e exemplos de SI (TPS/ERP, BI/Analytics, ESS). TED com rubrica, vídeo e quiz.",
     "arquivo": "aula11.html",
-    "ativo": true
+    "ativo": true,
+    "unidade": "Unidade III – Sistemas de Informação Administrativos",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
   },
   {
     "id": "aula12",
     "titulo": "Aula 12: Sistemas de Informação como Vantagem Competitiva",
     "descricao": "Como os SI geram vantagem competitiva: estratégias de Porter (custo, diferenciação, foco), Cadeia de Valor, visão baseada em recursos (RBV) com análise VRIO, efeitos de rede e governança/LGPD como pilares de confiança. Laboratório de métricas (KPI↔alavancas de SI), atividade ativa (Jigsaw + VRIO Express + KPI) e checklist de sustentabilidade da vantagem. TED: resposta escrita no AVA com exemplo real, aplicação de VRIO e definição de um KPI impactado.",
     "arquivo": "aula12.html",
-    "ativo": true
+    "ativo": true,
+    "unidade": "Unidade III – Sistemas de Informação Administrativos",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula13",
+    "titulo": "Aula 13: Avaliação Parcial – NP1",
+    "descricao": "Prova abrangendo as Unidades I, II e III com questões objetivas e discursivas para verificação de aprendizagem. Aplicação individual em sala, sob supervisão. Sem TED nesta aula. Bibliografia de referência: Stair et al. (2021), Meireles & Sordi (2019).",
+    "arquivo": "aula13.html",
+    "ativo": true,
+    "unidade": "Avaliação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula14",
+    "titulo": "Aula 14: Correção da NP1 e Retomada – Introdução à Unidade IV",
+    "descricao": "Correção comentada e participativa da NP1 com esclarecimentos dos pontos de atenção e retomada dos conceitos-chave das Unidades I a III. Introdução dialogada à Unidade IV (aplicações práticas dos SI). TED: resumo visual conectando conceitos e prática.",
+    "arquivo": "aula14.html",
+    "ativo": false,
+    "unidade": "Unidade IV – Aplicações-chave dos Sistemas de Informação na Organização",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula15",
+    "titulo": "Aula 15: Sistemas Empresariais – ERP, CRM, SCM, BI",
+    "descricao": "Panorama dos principais sistemas organizacionais, suas funções e aplicações por nível de gestão. Casos e interfaces reais (SAP, Salesforce, Oracle, TOTVS) e quadro comparativo. TED: descrição comparativa de dois sistemas e seus benefícios.",
+    "arquivo": "aula15.html",
+    "ativo": false,
+    "unidade": "Unidade IV – Aplicações-chave dos Sistemas de Informação na Organização",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula16",
+    "titulo": "Aula 16: Integração entre Sistemas (ERP + CRM + SCM)",
+    "descricao": "Estudo de caso de integração de sistemas para otimização de processos e apoio a decisões (ex.: SAP + Salesforce + BI). Atividade em grupos com apresentações e debate. Observação: sábado letivo. TED: esboço de fluxograma de integração para um cenário fictício.",
+    "arquivo": "aula16.html",
+    "ativo": false,
+    "unidade": "Unidade IV – Aplicações-chave dos Sistemas de Informação na Organização",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula17",
+    "titulo": "Aula 17: Business Intelligence (BI) e Dashboards",
+    "descricao": "Demonstração prática de dashboards (ex.: Power BI, Looker Studio) e leitura de relatórios para geração de insights. Interpretação de indicadores, granularidade e decisões possíveis. TED: responder questões analíticas com base em um dashboard em PDF.",
+    "arquivo": "aula17.html",
+    "ativo": false,
+    "unidade": "Unidade IV – Aplicações-chave dos Sistemas de Informação na Organização",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula18",
+    "titulo": "Aula 18: CRM – Sistemas de Relacionamento com o Cliente",
+    "descricao": "Funcionamento de CRM e sua contribuição para fidelização e satisfação do cliente (ex.: Salesforce, HubSpot, RD Station). Jornada do cliente, automações e métricas de relacionamento. TED: fórum reflexivo sobre experiências com automações de relacionamento.",
+    "arquivo": "aula18.html",
+    "ativo": false,
+    "unidade": "Unidade IV – Aplicações-chave dos Sistemas de Informação na Organização",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula19",
+    "titulo": "Aula 19: ERP – Conceito e Principais Características",
+    "descricao": "Introdução a Sistemas Integrados de Gestão (ERP): conceito, propósito e funcionalidades. Integração de processos e visão única do negócio. Vídeo institucional e discussão orientada. TED: leitura guiada e resumo sobre vantagens e desvantagens do ERP.",
+    "arquivo": "aula19.html",
+    "ativo": false,
+    "unidade": "Unidade V – Sistemas de Gestão Integrada",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula20",
+    "titulo": "Aula 20: Módulos do ERP e Integração",
+    "descricao": "Principais módulos (Financeiro, RH, Produção, Vendas etc.) e como a integração entre eles melhora a eficiência organizacional. Dinâmica de 'consultorias fictícias' para mapear integrações. TED: apresentação em grupo (até 5 slides) explicando a integração entre dois módulos.",
+    "arquivo": "aula20.html",
+    "ativo": false,
+    "unidade": "Unidade V – Sistemas de Gestão Integrada",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula21",
+    "titulo": "Aula 21: ERP – Benefícios e Desafios de Implementação",
+    "descricao": "Ganhos e obstáculos na adoção de ERP sob perspectivas técnica, organizacional e humana. Estudo de caso com debate orientado e síntese de aprendizados. TED: fórum sobre adoção universal de ERP com justificativa baseada no caso.",
+    "arquivo": "aula21.html",
+    "ativo": false,
+    "unidade": "Unidade V – Sistemas de Gestão Integrada",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula22",
+    "titulo": "Aula 22: Estrutura e Funcionamento dos Módulos de ERP",
+    "descricao": "Estrutura modular, funções e simulações de tela para compreensão prática (Financeiro, RH, Vendas, Produção etc.). Atividade em grupos com mapeamento guiado. TED: explicação individual sobre contribuição de um módulo escolhido para a integração organizacional.",
+    "arquivo": "aula22.html",
+    "ativo": false,
+    "unidade": "Unidade V – Sistemas de Gestão Integrada",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula23",
+    "titulo": "Aula 23: ERP – Vantagens e Desafios (Estudo de Caso)",
+    "descricao": "Análise de um projeto de implantação de ERP em empresa real: fatores técnicos e humanos, indicadores de sucesso/fracasso e lições aprendidas. TED em dupla: condições de falha de projetos ERP e estratégias de mitigação com exemplo real.",
+    "arquivo": "aula23.html",
+    "ativo": false,
+    "unidade": "Unidade V – Sistemas de Gestão Integrada",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula24",
+    "titulo": "Aula 24: Integração de Módulos no ERP",
+    "descricao": "Atividade remota (estudo dirigido) sobre integração entre módulos financeiro, estoque, RH e vendas e seus impactos na visão sistêmica. TED: questionário com 4 objetivas e 1 dissertativa (vale ponto extra).",
+    "arquivo": "aula24.html",
+    "ativo": false,
+    "unidade": "Unidade V – Sistemas de Gestão Integrada",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula25",
+    "titulo": "Aula 25: Manutenção e Evolução de ERPs",
+    "descricao": "Desafios de legados, atualizações e customizações em ERPs (SAP, TOTVS, Oracle). Riscos, custos, benefícios e sustentabilidade/escala. TED: fórum sobre adaptar ERP antigo vs adotar novo com justificativa crítica.",
+    "arquivo": "aula25.html",
+    "ativo": false,
+    "unidade": "Unidade V – Sistemas de Gestão Integrada",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula26",
+    "titulo": "Aula 26: Integração de Processos via ERP – Benefícios e Limitações",
+    "descricao": "Estudo de caso sobre integração de processos organizacionais por meio do ERP: quando é decisivo e quando cria fricções. Análise crítica dos trade-offs e dependências. TED: análise de processos acadêmicos/trabalho que poderiam ser integrados e benefícios esperados.",
+    "arquivo": "aula26.html",
+    "ativo": false,
+    "unidade": "Unidade V – Sistemas de Gestão Integrada",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula27",
+    "titulo": "Aula 27: Fatores Críticos de Sucesso em ERP",
+    "descricao": "Fatores organizacionais, técnicos e humanos que influenciam o sucesso da implantação (patrocínio, governança, gestão de mudanças, dados mestres, capacitação, escopo e iteratividade). TED: mapa mental de FCS para uma PME.",
+    "arquivo": "aula27.html",
+    "ativo": false,
+    "unidade": "Unidade V – Sistemas de Gestão Integrada",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula28",
+    "titulo": "Aula 28: Avaliação – NP2",
+    "descricao": "Prova de verificação referente às Unidades III, IV e V com questões objetivas e discursivas. Aplicação individual com suporte do AVA quando aplicável. Sem TED nesta aula. Bibliografia: Stair et al. (2021), Meireles & Sordi (2019).",
+    "arquivo": "aula28.html",
+    "ativo": true,
+    "unidade": "Avaliação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula29",
+    "titulo": "Aula 29: Introdução ao Planejamento de Sistemas de Informação (PSI)",
+    "descricao": "Fundamentos do PSI e sua importância estratégica para alinhar TI e objetivos organizacionais. Análise de trechos reais de planejamentos estratégicos. TED: localizar um exemplo real de planejamento de SI/TI e postar reflexão com link no AVA.",
+    "arquivo": "aula29.html",
+    "ativo": false,
+    "unidade": "Unidade VI – Planejamento Estratégico de Sistemas de Informação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula30",
+    "titulo": "Aula 30: Fases do PSI e Integração com o Planejamento Organizacional",
+    "descricao": "Identificação e compreensão das etapas do processo de PSI e sua relação com níveis estratégico, tático e operacional. Construção colaborativa (mapa mental coletivo) das fases. TED: linha do tempo das fases do PSI baseada em estudo de caso.",
+    "arquivo": "aula30.html",
+    "ativo": false,
+    "unidade": "Unidade VI – Planejamento Estratégico de Sistemas de Informação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula31",
+    "titulo": "Aula 31: Ferramentas Estratégicas aplicadas ao PSI (SWOT, 5 Forças, BCG)",
+    "descricao": "Aplicação de ferramentas estratégicas no contexto do planejamento de SI para definição de prioridades e direcionamentos. Estudo de caso em grupo com instrumentação. TED: matriz SWOT individual para um cenário de TI.",
+    "arquivo": "aula31.html",
+    "ativo": false,
+    "unidade": "Unidade VI – Planejamento Estratégico de Sistemas de Informação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula32",
+    "titulo": "Aula 32: Alinhamento entre Objetivos Organizacionais e Sistemas de Informação",
+    "descricao": "Como alinhar o planejamento de SI à estratégia organizacional com apoio de frameworks de governança/gestão de TI (ex.: COBIT, ITIL). Análise de exemplos de desalinhamento. TED: fórum sobre riscos do desalinhamento.",
+    "arquivo": "aula32.html",
+    "ativo": false,
+    "unidade": "Unidade VI – Planejamento Estratégico de Sistemas de Informação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula33",
+    "titulo": "Aula 33: Modelos de Planejamento – BSC e Mapas Estratégicos",
+    "descricao": "Uso do Balanced Scorecard e mapas estratégicos para planejar e monitorar resultados de SI. Exemplos adaptados e discussão orientada. TED: mini mapa estratégico focado em TI (individual ou em dupla).",
+    "arquivo": "aula33.html",
+    "ativo": false,
+    "unidade": "Unidade VI – Planejamento Estratégico de Sistemas de Informação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula34",
+    "titulo": "Aula 34: Fatores Críticos de Sucesso e Alinhamento Estratégico",
+    "descricao": "Análise de FCS no planejamento de SI e impactos do alinhamento nos resultados de negócio. Estudo de caso real de falha por desalinhamento entre TI e negócio. TED: fórum com exemplo de risco de desalinhamento.",
+    "arquivo": "aula34.html",
+    "ativo": false,
+    "unidade": "Unidade VI – Planejamento Estratégico de Sistemas de Informação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula35",
+    "titulo": "Aula 35: Etapas do Planejamento e Priorização de Investimentos em TI",
+    "descricao": "Etapas do planejamento estratégico de SI e critérios/quadros para priorização de projetos (ex.: GUT, 5W2H adaptado). Exercício aplicado de priorização. TED: simulação de priorização de três projetos com justificativa.",
+    "arquivo": "aula35.html",
+    "ativo": false,
+    "unidade": "Unidade VI – Planejamento Estratégico de Sistemas de Informação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula36",
+    "titulo": "Aula 36: Alinhamento Estratégico entre TI e o Negócio",
+    "descricao": "Estudo de caso sobre desalinhamento estratégico e seus impactos. Ações de correção e governança para reconectar portfólio de projetos às metas de negócio. TED: redação orientada como gestor de TI propondo ações de alinhamento.",
+    "arquivo": "aula36.html",
+    "ativo": false,
+    "unidade": "Unidade VI – Planejamento Estratégico de Sistemas de Informação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula37",
+    "titulo": "Aula 37: Metodologias e Ferramentas de Apoio ao PSI",
+    "descricao": "Exploração de metodologias e ferramentas (BSC, SWOT, análise de lacunas) com exercícios guiados e análise de exemplos reais. TED em grupo: aplicação de SWOT ao setor de TI de uma empresa fictícia e entrega de relatório.",
+    "arquivo": "aula37.html",
+    "ativo": false,
+    "unidade": "Unidade VI – Planejamento Estratégico de Sistemas de Informação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula38",
+    "titulo": "Aula 38: Alinhamento Estratégico – Estudo de Caso",
+    "descricao": "Análise em grupo de caso real (empresa de tecnologia) para avaliar como SI pode ser planejado estrategicamente para apoiar metas e gerar vantagem competitiva. Coleta de respostas via formulário. TED: fórum sobre caso vivido/observado de desalinhamento tecnológico.",
+    "arquivo": "aula38.html",
+    "ativo": false,
+    "unidade": "Unidade VI – Planejamento Estratégico de Sistemas de Informação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula39",
+    "titulo": "Aula 39: Tendências de SI Estratégicos e Impactos",
+    "descricao": "Panorama de tendências (IA, BI, RPA, computação em nuvem), riscos e oportunidades, e implicações para o alinhamento organizacional e decisões estratégicas. Debate orientado com materiais atuais. TED: redação reflexiva sobre impactos das tendências no planejamento estratégico.",
+    "arquivo": "aula39.html",
+    "ativo": false,
+    "unidade": "Unidade VI – Planejamento Estratégico de Sistemas de Informação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
+  },
+  {
+    "id": "aula40",
+    "titulo": "Aula 40: Avaliação Final – NP3",
+    "descricao": "Prova integradora cobrindo os conteúdos até a Unidade VI, com questões objetivas e discursivas. Aplicação individual (impresso/digital com apoio do AVA). Sem TED nesta aula. Bibliografia: materiais e referências utilizados ao longo do semestre.",
+    "arquivo": "aula40.html",
+    "ativo": true,
+    "unidade": "Avaliação",
+    "styles": [
+      "../css/style.css",
+      "../css/aula.css"
+    ],
+    "scripts": [],
+    "init": null
   }
 ]

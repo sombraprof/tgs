@@ -9,7 +9,6 @@
       content="Aula 3 de TGS aprofundando componentes (entradas, saídas), características (fronteira, ambiente) e tipos de sistemas. Essencial para análise em Sistemas de Informação."
     />
     <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Tailwind Typography Plugin -->
     <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
     <!-- Google Fonts: Inter -->
@@ -24,63 +23,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <style>
-      /* Estilo base para a fonte Inter */
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #f8fafc; /* bg-slate-50 */
-      }
-      /* Estilo para destacar os callouts */
-      .callout {
-        border-left-width: 4px;
-        padding: 1.5rem;
-        margin: 1.5rem 0;
-        border-radius: 0.5rem;
-      }
-      .callout-info {
-        background-color: #f0f9ff; /* bg-sky-50 */
-        border-color: #7dd3fc; /* border-sky-300 */
-        color: #0c4a6e; /* text-sky-800 */
-      }
-      .callout-practice {
-        background-color: #f0fdf4; /* bg-emerald-50 */
-        border-color: #6ee7b7; /* border-emerald-300 */
-        color: #065f46; /* text-emerald-800 */
-      }
-      .callout-history {
-        background-color: #fefce8; /* bg-yellow-50 */
-        border-color: #fde047; /* border-yellow-300 */
-        color: #854d0e; /* text-yellow-800 */
-      }
-      .callout-case {
-        background-color: #f5f3ff; /* bg-violet-50 */
-        border-color: #c4b5fd; /* border-violet-300 */
-        color: #5b21b6; /* text-violet-800 */
-      }
-      /* Estilo para o quiz */
-      details > summary {
-        cursor: pointer;
-        font-weight: 600;
-        padding: 0.75rem;
-        background-color: #f1f5f9;
-        border-radius: 0.375rem;
-        transition: background-color 0.2s;
-      }
-      details > summary:hover {
-        background-color: #e2e8f0;
-      }
-      details[open] > summary {
-        background-color: #e2e8f0;
-      }
-      .quiz-answer {
-        padding: 1rem;
-        background-color: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-top: none;
-        border-radius: 0 0 0.375rem 0.375rem;
-      }
-    </style>
-  </head>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/aula.css" />
+    </head>
   <body class="text-slate-800">
     <!-- Cabeçalho da Aula -->
     <header class="bg-white shadow-md">
@@ -91,11 +36,13 @@
         <p class="text-xl text-slate-600 mt-2">
           Aula 3: Componentes e Características dos Sistemas
         </p>
-      </div>
+      <nav class=\"mt-2\"><a href=\"../index.html\" class=\"inline-flex items-center gap-2 text-slate-500 hover:text-sky-700 text-sm\"><i class=\"fa-solid fa-arrow-left\"></i><span>Voltar ao Início</span></a></nav>
+    </div>
     </header>
 
     <!-- Corpo Principal da Aula -->
     <main class="container mx-auto px-6 py-10">
+      <div class=\"prose prose-slate max-w-none lg:prose-lg aula-prose\">
       <!-- Seção: Plano da Aula -->
       <section
         id="plano-aula"
@@ -108,7 +55,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           <!-- Conteúdo e Objetivo -->
           <div
-            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
+            class="bg-white aula-card p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
           >
             <h3 class="font-semibold text-lg text-sky-800 mb-2">
               <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
@@ -122,7 +69,7 @@
               tipos de sistemas.
             </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="bg-white aula-card p-6 rounded-lg shadow-sm">
             <h3 class="font-semibold text-lg text-sky-800 mb-2">
               <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO ESPECÍFICO
             </h3>
@@ -133,7 +80,7 @@
             </p>
           </div>
           <!-- Metodologia e Recursos -->
-          <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="bg-white aula-card p-6 rounded-lg shadow-sm">
             <h3 class="font-semibold text-lg text-sky-800 mb-2">
               <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA E RECURSOS
             </h3>
@@ -208,7 +155,7 @@
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           <!-- Propósito -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="bg-white aula-card p-6 rounded-lg shadow-md">
             <i
               class="fa-solid fa-bullseye-arrow text-3xl text-sky-600 mb-3"
             ></i>
@@ -224,7 +171,7 @@
             </p>
           </div>
           <!-- Ambiente -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="bg-white aula-card p-6 rounded-lg shadow-md">
             <i class="fa-solid fa-globe text-3xl text-blue-600 mb-3"></i>
             <h3 class="text-xl font-bold text-slate-700 mb-2">Ambiente</h3>
             <p class="text-slate-600">
@@ -235,7 +182,7 @@
             </p>
           </div>
           <!-- Fronteira -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="bg-white aula-card p-6 rounded-lg shadow-md">
             <i
               class="fa-solid fa-draw-polygon text-3xl text-purple-600 mb-3"
             ></i>
@@ -248,7 +195,7 @@
             </p>
           </div>
           <!-- Subsistemas -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="bg-white aula-card p-6 rounded-lg shadow-md">
             <i
               class="fa-solid fa-puzzle-piece text-3xl text-emerald-600 mb-3"
             ></i>
@@ -306,7 +253,7 @@
               ambiente para poder operar. São a matéria-prima, os dados brutos,
               a energia ou os comandos que iniciam uma ação.
             </p>
-            <div class="mt-4 bg-sky-50 p-4 rounded-md">
+            <div class="mt-4 bg-sky-50 aula-card p-4 rounded-md">
               <p><strong>Exemplos:</strong></p>
               <ul class="list-disc list-inside ml-4 text-slate-700">
                 <li>
@@ -332,7 +279,7 @@
               transformam as entradas em algo novo e útil. É o "cérebro" da
               operação, onde a mágica acontece.
             </p>
-            <div class="mt-4 bg-purple-50 p-4 rounded-md">
+            <div class="mt-4 bg-purple-50 aula-card p-4 rounded-md">
               <p><strong>Exemplos:</strong></p>
               <ul class="list-disc list-inside ml-4 text-slate-700">
                 <li>
@@ -360,7 +307,7 @@
               entregues de volta ao ambiente. É o produto final, o serviço
               prestado ou a informação gerada.
             </p>
-            <div class="mt-4 bg-emerald-50 p-4 rounded-md">
+            <div class="mt-4 bg-emerald-50 aula-card p-4 rounded-md">
               <p><strong>Exemplos:</strong></p>
               <ul class="list-disc list-inside ml-4 text-slate-700">
                 <li>
@@ -386,7 +333,7 @@
               para avaliar e corrigir seu desempenho. É o que permite que um
               sistema aprenda, se adapte e melhore continuamente.
             </p>
-            <div class="mt-4 bg-orange-50 p-4 rounded-md">
+            <div class="mt-4 bg-orange-50 aula-card p-4 rounded-md">
               <p><strong>Exemplos:</strong></p>
               <ul class="list-disc list-inside ml-4 text-slate-700">
                 <li>
@@ -604,18 +551,18 @@
           uma prévia:
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="bg-white aula-card p-4 rounded-lg shadow-sm">
             <strong>Naturais vs. Artificiais:</strong> O corpo humano vs. um
             software.
           </div>
-          <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="bg-white aula-card p-4 rounded-lg shadow-sm">
             <strong>Abertos vs. Fechados:</strong> Uma empresa vs. um relógio.
           </div>
-          <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="bg-white aula-card p-4 rounded-lg shadow-sm">
             <strong>Simples vs. Complexos:</strong> Uma calculadora vs. um
             sistema de controlo de tráfego aéreo.
           </div>
-          <div class="bg-white p-4 rounded-lg shadow-sm">
+          <div class="bg-white aula-card p-4 rounded-lg shadow-sm">
             <strong>Determinísticos vs. Probabilísticos:</strong> Um cálculo
             matemático vs. a previsão do tempo.
           </div>
@@ -633,7 +580,7 @@
         >
           📝 Tarefa (TED): Análise Crítica de um Sistema
         </h2>
-        <div class="bg-white p-8 rounded-lg shadow not-prose">
+        <div class="bg-white aula-card p-8 rounded-lg shadow not-prose">
           <p class="text-lg leading-relaxed mb-4">
             A sua tarefa é escolher um sistema (físico ou de informação) e fazer
             uma análise crítica dos seus componentes.
@@ -742,7 +689,7 @@
         >
           📚 Bibliografia
         </h2>
-        <div class="bg-white p-8 rounded-lg shadow space-y-4 not-prose">
+        <div class="bg-white aula-card p-8 rounded-lg shadow space-y-4 not-prose">
           <p>
             <strong>STAIR, Ralph M.; REYNOLDS, George W.</strong>
             <em>Princípios de sistemas de informação.</em> 14. ed. São Paulo:
@@ -755,6 +702,7 @@
           </p>
         </div>
       </section>
+          </div>
     </main>
 
     <!-- Rodapé -->

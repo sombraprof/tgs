@@ -9,7 +9,6 @@
       content="Aula 7 da disciplina Teoria Geral de Sistemas, focada em homeostase, adaptação e autorregulação em sistemas organizacionais, com analogias e exemplos contemporâneos."
     />
     <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Tailwind Typography Plugin -->
     <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
     <!-- Google Fonts: Inter -->
@@ -24,53 +23,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <style>
-      /* Estilo base para a fonte Inter */
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #f8fafc; /* bg-slate-50 */
-      }
-      /* Estilo para destacar os callouts */
-      .callout {
-        border-left-width: 4px;
-        padding: 1.5rem;
-        margin: 1.5rem 0;
-        border-radius: 0.5rem;
-      }
-      .callout-info {
-        background-color: #f0f9ff; /* bg-sky-50 */
-        border-color: #7dd3fc; /* border-sky-300 */
-        color: #0c4a6e; /* text-sky-800 */
-      }
-      .callout-practice {
-        background-color: #f0fdf4; /* bg-emerald-50 */
-        border-color: #6ee7b7; /* border-emerald-300 */
-        color: #065f46; /* text-emerald-800 */
-      }
-      /* Estilo para o quiz */
-      details > summary {
-        cursor: pointer;
-        font-weight: 600;
-        padding: 0.75rem;
-        background-color: #f1f5f9;
-        border-radius: 0.375rem;
-        transition: background-color 0.2s;
-      }
-      details > summary:hover {
-        background-color: #e2e8f0;
-      }
-      details[open] > summary {
-        background-color: #e2e8f0;
-      }
-      .quiz-answer {
-        padding: 1rem;
-        background-color: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-top: none;
-        border-radius: 0 0 0.375rem 0.375rem;
-      }
-    </style>
-  </head>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/aula.css" />
+    </head>
   <body class="text-slate-800">
     <!-- Cabeçalho da Aula -->
     <header class="bg-white shadow-md">
@@ -81,11 +36,13 @@
         <p class="text-xl text-slate-600 mt-2">
           Aula 7: Homeostase e Adaptação Organizacional
         </p>
-      </div>
+      <nav class=\"mt-2\"><a href=\"../index.html\" class=\"inline-flex items-center gap-2 text-slate-500 hover:text-sky-700 text-sm\"><i class=\"fa-solid fa-arrow-left\"></i><span>Voltar ao Início</span></a></nav>
+    </div>
     </header>
 
     <!-- Corpo Principal da Aula -->
     <main class="container mx-auto px-6 py-10">
+      <div class=\"prose prose-slate max-w-none lg:prose-lg aula-prose\">
       <!-- Seção: Plano da Aula -->
       <section
         id="plano-aula"
@@ -98,7 +55,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           <!-- Conteúdo e Objetivo -->
           <div
-            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
+            class="bg-white aula-card p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
           >
             <h3 class="font-semibold text-lg text-sky-800 mb-2">
               <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
@@ -111,7 +68,7 @@
               sistemas.
             </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="bg-white aula-card p-6 rounded-lg shadow-sm">
             <h3 class="font-semibold text-lg text-sky-800 mb-2">
               <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO ESPECÍFICO
             </h3>
@@ -122,7 +79,7 @@
             </p>
           </div>
           <!-- Metodologia e Recursos -->
-          <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="bg-white aula-card p-6 rounded-lg shadow-sm">
             <h3 class="font-semibold text-lg text-sky-800 mb-2">
               <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA E RECURSOS
             </h3>
@@ -895,7 +852,7 @@
         >
           📝 Tarefa (TED): Resposta Argumentativa
         </h2>
-        <div class="bg-white p-8 rounded-lg shadow not-prose">
+        <div class="bg-white aula-card p-8 rounded-lg shadow not-prose">
           <p class="text-lg leading-relaxed mb-4">
             Para a próxima aula, você deverá produzir uma resposta argumentativa
             curta, baseada nos conceitos de adaptação e autorregulação.
@@ -983,7 +940,7 @@
           🧪 Quiz Extra
         </h2>
 
-        <form id="quizEnade" class="space-y-6">
+        <form id="quizEnade" class="space-y-6" data-quiz-answers='{"q1":"B","q2":"C","q3":"D"}' data-quiz-button="#submitQuizEnade" data-quiz-score="#quizScoreEnade">
           <!-- Q1 -->
           <fieldset class="border border-slate-200 rounded-lg p-4">
             <legend class="font-semibold text-slate-700">
@@ -1068,7 +1025,7 @@
           <button
             type="button"
             id="submitQuizEnade"
-            class="mt-2 inline-flex items-center px-4 py-2 rounded-lg bg-sky-600 text-white hover:bg-sky-700"
+            class="mt-2 btn btn-primary"
           >
             Corrigir
           </button>
@@ -1080,23 +1037,21 @@
         </form>
       </section>
 
-      <script>
-        // Answers for ENADE-style quiz
-        const ENADE_ANS = { q1: "B", q2: "C", q3: "D" }; // one correct option each
-
-        document
-          .getElementById("submitQuizEnade")
-          ?.addEventListener("click", () => {
-            let score = 0,
-              total = Object.keys(ENADE_ANS).length;
-            for (const k of Object.keys(ENADE_ANS)) {
-              const sel = document.querySelector(`input[name="${k}"]:checked`);
-              if (sel && sel.value === ENADE_ANS[k]) score++;
-            }
-            const out = document.getElementById("quizScoreEnade");
-            if (out) out.textContent = `Você acertou ${score} de ${total}.`;
-          });
-      </script>
+            <script src="../js/quiz.js?v=1"></script>
+            <script>
+              (function(){
+                const init = () => {
+                  if (window.attachQuiz) {
+                    try {
+                      const answers = { q1: "B", q2: "C", q3: "D" };
+                      window.attachQuiz("quizEnade", "submitQuizEnade", "quizScoreEnade", answers, { showHints: true });
+                    } catch (e) { /* noop */ }
+                  }
+                };
+                if (document.readyState === "complete" || document.readyState === "interactive") init();
+                else document.addEventListener("DOMContentLoaded", init);
+              })();
+            </script>
 
       <!-- Seção: Bibliografia -->
       <section
@@ -1109,7 +1064,7 @@
         >
           📚 Bibliografia
         </h2>
-        <div class="bg-white p-8 rounded-lg shadow space-y-4 not-prose">
+        <div class="bg-white aula-card p-8 rounded-lg shadow space-y-4 not-prose">
           <p>
             <strong>MEIRELES, Manuel; SORDI, J. O. de.</strong>
             <em>Administração de sistemas de informação.</em> 2. ed. São Paulo:
@@ -1122,6 +1077,7 @@
           </p>
         </div>
       </section>
+          </div>
     </main>
 
     <!-- Rodapé -->

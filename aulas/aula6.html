@@ -9,7 +9,6 @@
       content="Aula 6 da disciplina Teoria Geral de Sistemas, focada em transformação organizacional, fluxos de informação e materiais, e a interdependência nas organizações como sistemas abertos."
     />
     <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Tailwind Typography Plugin -->
     <script src="https://cdn.tailwindcss.com/3.4.1?plugins=typography"></script>
     <!-- Google Fonts: Inter -->
@@ -24,53 +23,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <style>
-      /* Estilo base para a fonte Inter */
-      body {
-        font-family: "Inter", sans-serif;
-        background-color: #f8fafc; /* bg-slate-50 */
-      }
-      /* Estilo para destacar os callouts */
-      .callout {
-        border-left-width: 4px;
-        padding: 1.5rem;
-        margin: 1.5rem 0;
-        border-radius: 0.5rem;
-      }
-      .callout-info {
-        background-color: #f0f9ff; /* bg-sky-50 */
-        border-color: #7dd3fc; /* border-sky-300 */
-        color: #0c4a6e; /* text-sky-800 */
-      }
-      .callout-practice {
-        background-color: #f0fdf4; /* bg-emerald-50 */
-        border-color: #6ee7b7; /* border-emerald-300 */
-        color: #065f46; /* text-emerald-800 */
-      }
-      /* Estilo para o quiz */
-      details > summary {
-        cursor: pointer;
-        font-weight: 600;
-        padding: 0.75rem;
-        background-color: #f1f5f9;
-        border-radius: 0.375rem;
-        transition: background-color 0.2s;
-      }
-      details > summary:hover {
-        background-color: #e2e8f0;
-      }
-      details[open] > summary {
-        background-color: #e2e8f0;
-      }
-      .quiz-answer {
-        padding: 1rem;
-        background-color: #f8fafc;
-        border: 1px solid #e2e8f0;
-        border-top: none;
-        border-radius: 0 0 0.375rem 0.375rem;
-      }
-    </style>
-  </head>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/aula.css" />
+    </head>
   <body class="text-slate-800">
     <!-- Cabeçalho da Aula -->
     <header class="bg-white shadow-md">
@@ -81,11 +36,13 @@
         <p class="text-xl text-slate-600 mt-2">
           Aula 6: Fluxos e Transformação Organizacional
         </p>
-      </div>
+      <nav class=\"mt-2\"><a href=\"../index.html\" class=\"inline-flex items-center gap-2 text-slate-500 hover:text-sky-700 text-sm\"><i class=\"fa-solid fa-arrow-left\"></i><span>Voltar ao Início</span></a></nav>
+    </div>
     </header>
 
     <!-- Corpo Principal da Aula -->
     <main class="container mx-auto px-6 py-10">
+      <div class=\"prose prose-slate max-w-none lg:prose-lg aula-prose\">
       <!-- Seção: Plano da Aula -->
       <section
         id="plano-aula"
@@ -98,7 +55,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
           <!-- Conteúdo e Objetivo -->
           <div
-            class="bg-white p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
+            class="bg-white aula-card p-6 rounded-lg shadow-sm col-span-1 md:col-span-2 lg:col-span-2"
           >
             <h3 class="font-semibold text-lg text-sky-800 mb-2">
               <i class="fa-solid fa-book-open mr-2"></i>CONTEÚDO
@@ -111,7 +68,7 @@
               sistemas.
             </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="bg-white aula-card p-6 rounded-lg shadow-sm">
             <h3 class="font-semibold text-lg text-sky-800 mb-2">
               <i class="fa-solid fa-bullseye mr-2"></i>OBJETIVO ESPECÍFICO
             </h3>
@@ -122,7 +79,7 @@
             </p>
           </div>
           <!-- Metodologia e Recursos -->
-          <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="bg-white aula-card p-6 rounded-lg shadow-sm">
             <h3 class="font-semibold text-lg text-sky-800 mb-2">
               <i class="fa-solid fa-gears mr-2"></i>METODOLOGIA E RECURSOS
             </h3>
@@ -194,7 +151,7 @@
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           <!-- Fluxo de Materiais/Energia -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="bg-white aula-card p-6 rounded-lg shadow-md">
             <i class="fa-solid fa-box-open text-3xl text-amber-600 mb-3"></i>
             <h3 class="text-xl font-bold text-slate-700 mb-2">
               Fluxo de Materiais e Energia
@@ -216,7 +173,7 @@
             </ul>
           </div>
           <!-- Fluxo de Informação -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="bg-white aula-card p-6 rounded-lg shadow-md">
             <i class="fa-solid fa-wifi text-3xl text-sky-600 mb-3"></i>
             <h3 class="text-xl font-bold text-slate-700 mb-2">
               Fluxo de Informação
@@ -251,7 +208,7 @@
         >
           Exemplo Prático: A Cadeia de Suprimentos (Supply Chain)
         </h2>
-        <div class="bg-white p-6 rounded-lg shadow text-center">
+        <div class="bg-white aula-card p-6 rounded-lg shadow text-center">
           <p class="text-lg text-slate-600 mb-6">
             A cadeia de suprimentos é o exemplo perfeito da interdependência
             entre os fluxos de materiais e de informação. Um não funciona sem o
@@ -960,7 +917,7 @@
         </h2>
 
         <!-- Use radio buttons for accessibility -->
-        <form id="quizForm" class="space-y-6">
+        <form id="quizForm" class="space-y-6" data-quiz-answers='{"q1":"B","q2":"B","q3":"B","q4":"B","q5":"B"}' data-quiz-button="#submitQuiz" data-quiz-score="#quizScore">
           <!-- Q1 -->
           <fieldset class="border border-slate-200 rounded-lg p-4">
             <legend class="font-semibold text-slate-700">
@@ -1097,7 +1054,7 @@
           <button
             type="button"
             id="submitQuiz"
-            class="mt-2 inline-flex items-center px-4 py-2 rounded-lg bg-sky-600 text-white hover:bg-sky-700"
+            class="mt-2 btn btn-primary"
           >
             Corrigir
           </button>
@@ -1109,35 +1066,22 @@
         </form>
       </section>
 
-      <script>
-        // Simple quiz grading logic (no external deps)
-        // NOTE: Keep answers centralized for maintainability.
-        const ANSWERS = { q1: "B", q2: "B", q3: "B", q4: "B", q5: "B" };
-
-        document.getElementById("submitQuiz")?.addEventListener("click", () => {
-          // Compute score by checking selected radio inputs
-          let score = 0;
-          let total = Object.keys(ANSWERS).length;
-
-          for (const key of Object.keys(ANSWERS)) {
-            const selected = document.querySelector(
-              `input[name="${key}"]:checked`
-            );
-            if (selected && selected.value === ANSWERS[key]) score++;
-          }
-
-          // Announce score and provide light feedback
-          const msg = `Você acertou ${score} de ${total}.`;
-          const feedback =
-            score === total
-              ? "Excelente! Entendimento sólido dos fluxos."
-              : score >= 3
-              ? "Bom! Reveja WIP/lead time e feedback."
-              : "Sugiro reler SIPOC/VSM e os conceitos-chave.";
-          const out = document.getElementById("quizScore");
-          if (out) out.textContent = `${msg} ${feedback}`;
-        });
-      </script>
+            <script src="../js/quiz.js?v=1"></script>
+            <script>
+              // Fallback explicit init in case auto-init is bypassed by cache
+              (function(){
+                const init = () => {
+                  if (window.attachQuiz) {
+                    try {
+                      const answers = { q1: "B", q2: "B", q3: "B", q4: "B", q5: "B" };
+                      window.attachQuiz("quizForm", "submitQuiz", "quizScore", answers, { showHints: true });
+                    } catch (e) { /* noop */ }
+                  }
+                };
+                if (document.readyState === "complete" || document.readyState === "interactive") init();
+                else document.addEventListener("DOMContentLoaded", init);
+              })();
+            </script>
 
       <!-- GLOSSÁRIO E LEITURAS -->
       <section
@@ -1280,7 +1224,7 @@
     🧩 TED: Fluxograma do Processo de Matrícul
   </h2>
 
-  <div class="bg-white p-6 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg">
+  <div class="bg-white aula-card p-6 rounded-lg shadow prose prose-slate max-w-none lg:prose-lg">
     <p><strong>Objetivo:</strong> Completar o fluxograma, preenchendo os blocos <code>[Preencher]</code> e validando o caminho das decisões.</p>
   </div>
 
@@ -1470,7 +1414,7 @@
         >
           📝 Tarefa (TED): Estudo Orientado de Fluxograma
         </h2>
-        <div class="bg-white p-8 rounded-lg shadow not-prose">
+        <div class="bg-white aula-card p-8 rounded-lg shadow not-prose">
           <p class="text-lg leading-relaxed mb-4">
             Para a próxima aula, a sua tarefa será aplicar o conhecimento sobre
             fluxos a um processo organizacional.
@@ -1567,7 +1511,7 @@
         >
           📚 Bibliografia
         </h2>
-        <div class="bg-white p-8 rounded-lg shadow space-y-4 not-prose">
+        <div class="bg-white aula-card p-8 rounded-lg shadow space-y-4 not-prose">
           <p>
             <strong>SILVA, K.C.N.D.; BARBOSA, C.; JUNIOR, R.S.C.</strong>
             <em>Sistemas de informações gerenciais.</em> Porto Alegre: Grupo A,
@@ -1580,6 +1524,7 @@
           </p>
         </div>
       </section>
+          </div>
     </main>
 
     <!-- Rodapé -->

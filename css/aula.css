@@ -1,0 +1,100 @@
+/* Base tipografia e fundo (usar variáveis do tema principal) */
+body { font-family: "Inter", sans-serif; background-color: var(--bg); color: var(--text); }
+
+/* Deixe a definição de callouts padrão para css/style.css (evita conflito). */
+/* Complemento: callout de desafio (não existe no style.css) */
+.callout-challenge { border-left-width: 4px; padding: 1.5rem; margin: 1.5rem 0; border-radius: 0.5rem; background-color: var(--danger-soft-bg); border-color: var(--danger-soft-border); color: var(--text); }
+
+/* Dark mode: ajustar componentes comuns das aulas */
+html.theme-dark header.bg-white { background-color: var(--panel-bg) !important; }
+html.theme-dark .bg-sky-50 { background-color: var(--panel-bg) !important; }
+html.theme-dark .border-sky-200 { border-color: var(--panel-border) !important; }
+html.theme-dark .text-slate-600 { color: var(--muted) !important; }
+
+/* Dark mode: callouts herdados do style.css com variáveis adequadas */
+html.theme-dark .callout-info { background-color: var(--info-soft-bg) !important; border-color: var(--info-soft-border) !important; color: var(--text) !important; }
+html.theme-dark .callout-practice, html.theme-dark .callout-good-practice { background-color: var(--success-soft-bg) !important; border-color: var(--success-soft-border) !important; color: var(--text) !important; }
+html.theme-dark .callout-academic { background-color: var(--warn-soft-bg) !important; border-color: var(--warn-soft-border) !important; color: var(--text) !important; }
+html.theme-dark .callout-challenge { background-color: var(--danger-soft-bg) !important; border-color: var(--danger-soft-border) !important; color: var(--text) !important; }
+
+/* Dark mode: harmonizar classes Tailwind comuns usadas nas aulas */
+html.theme-dark .bg-white { background-color: var(--panel-bg) !important; }
+html.theme-dark .bg-slate-50 { background-color: var(--bg) !important; }
+html.theme-dark .bg-sky-50 { background-color: var(--info-soft-bg) !important; }
+html.theme-dark .bg-emerald-50 { background-color: var(--success-soft-bg) !important; }
+html.theme-dark .bg-orange-50 { background-color: var(--warn-soft-bg) !important; }
+html.theme-dark .bg-purple-50 { background-color: var(--accent-soft-bg) !important; }
+html.theme-dark .border-slate-200 { border-color: var(--panel-border) !important; }
+html.theme-dark .text-slate-500 { color: var(--muted) !important; }
+html.theme-dark .text-slate-600 { color: var(--muted) !important; }
+html.theme-dark .text-slate-700 { color: var(--text) !important; }
+html.theme-dark .text-slate-800 { color: var(--text) !important; }
+html.theme-dark body.text-slate-800 { color: var(--text) !important; }
+html.theme-dark .text-sky-700, html.theme-dark .text-sky-800 { color: var(--accent) !important; }
+html.theme-dark .text-sky-600 { color: var(--accent) !important; }
+html.theme-dark .text-emerald-600 { color: var(--success-soft-border) !important; }
+html.theme-dark .text-orange-600 { color: var(--warn-soft-border) !important; }
+html.theme-dark .text-purple-600 { color: var(--accent) !important; }
+html.theme-dark .border-sky-500 { border-color: var(--accent) !important; }
+html.theme-dark .hover\:text-sky-700:hover { color: var(--accent) !important; }
+html.theme-dark .bg-white\/50 { background-color: rgba(255,255,255,0.06) !important; }
+
+/* Quiz e detalhes */
+details > summary { cursor: pointer; font-weight: 600; padding: 0.75rem; background-color: #f1f5f9; border-radius: 0.375rem; transition: background-color 0.2s; }
+details > summary:hover { background-color: #e2e8f0; }
+details[open] > summary { background-color: #e2e8f0; }
+.quiz-answer { padding: 1rem; background-color: var(--bg); border: 1px solid var(--panel-border); border-top: none; border-radius: 0 0 0.375rem 0.375rem; }
+html.theme-dark details > summary { background-color: var(--panel-bg); color: var(--text); border: 1px solid var(--panel-border); }
+html.theme-dark details > summary:hover { background-color: #0f1a2e; }
+
+/* Linha do tempo usada em algumas aulas */
+.timeline-item { position: relative; padding-bottom: 2.5rem; padding-left: 2.5rem; border-left: 2px solid var(--panel-border); }
+.timeline-item:last-child { border-left: 2px solid transparent; }
+.timeline-icon { position: absolute; left: -0.8rem; top: 0; display: flex; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 9999px; background-color: var(--panel-bg); border: 2px solid var(--panel-border); }
+
+/* Impressão */
+@media print {
+  .no-print { display: none !important; }
+  section { box-shadow: none !important; border: 1px solid var(--panel-border); margin-bottom: 1rem; background: #fff !important; }
+}
+
+/* Prose wrapper: harmonização tipográfica e invert no dark */
+.aula-prose :where(h1,h2,h3,h4,h5,h6) { color: var(--text); }
+.aula-prose a { color: #2563eb; }
+html.theme-dark .aula-prose a { color: var(--accent); }
+.aula-prose code { background: var(--inline-code-bg); color: var(--inline-code-fg); padding: .125rem .35rem; border-radius: .25rem; }
+.aula-prose pre code { background: transparent; color: inherit; padding: 0; }
+.aula-prose blockquote { color: var(--text); border-left: 4px solid var(--panel-border); background: var(--panel-bg); padding: .75rem 1rem; border-radius: .375rem; }
+
+/* Spacing padrão entre seções */
+.aula-prose section { margin-bottom: 3rem !important; }
+
+/* Cartões de conteúdo dentro das seções */
+.aula-card { background: var(--panel-bg); border: 1px solid var(--panel-border); border-radius: 0.75rem; padding: 2rem !important; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+html.theme-dark .aula-card { box-shadow: none; }
+
+/* Aula section titles */
+.aula-title { font-size: 1.875rem; line-height: 2.25rem; font-weight: 700; color: var(--text); border-bottom: 2px solid var(--accent); padding-bottom: .5rem; margin-bottom: 1.5rem; }
+.aula-title--center { text-align: center; border-bottom: none; margin-bottom: 1.25rem; }
+
+/* Mapear outras cores claras comuns para variáveis no dark */
+html.theme-dark .bg-amber-50 { background-color: var(--warn-soft-bg) !important; }
+html.theme-dark .text-amber-600 { color: var(--warn-soft-border) !important; }
+html.theme-dark .bg-rose-50 { background-color: var(--danger-soft-bg) !important; }
+html.theme-dark .text-rose-600 { color: var(--danger-soft-border) !important; }
+
+/* Quiz visual feedback */
+.quiz-correct { background: var(--success-soft-bg) !important; border: 1px solid var(--success-soft-border) !important; border-radius: .5rem; padding: .25rem .5rem; }
+.quiz-incorrect { background: var(--danger-soft-bg) !important; border: 1px solid var(--danger-soft-border) !important; border-radius: .5rem; padding: .25rem .5rem; }
+.quiz-correct-hint { border: 1px dashed var(--success-soft-border) !important; border-radius: .5rem; padding: .25rem .5rem; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem 1rem; border-radius: .5rem; font-weight: 600; border: 1px solid transparent; }
+.btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-primary:hover { filter: brightness(.9); }
+html.theme-dark .btn-primary { background: var(--accent); color: #0b1020; color: #fff; border-color: var(--accent); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Map sky buttons to theme accent in dark */
+html.theme-dark .bg-sky-600 { background-color: var(--accent) !important; }
+html.theme-dark .hover\:bg-sky-700:hover { background-color: var(--accent) !important; }

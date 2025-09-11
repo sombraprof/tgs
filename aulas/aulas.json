@@ -81,7 +81,7 @@
       "../css/aula.css"
     ],
     "scripts": [
-      "../js/quiz.js"
+     
     ],
     "init": null
   },
@@ -97,7 +97,6 @@
       "../css/aula.css"
     ],
     "scripts": [
-      "../js/quiz.js"
     ],
     "init": null
   },
